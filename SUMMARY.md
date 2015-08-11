@@ -138,11 +138,11 @@
     * [How to connect to api jportal](Howto/How To Use JSPortal APIs Non Generated.md)
     * [How to use a mail client in jumpscale](Howto/HowtoMailClient.md)
     * [How To FS Walker](Howto/HowToFSWalker.md)
-* [CookBook](Cookbook/home.md)
-    * [Bots] 
+* [CookBook](Cookbook/Home.md)
+    * [Bots](Cookbook/Home.md) 
         * [Telegram](Cookbook/Bots/Telegram.md)
-    * [CloudAutomation]
+    * [CloudAutomation](Cookbook/Home.md)
         * [Mothership1 Cloud](Cookbook/CloudAutomation/MS1.md)
-    * [DB]
+    * [DB](Cookbook/Home.md)
         *  [SQLAlchemy](Cookbook/DB/SQLAlchemy.md)
 * [Modules](Modules)
