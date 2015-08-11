@@ -12,7 +12,7 @@ Adds sorting & filteration capabilities to all the tables in this page
 ### Example
 
 ```
-{{datatables_use: disable_filters:False\}\}
+\{\{datatables_use: disable_filters:False\}\}
 
 ||col1||col2||col3||col4||
 |something a|yes|city|938429374|
