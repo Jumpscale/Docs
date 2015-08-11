@@ -1,53 +1,61 @@
-query as json
+Rest Services
 =============
 
 ```
-http://localhost:82/rest/system/contentmanager/getSpaces?format=json
+http://localhost:82/rest/system/contentmanager/getSpaces
 ```
-(where 82 is your configured port)
-
-
+(Where 82 is your configured port)
 
 if no error:
 
 ```
-{"result": ['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']}
+result of rest call
+
+
+['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']
+
+how to get machine readable output?
+
+if you want to use this rest interface from a machine (so not by browser) use the following url
+
+http://127.0.0.1/restmachine/system/contentmanager/getSpaces?human=falseauthkey=???
+
+Be carefull generated authkey above has been generated for you as administrator.
 ```
 
 
 if error:
 
 ```
-{
-    "category": "", 
-    "applicationName": "appserver6_test", 
-    "guid": "290ac4b1-1212-44f2-95e1-d2ea77d2b043", 
-    "errormessagePub": "", 
-    "level": 1, 
-    "backtrace": "Traceback (most recent call last):\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\geventWebserver\\PortalServer.py\", line 583, in processor_rest\n    result=self.routes[path][0](ctx,self)\n~   File \"C:\\Users\\test\\QBASEVAR\\code\\actormethodgreenlet_myapp_actor_testactor_testactor.py\", line 69, in wscall\n    params=q.core.codegenerator.taskletengines[\"myapp_testactor_get\"].execute(params,tags=None)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 197, in execute\n    params = tasklet.checkExecute(q, i ,     def getSpaces(self, **args):params, service, tags)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 54, in checkExecute\n    params = self.main(q, i, params, service, tags)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 43, in main\n    params=self.module.main(q,i,params,service,tags,self)\n~   File \"code\\myapp\\testactor\\method_get\\5_main.py\", line 4, in main\n    sparams.test=\"d\"\n~ NameError: global name 'sparams' is not defined\n", 
-    "id": 0, 
-    "errormessage": "Execute method myapp_testactor_get failed.\nquerystr was:key=1234&format=json", 
-    "pid": 0, 
-    "funclinenr": 0, 
-    "funcname": "", 
-    "code": "", 
-    "params": {}, 
-    "caller": "127.0.0.1", 
-    "time": 1344162981, 
-    "nid": 3, 
-    "gid": 10, 
-    "jobid": 0, 
-    "type": 0, 
-    "funcfilename": "c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\geventWebserver\\PortalServer.py", 
-    "tags": ""
-}
+"Param with name:namespace is missing."
+```
+or 
+
+```
+Execute method GET_system_contentmanager_modelobjectlist failed.
+Traceback (most recent call last):
+~ File "/opt/jumpscale7/lib/JumpScale/portal/portal/PortalRest.py", line 163, in execute_rest_call
+result = method(ctx=ctx, **ctx.params)
+~ File "/opt/jumpscale7/apps/portals/portalbase/system/system__contentmanager/methodclass/system_contentmanager.py", line 94, in modelobjectlist
+data = dtext.getData(namespace, category, key, **args)
+~ File "/opt/jumpscale7/apps/portals/portalbase/system/system__contentmanager/extensions/extension_datatable/DataTables.py", line 88, in getData
+datainfo = self.getFromCache(key)
+~ File "/opt/jumpscale7/apps/portals/portalbase/system/system__contentmanager/extensions/extension_datatable/DataTables.py", line 69, in getFromCache
+return self.cache.cacheGet(key)
+~ File "/opt/jumpscale7/lib/JumpScale/baselib/key_value_store/store.py", line 102, in cacheGet
+r=self.get("cache",key)
+~ File "/opt/jumpscale7/lib/JumpScale/baselib/key_value_store/memory_store.py", line 21, in get
+raise RuntimeError("Could not find object with category %s key %s"%(category,key))
+~ RuntimeError: Could not find object with category cache key 1234
+
+type/level: UNKNOWN/1
+Execute method GET_system_contentmanager_modelobjectlist failed.
+querystr was:category=%27%27&namespace=%27%27&key=1234&format=str
+method was:/rest/system/contentmanager/modelobjectlist
 ```
 
-how to know if appropriate result result is always a dict check on key
-"result" if not there is an errorcondition object with props as shown
-above
 
-if no format str -\> text readable
-----------------------------------
+This format is very difficult to parse but ideal to play around with on webserver.
 
-very difficult to parse but ideal to play around with on webserver
+For machine usage, [RestMachine services](RestMachineServices) would be a better fit.
+
