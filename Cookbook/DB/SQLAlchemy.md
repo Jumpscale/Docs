@@ -1,13 +1,10 @@
-Cookbook SQL Alchemy
-====================
+## Cookbook SQL Alchemy
 
-init
-----
+### init
 
 - create a dir in which all following files will be stored
 
-Model.py
---------
+### Model.py
 
 this is the file which will build your database model
 
@@ -118,8 +115,9 @@ listen(User.git_github, 'set', db.validate_lower_strip, retval=True)
 
 ```
 
-Example.py
--------
+### Example.py
+
+
 example to use your model
 ```
 ```

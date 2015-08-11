@@ -1,8 +1,6 @@
-Telegram BOT
-============
+## Telegram BOT
 
-create your own bot on telegram
--------------------------------
+### create your own bot on telegram
 
 - go to your telegram chat app
 - look for BotFather user (find user)
@@ -39,8 +37,7 @@ For a description of the Bot API, see this page: https://core.telegram.org/bots/
 ```
 
 
-to do a quick demo
-------------------
+### to do a quick demo
 
 ofcourse use your own generated key
 ```
@@ -52,7 +49,6 @@ j.tools.telegrambot.demo()
 now go to your chat app & look for user jumpscale_bot (ofcourse needs to be your chosen name)
 
 
-check the handlers code on
---------------------------
+### check the handlers code on
 
 https://github.com/Jumpscale/jumpscale_core7/tree/master/lib/JumpScale/lib/telegram/handlers
