@@ -8,9 +8,10 @@
 * [Portal](Portal/Home.md)
     * [Install](Portal/Install.md)
     * [Get Started](Portal/GetStarted.md)
-    * [Wiki Syntax Confluence](Portal/Wiki Syntax Confluence.md)
-    * [Wiki Syntax Markdown](Portal/Wiki Syntax Markdown.md)
-    * [Wiki Portal/Pagestructure](Portal/Pagestructure.md)
+    * Syntax
+        * [Wiki Syntax Confluence](Portal/Syntax/Wiki Syntax Confluence.md)
+        * [Wiki Syntax Markdown](Portal/Syntax/Wiki Syntax Markdown.md)
+        * [Wiki Portal/Pagestructure](Portal/Syntax/Pagestructure.md)
     * [Configuration](Portal/Configuration/Configuration.md)
         * [Main Configuration](Portal/Configuration/PortalConfiguration.md)
         * [User Management](/Portal/Configuration/UserManagement.md)
