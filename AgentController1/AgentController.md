@@ -14,16 +14,6 @@ Those tasks can be executed in different ways
     [processmanager](processmanager) or [worker](workers) on the
     specified interval
 
-Architecture
-------------
-
-Components
-----------
-
--   [Agentcontroller](Agentcontroller)
--   [ProcessManager](ProcessManager)
--   [Worker](Worker)
-
 How To
 ------
 
