@@ -18,10 +18,16 @@ if no error:
 if error:
 
 ```
+"Param with name:namespace is missing."
+```
+
+or
+
+```
 Execute method GET_system_contentmanager_modelobjectlist failed.
 Traceback (most recent call last):
-~ File "/opt/jumpscale7/lib/JumpScale/portal/portal/PortalRest.py", line 164, in execute_rest_call
-return (True, result)
+~ File "/opt/jumpscale7/lib/JumpScale/portal/portal/PortalRest.py", line 163, in execute_rest_call
+result = method(ctx=ctx, **ctx.params)
 ~ File "/opt/jumpscale7/apps/portals/portalbase/system/system__contentmanager/methodclass/system_contentmanager.py", line 94, in modelobjectlist
 data = dtext.getData(namespace, category, key, **args)
 ~ File "/opt/jumpscale7/apps/portals/portalbase/system/system__contentmanager/extensions/extension_datatable/DataTables.py", line 88, in getData
@@ -39,6 +45,7 @@ Execute method GET_system_contentmanager_modelobjectlist failed.
 querystr was:category=%27%27&namespace=%27%27&key=1234&format=json
 method was:/rest/system/contentmanager/modelobjectlist
 ```
+
 
 how to know if appropriate result result is always a dict check on key
 "result" if not there is an errorcondition object with props as shown
