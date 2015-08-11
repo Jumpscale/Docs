@@ -1,4 +1,4 @@
-# service.hrd Process Section
+## service.hrd Process Section
 
 this is how you can define processes & how they will be run on a local or remote system
 
@@ -18,7 +18,7 @@ env.procces.1 =
     LC_ALL:C,
 ```
 
-## process.1
+### process.1
 
 The number `1` here is the order of the process if multiple processes are defined they have to have a unique order.
 
@@ -36,6 +36,6 @@ The number `1` here is the order of the process if multiple processes are define
 
 * Note: If ports is defined it is used to check if the process is started or stopped
 
-## env.process.1
+### env.process.1
 
 Environment variables for process `1`

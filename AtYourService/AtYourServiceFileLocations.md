@@ -1,4 +1,4 @@
-# File Locations For Service Templates
+## File Locations For Service Templates
 
 ```
 /opt/code/github/jumpscale/ays_jumpscale7/singlenode_portal/

@@ -1,3 +1,6 @@
+AYS Parent/Child relationship
+-------------------------------
+
 A service can be a parent for other services. It's a way of organizing your services and grouping them.
 
 Child services are located inside the directory of the parent.
@@ -18,8 +21,8 @@ A service is also identified by its parent, so two services with the same domain
 
 This is useful for grouping services of a certain location/node together. Then, performing any action is made easier.
 
-To create a nested child service:
-```
+#To create a nested child service:
+#```
 # First, create the parent
 # Note that the parent can be any service
 ays install -n location -i europe --data 'instance.name:Europe'

@@ -1,5 +1,4 @@
-recipe part of service.hrd
-=====================
+## recipe part of service.hrd
 
 this explains how a binary repo will be checked out to local filesystem
 

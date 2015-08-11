@@ -1,8 +1,7 @@
-Human Readable Data
-===================
+## Human Readable Data
 
-About HRD
----------
+### About HRD
+
 * HRD is the configuration format in jumpscale.
 * Used in AtYourService configuration.
 * HRD is a more easily read and interpreted format for data, that is friendly to system engineers too.
@@ -12,8 +11,8 @@ About HRD
  * Database objects
 
 * * * * *
-Example Of An HRD File
-----------------------
+
+### Example Of An HRD File
 
 ```shell
 
@@ -24,8 +23,8 @@ osis.db.type=filesystem
 ```
 
 * * * * *
-Usage As Template Engine
-------------------------
+
+### Usage As Template Engine
 
 **Getting application instance HRD's**
 

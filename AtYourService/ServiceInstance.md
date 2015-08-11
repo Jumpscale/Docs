@@ -1,5 +1,4 @@
-Service Instances
-==================
+## Service Instances
 
 Example: Running several instances of mongodb on the same machine on different ports.
 

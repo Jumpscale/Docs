@@ -1,8 +1,6 @@
-AtYourService Details
-=================
+## AtYourService Details
 
-Introduction
-------------
+### Introduction
 
 **AtYourService** An hybrid between a modelisation tool and a package manager
 
@@ -18,8 +16,7 @@ AtYourService is able to install several instances of a service on the same mach
 
 
 
-AtYourService system features
----------------------------
+### AtYourService system features
 
 * Powerful Command line tool (One command to rule them all) : see [AtYourServiceCmd]
 * Install multiple instances of a service on the same node/machine : see [ServiceInstance]
@@ -35,10 +32,9 @@ AtYourService system features
   - actions.py or actions.lua : the livecycle management actions
 
 
-AtYourService Basics
-------------------
+### AtYourService Basics
 
-### Instances
+#### Instances
 Example: Running several instances of mongodb on the same machine on different ports.
 
 @todo
@@ -48,12 +44,11 @@ ays install -n mongodb #Use default instance name (main)
 ays install -n mongodb -i mongo2 #instance name is (mongo2)
 ```
 
-### templates
+#### templates
 
 @todo
 
-Remarks
--------
+### Remarks
 
 @todo do better
 
