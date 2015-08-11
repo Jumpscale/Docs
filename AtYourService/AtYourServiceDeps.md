@@ -1,8 +1,8 @@
-AtYourService Dependencies
-=====================
+## AtYourService Dependencies
 
+
+### Basics
 dependencies are marked in the service template hrd as follows
-
 
 ```
 dependencies.1                 =
@@ -12,7 +12,8 @@ dependencies.1                 =
 
 ```
 
-more complex example where arguments are embedded
+### more complex example where arguments are embedded
+
 ```
 dependencies.1                 =
     args:'dep.args.redis',
@@ -34,3 +35,4 @@ dependencies.2               =
 
 
 ```
+

@@ -1,4 +1,4 @@
-ays Command
+## ays command line
 
 ```
 ays commands:
@@ -90,8 +90,8 @@ List:
 
 ```
 
-details
---------
+## ays command line actions
+
 
 * ```install``` Configure, install and run a service
 * ```uninstall``` Uninstall a service
@@ -123,8 +123,7 @@ details
 * ```consume --category categoryName producerInstanceName``` to consume specified producer category and instance for this service
 * ```--immediate``` to indicate provided parent path is the exact one to use. If neither path nor parent is path, action will be performed on the root of the configured directory.
 
-* Examples:
-
+## AYS cmd line examples:
 
 ```shell
 #updates the metadata
@@ -148,3 +147,4 @@ ays status
 # Show current status of locally installed AYSes
 ays status --local
 ```
+

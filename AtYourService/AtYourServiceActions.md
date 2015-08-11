@@ -4,7 +4,8 @@
 
 @todo explain better is also outdated 
 
-* Example:
+### Example:
+
  ```shell
 class Actions(ActionsBase):
     """
