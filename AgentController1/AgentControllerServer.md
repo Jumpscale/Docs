@@ -4,7 +4,7 @@ Agentcontroller
 Description.
 ------------
 
-The Agentcontroller is repsonsible of distrubuting the work over the
+The Agentcontroller is respsonsible of distributing the work over the
 nodes. This can be accomplished by specifying a specific node id to
 execute on or based on a role.
 
@@ -17,8 +17,8 @@ doing.
 Executing of a task (Jumpscript)
 --------------------------------
 
-In JumpScale one can define a task in a [Jumpscript](Jumpscript) As
-[Jumpscript](Jumpscript) defines a set of intruction to execute how and
+In JumpScale one can define a task in a [Jumpscript](Jumpscript) as
+[Jumpscript](Jumpscript) defines a set of instructions to execute how and
 where to do so.
 
 Agentcontroller client
@@ -29,7 +29,6 @@ Agentcontroller client
 In the JSShell one can execute a task as followed
 
 ```python
-import JumpScale.grid.agentcontroller
 acl = j.clients.agentcontroller.get()
 job = acl.executeJumpscript(organization='jumpscale', name='jumpscale', nid=1, role=None, args={'msg':'bleh'}, timeout=600, wait=True, queue='')
 print job['result']
@@ -63,7 +62,6 @@ This method provides an insight on which nodes are connected to the
 AgentController. It provides which nodes is connected with which roles.
 
 ```python
-import JumpScale.grid.agentcontroller
 acl = j.clients.agentcontroller.get()
 sessions = acl.listSessions()
 ```
