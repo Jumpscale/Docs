@@ -59,8 +59,8 @@ This format is very difficult to parse but ideal to play around with on webserve
 
 For machine usage, use `restmachine`
 
-RestMachine Service
-===================
+RestMachine Services
+====================
 
 ```
 http://localhost:82/restmachine/system/contentmanager/getSpaces
