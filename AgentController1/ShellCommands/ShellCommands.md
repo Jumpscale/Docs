@@ -7,6 +7,5 @@ Shell commands
 -   [JSGRID](JSGRID.md)
 -   [JSGroup](JSGroup.md)
 -   [JSNode](JSNode.md)
--   [JSProcess](JSProcess.md)
 -   [JSUser](JSUser.md)
 
