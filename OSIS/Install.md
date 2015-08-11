@@ -21,7 +21,7 @@ ays install -n osis -i test --data 'param.osis.key: param.osis.connection.mongod
 ### Install OSIS client
 
 ```
-ays install -n osis_client
+ays install -n osis_client --data 'param.osis.client.addr:127.0.0.1 param.osis.client.login:root param.osis.client.passwd:rooter'
 ```
 
 ### Control your OSIS service
