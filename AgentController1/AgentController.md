@@ -14,8 +14,10 @@ Those tasks can be executed in different ways
     [JSAgent](JSAgent.md) or [worker](workers.md) on the
     specified interval
 
-How To
-------
+Useful links
+-------------
 
--   [Schedule work using agentcontroller](ScheduleWork)
+-   [How To Schedule Work using AgentController](ScheduleWork.md)
+-   [Usage of redis in AgentController and JSAgent](redis.md)
+-   [Understanding JumpScripts and utilizing](JumpScript.md)
 
