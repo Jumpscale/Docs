@@ -22,4 +22,5 @@ Useful links
 -   [How To Schedule Work using AgentController](ScheduleWork.md)
 -   [Usage of redis in AgentController and JSAgent](redis.md)
 -   [Understanding JumpScripts and utilizing](JumpScript.md)
+-   [Demo Setup for AgentController/JSAgent](DemoSetupTutorial.md)
 
