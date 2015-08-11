@@ -130,14 +130,12 @@
     * [Development](Devel)
     * [Modules](Modules)
     * [Pagestructure](Pagestructure)
-    
 * [SSH System Management](SSHSystemManagement/Home.md)
     * [SSH connections & Basic SSH Info](SSHSystemManagement/SSHBasics.md)
     * [SSH Remote System](SSHSystemManagement/SSHRemoteSystem.md)
     * [SSH Cuisine](SSHSystemManagement/Cuisine.md)
     * [SSH SAL = System Abstraction Layer](SSHSystemManagement/SSHSAL's.md)
     * [SSH SAL For Unix](SSHSystemManagement/SSHUnix.md)
-
 * [SAL's](SAL/Home.md)
 * [Howto](Howto/Home.md)
     * [How to connect to api jportal](Howto/How To Use JSPortal APIs Non Generated.md)
