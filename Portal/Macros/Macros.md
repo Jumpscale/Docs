@@ -1,5 +1,7 @@
 # Macros
 
+@todo need to do includes of all pages underneith (otherwise will not showup in pdf)
+
 JumpScale portal comes shipped with a big variety of macros.
 
 The portal supports three kind of macros.
