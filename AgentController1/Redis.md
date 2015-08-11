@@ -8,7 +8,7 @@ strings, hashes, lists, sets and sorted sets.
 Redis Usage in JumpScale.
 -------------------------
 
-Redis is used to cache our in process jobs and used as a queing
+Redis is used to cache our in process jobs and used as a queuing
 mechanism to pass information from one component to the other. Runs on
 port 9999
 
