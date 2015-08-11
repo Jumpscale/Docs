@@ -69,7 +69,17 @@ http://localhost:82/restmachine/system/contentmanager/getSpaces
 if no error:
 
 ```
-['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']
+{
+result: [
+"tests",
+"system",
+"testwebsite",
+"grid",
+"testspace",
+"home",
+"ays"
+]
+}
 ```
 
 if error:
@@ -109,3 +119,5 @@ backtraceDetailed: " File "/opt/jumpscale7/lib/JumpScale/portal/portal/PortalRes
 masterjid: 0
 }
 ```
+
+if result is in the 
