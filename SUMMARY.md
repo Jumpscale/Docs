@@ -1,6 +1,6 @@
 # Summary
 
-* [Core](Core)
+* [Core](Core/Core.md)
 * [Devel](Devel)
 * [Grid](Grid)
 * [Howto](Howto)
