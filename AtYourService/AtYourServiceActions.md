@@ -1,7 +1,8 @@
-### Action files
+## AYS Actions
+
 * Manages the lifecycle of service
 
-* 2 supported formats .py & (.lua) ```coming soon```
+@todo explain better is also outdated 
 
 * Example:
  ```shell

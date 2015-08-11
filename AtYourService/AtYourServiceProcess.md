@@ -1,5 +1,7 @@
 # service.hrd Process Section
 
+this is how you can define processes & how they will be run on a local or remote system
+
 ```
 process.1=
     cmd:'/opt/mongodb/bin/mongod',

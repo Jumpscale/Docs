@@ -1,6 +1,9 @@
 AtYourService Dependencies
 =====================
 
+dependencies are marked in the service template hrd as follows
+
+
 ```
 dependencies.1                 =
     name:'ubuntukernel',

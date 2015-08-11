@@ -16,16 +16,7 @@ Instead of the traditional (complicated) way of handling services data through d
 AtYourService preserves the installation/build state, so if for example an installation/build attempt fails, next time the process will continue from the last point, this behavior of course could be changed, but it's the default behavior and it's very handy.
 AtYourService is able to install several instances of a service on the same machine.
 
-Migration from JPackage to AtYourService
-----------------------------------------
-It's possible that you find bugs or not implemted feature in AtYourService. In that case, fill open a bug so we can work on it.  
 
-### From an already installed jumpscale system:
-if you want to start using @ys with your old installation of Jumpscale make sure you updated these files :
-- rename **/opt/jumpscale7/hrd/system/jpackage.hrd** to **/opt/jumpscale7/hrd/system/atyourservice.hrd**  
-- you can safely remove **/opt/jumpscale7/jpackage_actions** cause this folder is no longer use. the actions files of a service are now location next to its HRD file in **/opt/jumpscale7/hrd/apps**/opt/jumpscale7/hrd/apps
-be carefull is you just move your actions.py files to this new location without any other verification cause it's most likely that it will not be direclty compatible with @ys.  
-See this link to know [How to convert jpackage to service](AtYourServiceMigration.md)
 
 AtYourService system features
 ---------------------------
@@ -47,6 +38,25 @@ AtYourService system features
 AtYourService Basics
 ------------------
 
+### Instances
+Example: Running several instances of mongodb on the same machine on different ports.
+
+@todo
+
+```
+ays install -n mongodb #Use default instance name (main)
+ays install -n mongodb -i mongo2 #instance name is (mongo2)
+```
+
+### templates
+
+@todo
+
+Remarks
+-------
+
+@todo do better
+
 - A service data is separated into 2 types
     - Metadata (configuration files to determine how to manage the whole life cycle)
     - Binary data (Actual service data)
@@ -65,58 +75,3 @@ ays install -n mongodb #Install
 - This means we need frequently to do ```ays mdupdate``` to keep local metadata repo @```/opt/code/github/jumpscale/ays_jumpscale7/``` in sync with [Remote Metadata Repo](https://github.com/jumpscale/ays_jumpscale7)
 
 
-- In order to create a service template called ```fancyPackage``` (Without going into much details) you've to do:
-    - Publish service binary data
-          - Initiate a local git repo anywhere in your file system called ```fancyPackage```.
-          - Add the binary data files to this repo
-          - Push this repo to [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
-          - If you need access to that repo, contact us on info@incubaid.com
-    - Create service templates
-          - create a directory under ```/opt/code/github/jumpscale/ays_jumpscale7/``` called ```fancyPackage```
-          - Inside the service template directory, add 3 files *(actions.py, service.hrd, instance.hrd)*
-          - Those metadata files draw the life cycle plan of the service from creation to monitoring.
-          - Metadata will contain the URL for binary data repo for that service on [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
-          - In the next sections we'll explain in details how to configure and create a new service.
-
-- Examples see: [AtYourServiceExamples](AtYourServiceExamples)
-- [How to define dependencies in service.hrd](AtYourServiceDeps)
-- [How to define the exports (link between git repo's & filesystem)](AtYourServiceExports)
-- [How to define a process in service.hrd](AtYourServiceProcess)
-- [How to define Ubuntu features in service.hrd](AtYourServiceUbuntu)
-- [How to use the command line](AtYourServiceCmd)
-- [Locations of the important files](AtYourServiceFileLocations)
-- [AtYourServiceRemote](AtYourServiceRemote)
-
-
-How to configure a new service
-------------------------------
-
-the 3 important files
-
-- **actions.py**
-     - contains ```Actions``` class with predefined functions that do certain actions
-     - here're the steps involved in a service installation
-          - [```prepare```, ```check_requirements```] actions are executed in order.
-          - Then actual service files will be downloaded/installed
-          - [```configure```, ```check_uptime_local```] will be executed in order.
-              * ```check_uptime_local``` : Checks if process already running (from previous installation)
-              * If process running try execute ```stop``` for graceful stop
-              * execute  ```check_uptime_local``` to check if process still running
-              * If process still running try execute ```halt``` for hard stop
-          - execute ```start``` using the config files to start the application
-          - execute ```check_uptime_local``` to check process is started
-          - execute ```monitor_local``` to check local application is running & healthy
-          - execute ```monitor_remote``` to check if remote application is running & healthy
-     - see [AtYourServiceActions]
-
-- **service.hrd**
-- **instance.hrd**
-
-- [HRD format](Human-Readable-Data-Format) files + 1 python file)
-
-
-
-Installed AtYourService files
--------------------------
-
-* [Service templates file locations](AtYourServiceFileLocations)

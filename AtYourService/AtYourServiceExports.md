@@ -1,6 +1,8 @@
 recipe part of service.hrd
 =====================
 
+this explains how a binary repo will be checked out to local filesystem
+
 ```
 git.build.1=
     url:'http://git.aydo.com/aydo/qemu-ledis',
