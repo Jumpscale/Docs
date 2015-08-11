@@ -2,13 +2,13 @@ query as json
 =============
 
 ```
-http://localhost:9999/rest/myapp/testactor/get?key=1234&format=json
+http://localhost:82/rest/system/contentmanager/getSpaces?format=json
 ```
 
 if no error:
 
 ```
-{"result": ["test"]}
+{"result": ['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']}
 ```
 
 if error:
@@ -20,7 +20,7 @@ if error:
     "guid": "290ac4b1-1212-44f2-95e1-d2ea77d2b043", 
     "errormessagePub": "", 
     "level": 1, 
-    "backtrace": "Traceback (most recent call last):\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\geventWebserver\\PortalServer.py\", line 583, in processor_rest\n    result=self.routes[path][0](ctx,self)\n~   File \"C:\\Users\\test\\QBASEVAR\\code\\actormethodgreenlet_myapp_actor_testactor_testactor.py\", line 69, in wscall\n    params=q.core.codegenerator.taskletengines[\"myapp_testactor_get\"].execute(params,tags=None)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 197, in execute\n    params = tasklet.checkExecute(q, i , params, service, tags)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 54, in checkExecute\n    params = self.main(q, i, params, service, tags)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 43, in main\n    params=self.module.main(q,i,params,service,tags,self)\n~   File \"code\\myapp\\testactor\\method_get\\5_main.py\", line 4, in main\n    sparams.test=\"d\"\n~ NameError: global name 'sparams' is not defined\n", 
+    "backtrace": "Traceback (most recent call last):\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\geventWebserver\\PortalServer.py\", line 583, in processor_rest\n    result=self.routes[path][0](ctx,self)\n~   File \"C:\\Users\\test\\QBASEVAR\\code\\actormethodgreenlet_myapp_actor_testactor_testactor.py\", line 69, in wscall\n    params=q.core.codegenerator.taskletengines[\"myapp_testactor_get\"].execute(params,tags=None)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 197, in execute\n    params = tasklet.checkExecute(q, i ,     def getSpaces(self, **args):params, service, tags)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 54, in checkExecute\n    params = self.main(q, i, params, service, tags)\n~   File \"c:\\qb6\\apps\\CloudDesktopAgent\\pylabsextensions\\core\\taskletengine\\TaskletEngine.py\", line 43, in main\n    params=self.module.main(q,i,params,service,tags,self)\n~   File \"code\\myapp\\testactor\\method_get\\5_main.py\", line 4, in main\n    sparams.test=\"d\"\n~ NameError: global name 'sparams' is not defined\n", 
     "id": 0, 
     "errormessage": "Execute method myapp_testactor_get failed.\nquerystr was:key=1234&format=json", 
     "pid": 0, 
