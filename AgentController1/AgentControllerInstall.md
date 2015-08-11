@@ -1,21 +1,21 @@
-install of agent controller
-===========================
+## install of AgentController
 
-requirements
-------------
+
+###Requirements
+
 
 -   make sure jumpscale is installed properly (see [JumpScale Installation](../Core/Install/Install.md))
 -   make sure osis & portal are installed (see [Portal Installation](../portal/Install.md) and [OSIS Installation](../OSIS/Install.md))
 
-install locally as all in 1 install
----------------------------
+###install locally as all in 1 install
+
 
 ```
 ays install -n singlenode_grid
 ```
 
-install modular
----------------
+###install modular
+
 
 ```shell
 #agentcontroller
