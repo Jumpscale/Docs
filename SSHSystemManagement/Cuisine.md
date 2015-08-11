@@ -1,6 +1,43 @@
 
-cuisine getting started
-=======================
+## cuisine
+
+A set of very nice tools to do basic system management to a node
+This is all based on https://github.com/sebastien/cuisine 
+
+Use this tool if you want basic management.
+It does not support all platforms as well.
+
+```
+#in our example we will do all to localhost
+c=j.remote.cuisine.connect("localhost",22)
+```
+
+for documentation see [Cuisine](Cuisine)
+
+### how to make cuisine more silent
+
+```
+c=j.remote.cuisine.connect("localhost",22)
+
+c.fabric.api.env['connection_attempts'] = 5
+c.fabric.state.output["running"]=False
+c.fabric.state.output["stdout"]=False
+```
+
+### how to get cuisine to use a specific key
+
+```
+c.fabric.key_filename="/home/despiegk/.ssh/id_rsa"
+```
+
+### hoe to get cuisine to use passwd
+
+```
+c.fabric.api.env.password = 'PASSWORD'
+```
+
+### More info about cuisine
+
 
 'cuisine` makes it easy to write automatic server installation
 and configuration recipes by wrapping common administrative tasks

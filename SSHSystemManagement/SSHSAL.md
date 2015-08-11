@@ -1,4 +1,38 @@
 
+## SSH SAL tools (j.ssh)
+
+SAL = System Abstraction Layer tools
+The idea is we use SSH to remote manage certain systems (e.g. ubuntu, unix in general, openwrt, ...)
+For that a thin abstraction layer is created called SAL and this makes it easy for the developer to interact with the remote system.
+
+The original specs for this tool are on
+https://github.com/Jumpscale/jumpscale_core7/blob/master/specs/ssh_enabled_SALs.md
+Since then quite some modifcations are done.
+
+Its build on top of cuisine
+
+to get started
+
+```
+c=j.ssh.connect("localhost",verbose=True) #this returns a cuisine object (like above) which is verbose in output, if you don't want that put on False
+ub=j.ssh.ubuntu.get(c) #use the ubuntu methods, feed it the cuisine connection
+
+In [10]: ub=j.ssh.ubuntu.get(c)
+
+In [11]: ub.
+ub.connection                   ub.executeRemoteTmuxCmd         ub.executeRemoteTmuxJumpscript  ub.network                      
+
+In [11]: ub.network.
+ub.network.commit   ub.network.ipGet    ub.network.ipReset  ub.network.ipSet    ub.network.manager  ub.network.nics     ub.network.nsGet    ub.network.nsSet    
+
+In [11]: ub.network.nics
+
+Out[11]: ['eth0', 'lo', 'tun0']
+
+```
+
+like usual check the internal documentation using ipshell & ?
+
 ## Available SSH enabled SAL's
 
 @todo improve

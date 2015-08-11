@@ -2,6 +2,8 @@
 SSH Remote System Tools
 =======================
 
+Some jumpscale functions to deal with a remote system over SSH
+
 These are a set of tools inspired on
 j.system.fs ...
 but they work remotely over ssh.

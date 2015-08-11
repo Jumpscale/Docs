@@ -130,10 +130,16 @@
     * [Development](Devel)
     * [Modules](Modules)
     * [Pagestructure](Pagestructure)
+    
+* [SSH System Management](SSHSystemManagement/Home.md)
+    * [SSH connections & Basic SSH Info](SSHSystemManagement/SSHBasics.md)
+    * [SSH Remote System](SSHSystemManagement/SSHRemoteSystem.md)
+    * [SSH Cuisine](SSHSystemManagement/Cuisine.md)
+    * [SSH SAL = System Abstraction Layer](SSHSystemManagement/SSHSAL's.md)
+    * [SSH SAL For Unix](SSHSystemManagement/SSHUnix.md)
+
 * [SAL's](SAL/Home.md)
-    * [SSH-enabled-SAL's](SAL/SSH-enabled-SAL's.md)
 * [Howto](Howto/Home.md)
     * [How to connect to api jportal](Howto/How To Use JSPortal APIs Non Generated.md)
     * [How to use a mail client in jumpscale](Howto/HowtoMailClient.md)
-    * [How To Compare Dirs](Howto/HowToCompareDirs.md)
     * [How To FS Walker](Howto/HowToFSWalker.md)
