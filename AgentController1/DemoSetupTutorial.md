@@ -11,7 +11,7 @@ Requirements
 -   Ubuntu 14.04 64-bit (It possibly works on other ubuntu versions too
     but is not tested)
 -   [Install jumpscale in debug mode
-    see](/doc_jumpscale_core/UbuntuDevelopment)
+    see](../GettingStarted/Install.md)
 
 Installation
 ------------
