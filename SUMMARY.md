@@ -35,7 +35,6 @@
     * [Grid Portal](GridPortal/Home.md)
         * TODO
 * [Development](Devel)
-* [Howto](Howto)
 * [Portal](Portal/Home.md)
     * [Install](Portal/Install.md)
     * [Get Started](Portal/GetStarted.md)
@@ -131,7 +130,10 @@
     * [Development](Devel)
     * [Modules](Modules)
     * [Pagestructure](Pagestructure)
-* Details
-    * [Human Readable Data Format](Human Readable Data Format)
-    * [ContributeToDocs](ContributeToDocs)
-    * [JumpScale License](JumpScale License.md)
+* [SAL's](SAL/Home.md)
+    * [SSH-enabled-SAL's](SAL/SSH-enabled-SAL's.md)
+* [Howto](Howto/Home.md)
+    * [How to connect to api jportal](Howto/How To Use JSPortal APIs Non Generated.md)
+    * [How to use a mail client in jumpscale](Howto/HowtoMailClient.md)
+    * [How To Compare Dirs](Howto/HowToCompareDirs.md)
+    * [How To FS Walker](Howto/HowToFSWalker.md)

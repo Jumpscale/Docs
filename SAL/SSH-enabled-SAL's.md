@@ -1,6 +1,8 @@
-> WIP
 
-#Available SSH enabled SAL's
+## Available SSH enabled SAL's
+
+@todo improve
+@put each SAL in separate doc & in SUMMARY.md
 
 * OpenWRT
  * Network
@@ -16,14 +18,17 @@
  * UFW
  * AOE
 
-# OpenWRT
+### OpenWRT
+
 ```python
 #getting manager.
 wrt = j.ssh.openwrt.get(con)
 ```
+
 The `wrt` manager has interface to work with the various parts
 
-## Network
+### Network
+
 All network related properties and functions are grouped under `wrt.network` 
 * configure uci based network configuration of openwrt, all over ssh
  * wrt = j.ssh.openwrt.get(sshconnection)
@@ -36,21 +41,26 @@ All network related properties and functions are grouped under `wrt.network`
  * find(nic), find all interfaces bind to the given nic name (basically finds sections with ifname==nic
  * commit(), apply changes and restart networking
 
-### Examples
-* To list all `nics` (physically attached devices)
+#### Examples
+
+To list all `nics` (physically attached devices)
+
 ```python
 wrt.network.nics
 [('br-lan', '52:54:00:3d:59:01'),
  ('eth0', '52:54:00:3d:59:01'),
  ('lo', '00:00:00:00:00:00')]
 ```
-* To list all `interfaces` (logical devices)
+
+To list all `interfaces` (logical devices)
+
 ```python
 wrt.network.interfaces
 ```
 Interfaces allows you to configure the network device `nic` and each single interface is associated with a physical device or another interface. 
 
 To add a new interface
+
 ```python
 inf = wrt.network.addInterface('test')
 inf.ifname = 'eth0'
@@ -60,10 +70,12 @@ inf.netmask = '255.255.255.0'
 
 wrt.network.commit()
 ```
-> Note changes to network configuration won't take effect unless a call to `commit()` is made.
+
+Note changes to network configuration won't take effect unless a call to `commit()` is made.
 Also make sure that your changes will not drop your ssh connection, otherwise you might not be able to reach the `OpenWRT` machine anymore.
 
-## DNS
+### DNS
+
 * configure dnsmasq, all over ssh
 * limited support now e.g. A records
 * work with factory class
@@ -75,7 +87,8 @@ Also make sure that your changes will not drop your ssh connection, otherwise yo
  * removeArecord(name, ip=None) removes A record for name and IP. if ip is None, removes all A records for that name
  * commit(), apply changes and restart dnsmasq
 
-### Examples
+#### Examples
+
 ```python
 wrt.dns.records
 {}
@@ -83,6 +96,7 @@ wrt.dns.records
 wrt.dns.addARecord('test', '1.2.3.4')
 wrt.dns.commit()
 ```
+
 ```bash
 ping test
 PING test (1.2.3.4): 56 data bytes
@@ -90,6 +104,7 @@ PING test (1.2.3.4): 56 data bytes
 64 bytes from 1.2.3.4: seq=1 ttl=64 time=0.088 ms
 ^C
 ```
+
 ```python
 wrt.dnt.records
 {'test': ['1.2.3.4']}
@@ -98,7 +113,8 @@ wrt.dns.removeARecord('test')
 wrt.dns.commit()
 ```
 
-## DHCP
+### DHCP
+
 * configure dhcp server, all over ssh
 * limited support now e.g. boot to pxe
 * work with factory class
@@ -116,7 +132,7 @@ wrt.dns.commit()
  * pxe.options
  * commit(), apply changes and restart dnsmasq
 
-## FTP
+### FTP
 - configure chosen ftp server, all over ssh
 - limited support now e.g. just expose directory
 - work with factory class
@@ -161,10 +177,10 @@ wrt.ftp.fscharset                   wrt.ftp.userratio
 wrt.ftp.ipv4only                    wrt.ftp.verboselog
 ```
 
-# Linux (Ubuntu)
+## Linux (Ubuntu)
 The next set of SAL's are designed mainly to work with ubuntu, but they can be used with other distributions of linux (or even OpenWRT) if the configuration files are compatible.
 
-## Network
+### Network
 Get the ubuntu network manager as following:
 
 ```python
@@ -184,7 +200,7 @@ Provided methods and properties
 * `nsSet`: Sets the nameserver
 * `setHostname`: Sets the machine hostname
 
-## NFS
+### NFS
 * configure nfs server, all over ssh
 * limited support now e.g. just expose directory
 * work with factory class
@@ -196,7 +212,7 @@ Provided methods and properties
  * delete(path): Unexposes a path
  * commit(): Apply the changes to the nfs /etc/exports file and reload
 
-## Disk Manager
+### Disk Manager
 ```python
 sshconnection = j.remote.cuisine.connect(...)
 mgr = j.ssh.disklayout.get(sshconnection)
@@ -299,7 +315,7 @@ remote partition from fstab
 """
 ```
 
-## Nginx
+### Nginx
 - configure nginx server, all over ssh
 - work with factory class
     - j.ssh.nginx.get(sshconnection, configpath="/etc/nginx") 
@@ -310,7 +326,7 @@ remote partition from fstab
     - addconfig(... #push nginx configuration file to server and make sure it gets included when loading)
     - reload
 
-## SSH
+### SSH
 - configure ssh server, all over ssh
 - work with factory class
     - j.ssh.server.get(sshconnection) 
@@ -321,7 +337,7 @@ remote partition from fstab
     - disableNonKeyAccess()
     - commit()
 
-## ufw SAL
+### ufw SAL
 - configure ufw firewall, all over ssh  - work with factory class
     - j.ssh.ufw.get(sshconnection) 
 - methods on SAL

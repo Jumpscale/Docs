@@ -1,16 +1,14 @@
-How to Use the APIs
-===================
+## How to Use the APIs of OpenVCloud
 
 @todo check
 
-Using Python
-------------
+### Using Python
 
 ```python
 import requests
 import json
 
-BASE_URL = "https://mothership1.com/restmachine/"
+BASE_URL = "https:/$urlofmachine/restmachine/"
 
 # note empty authkey
 # fill in your username and password
@@ -19,15 +17,13 @@ params = {'username': {username}, 'password': {password}, 'authkey': ''}
 auth_key = requests.post(BASE_URL + 'cloudapi/users/authenticate', params).json()
 ```
 
-Using cURL
-----------
+### Using cURL
 
 ```shell
 curl -d username={username} -d password={password} https://mothership1.com/restmachine/cloudapi/users/authenticate
 ```
 
-Using JavaScript
-----------------
+### Using JavaScript
 
 ```javascript
 var url = "https://mothership1.com/restmachine/cloudapi/users/authenticate";
