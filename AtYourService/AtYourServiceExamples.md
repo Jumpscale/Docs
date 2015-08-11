@@ -62,8 +62,9 @@ git.export.1=
     - ```/opt/code/github/jumpscale/ays_jumpscale7``` is a git repo, so commit and push changes to [ays_jumpscale](https://github.com/Jumpscale/ays_jumpscale7) in order to publish the package
     - If you don't have access, contact us at info@incubaid.com]
 
-* **What others need to do to install nodejs**
-  * ```ays mdupdate``` or alternatively pull/update metadata repo at ```/opt/code/github/jumpscale/ays_jumpscale7```
+* normal install nodejs from other node
+  * ```ays mdupdate``` or alternatively pull/update metadata repo 
+      * This comes from ```/opt/code/github/jumpscale/ays_jumpscale7```
   * ```ays install -n nodejs```
 
 
@@ -76,7 +77,8 @@ git.export.1=
   * Inside the directory, add mongodb installation files
   * Push new changes [If you don't have access, please contact us at info@incubaid.com]
 
-* Because Mongodb is already added to our Repo, please take a look @https://git.aydo.com/binary/mongodb/tree/master
+* Because Mongodb is already added to our Repo, please take a look following repo
+  * [https://git.aydo.com/binary/mongodb/tree/master](https://git.aydo.com/binary/mongodb/tree/master)
 
 
 ### AYS Metadata Service Template
@@ -122,6 +124,7 @@ git.export.1=
 ```
 
 * If Mongodb binary repo has another directory **This is not the case** called ```newPath```, then we can use ```git.export.2=``` to define its destination upon installation
+
 ```cfg
 git.export.2=
    url:$(git.url),  # we use the git URL defined above
@@ -130,7 +133,9 @@ git.export.2=
    link:True,
 
 ```
+
 * You can add ```git.export.3   git.export.4   ...... ``` to define multiple destinations
+
 * Now it's time to define processes and the same as ```git.export.number``` we can define ```process.1  process.2  process.number``` and this will define prpcesses needed to run the package
 
 ``` cfg
@@ -183,8 +188,7 @@ def prepare(self,**args):
 * Usually contains definition for parameters that we need to ask user about but in the same time provide default value for it, just in case user is happy with default values.
 * In case of mongodb, no need for that file, but it's handy in other places
 
- ```cfg
-
+```cfg
 host=@ASK type:str default:'127.0.0.1'
 port=@ASK type:int default:27017
 replicaset=@ASK descr:'Name of replicaset, leave empty if not part of replicaSet'
