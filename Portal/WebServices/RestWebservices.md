@@ -46,10 +46,3 @@ querystr was:category=%27%27&namespace=%27%27&key=1234&format=json
 method was:/rest/system/contentmanager/modelobjectlist
 ```
 
-
-
-
-if no format str -\> text readable
-----------------------------------
-
-very difficult to parse but ideal to play around with on webserver
