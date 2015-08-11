@@ -6,3 +6,6 @@
 * [Graphs](Graphs.html)
 * [JGauge](JGauge.html)
 
+{% include "./BarChart.md" %}
+{% include "./DataTables.md" %}
+@todo others

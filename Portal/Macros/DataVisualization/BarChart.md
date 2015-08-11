@@ -1,10 +1,9 @@
 BarChart Macro
-==============
+--------------
 
 This macro is used to add barcharts to your page
 
-Parameters
-==========
+### Parameters
 
 -   'title': The title of the chart
 -   'rows': 2-D list of the data which will be viewed in the chart. Each
@@ -17,8 +16,7 @@ Parameters
 -   'onclickfunction': The name of the Javascript function which will be
     called when the chart is clicked.
 
-Example
-=======
+### Example
 
 ```
 \{\{barchart:
@@ -35,5 +33,3 @@ data.3.data= 60, 3, 2, 9, 100, 2000, 2000, 10000
 \}\}
 ```
 
-Output
-------

@@ -18,7 +18,7 @@
         * [Space Configuration](/Portal/Configuration/SpaceConfiguration.md)        
         * [User Management](/Portal/Configuration/UserManagement.md)
         * [Oauth Support](/Portal/Configuration/Oauth-Support.md)
-    * [Macros]((/Portal/Macros/Macros.md)
+    * [Macros](/Portal/Macros/Macros.md)
         * [Html Elements](/Portal/Macros/HtmlElements/Home.md)
         * [Images](/Portal/Macros/Images/Home.md)
         * [Navigation](/Portal/Macros/Navigation/Home.md)

@@ -1,17 +1,15 @@
-DataTables\_use
-===============
+DataTables use
+--------------
 
 Adds sorting & filteration capabilities to all the tables in this page
 
-Options
--------
+### Options
 
 -   disable\_filters: By default, the macro adds filters for each field.
     Passing this parameter with value 'true' will not add field-specific
     filters. This parameter is optional & its default value is false
 
-Example
--------
+### Example
 
 ```
 {{datatables_use: disable_filters:False\}\}
@@ -23,5 +21,3 @@ Example
 |bsomething|no|city|4353454|
 ```
 
-Show
-----
