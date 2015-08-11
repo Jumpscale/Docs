@@ -13,7 +13,7 @@ Examples
 --------
 
 ```
-{{finder: space:doc_jumpscale_portal\}\}
+\{\{finder: space:doc_jumpscale_portal\}\}
 ```
 
 [Click here to search for gallery](?search_term=gallery)
