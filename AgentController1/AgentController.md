@@ -14,6 +14,8 @@ Those tasks can be executed in different ways
     [JSAgent](JSAgent.md) or [worker](workers.md) on the
     specified interval
 
+Read more about the AgentController [here](AgentControllerServer.md)
+
 Useful links
 -------------
 
