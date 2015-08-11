@@ -47,9 +47,7 @@ method was:/rest/system/contentmanager/modelobjectlist
 ```
 
 
-how to know if appropriate result result is always a dict check on key
-"result" if not there is an errorcondition object with props as shown
-above
+
 
 if no format str -\> text readable
 ----------------------------------
