@@ -136,10 +136,9 @@ git.export.2=
 
 * You can add ```git.export.3   git.export.4   ...... ``` to define multiple destinations
 
-* Now it's time to define processes and the same as ```git.export.number``` we can define ```process.1  process.2  process.number``` and this will define prpcesses needed to run the package
+* Now it's time to define processes and the same as in ```git.export.number``` we can define multiple processes.
 
 ``` cfg
-
 process.1=
     cmd:'rm -f /opt/jumpscale7/var/mongodb/main/mongod.lock;export LC_ALL=C;/opt/mongodb/bin/mongod --dbpath $(system.paths.var)/mongodb/$(service.instance)/ --smallfiles --rest --httpinterface',
     args:,
