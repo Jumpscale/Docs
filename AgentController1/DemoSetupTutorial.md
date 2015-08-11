@@ -89,22 +89,22 @@ Here you execute a function remotely in the worker of the jsagent. This
 will be executed async and result returned. This is handy to schedule &
 launch long running jobs.
 
-Visit Gridportal and see the different nodes (agents)
------------------------------------------------------
+Visit [Gridportal](../GridPortal/Home.md) and see the different nodes (agents)
+------------------------------------------------------------------------------
 
 The grid portal gives you an overview what is going on your environment
 single or multigrid.
 
--   [Nodes](/grid/Nodes)
--   [Jobs](/grid/Jobs)
--   [Errors](/grid/ECOs)
+-   [Nodes](../gridportal/Nodes.md)
+-   [Jobs](../gridportal/Jobs.md)
+-   [Errors](../gridportal/ECOs.md)
 
-It also provides a [status overview](/grid/checkstatus).
+It also provides a [status overview](../gridportal/checkstatus).
 
 Executing Jumpscripts
 ---------------------
 
-One can use [JSAC](JSAC) to interact with the AgentController and
+One can use [JSAC](shellcommands/JSAC) to interact with the AgentController and
 execute remote scripts.
 
 ```
