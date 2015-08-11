@@ -1,6 +1,11 @@
 # Summary
 
-* [Core](Core)
+* [Getting Started](GettingStarted/Home.md)
+    * [Install](GettingStarted/Install.md)
+    * [Install Details](GettingStarted/Install Process Details.md)
+    * [Configuration Files](GettingStarted/Configuration Files.md)
+    * [IPythonTricks](GettingStarted/IPythonTricks.md)
+    * [Code Management](GettingStarted/JSCode.md)
 * [Devel](Devel)
 * [Grid](Grid)
 * [Howto](Howto)
@@ -103,3 +108,4 @@
 * Details
     * [Human Readable Data Format](Human Readable Data Format)
     * [ContributeToDocs](ContributeToDocs)
+    * [JumpScale License](JumpScale License.md)
