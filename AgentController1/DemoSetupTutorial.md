@@ -23,7 +23,7 @@ A grid master has everything required to manage a grid
 ### Working with multiple agents in debug mode
 
 On a new Ubuntu 14.04 server, [install jumpscale in debug
-mode](../Core/Install/Install.md), then run the following
+mode](../GettingStarted/Install.md), then run the following
 command
 
 ```shell
