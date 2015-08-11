@@ -1,6 +1,8 @@
 Get Started
 ===========
 
+@todo improve
+
 Now that you have your app up and running its time to put some content
 under it. You can easily add some wiki content.
 

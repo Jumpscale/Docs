@@ -14,3 +14,5 @@ cl = j.core.portal.getPortalClient(ip='<REMOTE-APPSERVER-IP>', port=80, secret="
 ma = cl.getActor("system", "master")
 ma.ping()
 ```
+
+@todo check if it works
