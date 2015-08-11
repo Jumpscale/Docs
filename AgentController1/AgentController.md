@@ -16,12 +16,13 @@ Those tasks can be executed in different ways
 
 Read more about the AgentController [here](AgentControllerServer.md)
 
-Useful links
+Useful linkst
 -------------
 
+-   [Install AgentController](AgentControllerInstall.md)
 -   [How To Schedule Work using AgentController](ScheduleWork.md)
--   [Usage of redis in AgentController and JSAgent](redis.md)
--   [Understanding JumpScripts and utilizing](JumpScript.md)
+-   [Usage of redis in AgentController and JSAgent](Redis.md)
+-   [Understanding JumpScripts and utilizing them](JumpScript.md)
 -   [Demo Setup for AgentController/JSAgent](DemoSetupTutorial.md)
 -   [Visual Management and Overview through the GridPortal](../GridPortal/Home.md)
 -   [Useful ShellCommands](ShellCommands/ShellCommands.md)
