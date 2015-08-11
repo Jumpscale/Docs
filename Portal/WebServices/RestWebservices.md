@@ -70,14 +70,14 @@ if no error:
 
 ```
 {
-result: [
-"tests",
-"system",
-"testwebsite",
-"grid",
-"testspace",
-"home",
-"ays"
+    result: [
+    "tests",
+    "system",
+    "testwebsite",
+    "grid",
+    "testspace",
+    "home",
+    "ays"
 ]
 }
 ```
