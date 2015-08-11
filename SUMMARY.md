@@ -1,6 +1,8 @@
 # Summary
 
 * [Core](Core/Core.md)
+* [AgentController1](AgentController1/AgentController.md)
+* [AgentController2](AgentController2/AgentController2.md)
 * [Devel](Devel)
 * [Grid](Grid)
 * [Howto](Howto)
