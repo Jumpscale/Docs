@@ -1,21 +1,27 @@
 # Summary
 
-<<<<<<< HEAD
 * [Getting Started](GettingStarted/Home.md)
     * [Install](GettingStarted/Install.md)
     * [Install Details](GettingStarted/Install Process Details.md)
     * [Configuration Files](GettingStarted/Configuration Files.md)
     * [IPythonTricks](GettingStarted/IPythonTricks.md)
     * [Code Management](GettingStarted/JSCode.md)
-=======
-* [Core](Core/Core.md)
-* [AgentController1](AgentController1/AgentController.md)
-* [AgentController2](AgentController2/AgentController2.md)
->>>>>>> 8ca8c07f82485f764a02eea3ed6c8caa3a09b2cf
-* [Devel](Devel)
-* [Grid](Grid)
+* [Multi Node Features](MultiNode/Home.md)
+    * [Agent Controller 1](AgentController1/AgentController.md)
+        * [Architecture](Architecture)
+    * [Agent Controller 2](AgentController2/Home.md)
+        * [JSAgent](AgentController2/Home.md)
+        * [Command Syntax](AgentController2/Command-Syntax.md)
+        * [Port-forwarding](AgentController2/Port-forwarding.md)
+        * [Stats](AgentController2/Stats.md)
+        * [Security Certificates](AgentController2/Using-Client-Certificate-For-Security.md)
+        * [Configuration](AgentController2/agent-configuration.md)
+        * [AYS Integration](AgentController2/AYS-Integration.md)
+        * [Examples](AgentController2/Examples.md)
+    * [Grid Portal](GridPortal/Home.md)
+        * TODO
+* [Development](Devel)
 * [Howto](Howto)
-* [Architecture](Architecture)
 * [Portal](Portal/Home.md)
     * [Install](Portal/Install.md)
     * [Get Started](Portal/GetStarted.md)
