@@ -11,20 +11,20 @@ Architecture and General Overview
   * **Application node:** 
 
 ## OSIS Server
-* An abstract layer that supports different backend databases; mainly, [MongoDB](www.mongodb.org) & [InfluxDB](influxdb.com)
-*  [InfluxDB](influxdb.com) is used to store statistical and log data while [MongoDB](www.mongodb.org) is the main database
+* An abstract layer that supports different backend databases; mainly, [MongoDB](https://www.mongodb.org) & [InfluxDB](https://www.influxdb.com)
+*  [InfluxDB](https://www.influxdb.com) is used to store statistical and log data while [MongoDB](https://www.mongodb.org) is the main database
 * All database operations are handled by OSIS and different components can connect to OSIS server using OSIS client.
 * More info about [OSIS](OSIS)
 
 ## Centralized HEKA Server
 * Every JS Node has a local [HEKA](https://github.com/mozilla-services/heka) server that pushes local stats and logs into the centralized server.
-* Collects logs, aggregates stats and pushes them into [InfluxDB](influxdb.com)
+* Collects logs, aggregates stats and pushes them into [InfluxDB](https://www,influxdb.com)
 
 ## Agent controller
 * It can interact with [OSIS](OSIS)
 * Controls the whole cloud / acts as a Job controller
 * It can schedule tasks on a JS Nodes [i.e start a virtual machine on a CPU Node]
-* Uses [Redis](redis.io) database as a task queue system.
+* Uses [Redis](https://redis.io) database as a task queue system.
 
 ## JumpScripts
 * Python scripts that are meant to do certain tasks

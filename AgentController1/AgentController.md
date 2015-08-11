@@ -8,24 +8,21 @@ JumpScale provides the capability to execute tasks on x number of nodes.
 
 Those tasks can be executed in different ways
 
--   async, task is executed in a [worker](workers)
--   sync, task is executed in the [processmanager](processmanager)
+-   async, task is executed in a [worker](workers.md)
+-   sync, task is executed in the [JSAgent](JSAgent.md)
 -   on interval, task is executed either in the
-    [processmanager](processmanager) or [worker](workers) on the
+    [JSAgent](JSAgent.md) or [worker](workers.md) on the
     specified interval
 
-Architecture
-------------
+Read more about the AgentController [here](AgentControllerServer.md)
 
-Components
-----------
+Useful links
+-------------
 
--   [Agentcontroller](Agentcontroller)
--   [ProcessManager](ProcessManager)
--   [Worker](Worker)
-
-How To
-------
-
--   [Schedule work using agentcontroller](ScheduleWork)
+-   [How To Schedule Work using AgentController](ScheduleWork.md)
+-   [Usage of redis in AgentController and JSAgent](redis.md)
+-   [Understanding JumpScripts and utilizing](JumpScript.md)
+-   [Demo Setup for AgentController/JSAgent](DemoSetupTutorial.md)
+-   [Visual Management and Overview through the GridPortal](../GridPortal/Home.md)
+-   [Useful ShellCommands](ShellCommands/ShellCommands.md)
 

@@ -1,11 +1,17 @@
 # Summary
 
+<<<<<<< HEAD
 * [Getting Started](GettingStarted/Home.md)
     * [Install](GettingStarted/Install.md)
     * [Install Details](GettingStarted/Install Process Details.md)
     * [Configuration Files](GettingStarted/Configuration Files.md)
     * [IPythonTricks](GettingStarted/IPythonTricks.md)
     * [Code Management](GettingStarted/JSCode.md)
+=======
+* [Core](Core/Core.md)
+* [AgentController1](AgentController1/AgentController.md)
+* [AgentController2](AgentController2/AgentController2.md)
+>>>>>>> 8ca8c07f82485f764a02eea3ed6c8caa3a09b2cf
 * [Devel](Devel)
 * [Grid](Grid)
 * [Howto](Howto)

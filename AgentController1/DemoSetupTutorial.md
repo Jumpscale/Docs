@@ -23,11 +23,11 @@ A grid master has everything required to manage a grid
 ### Working with multiple agents in debug mode
 
 On a new Ubuntu 14.04 server, [install jumpscale in debug
-mode](/doc_jumpscale_core/UbuntuDevelopment), then run the following
+mode](../Core/Install/Install.md), then run the following
 command
 
 ```shell
-jpackage install -n jsagent
+ays install -n jsagent
 ```
 
 This will install a new jsagent. The jsagent agent registers itself to
@@ -35,13 +35,10 @@ the agentcontroller.
 
 Starting the agent
 ------------------
-
-To start the agent, create a new tmux window & enter the following
-commands in it
+This will be automatically done with installation. But if you want to manually install the JSAgent, do:
 
 ```shell
-cd /opt/jumpscale/apps/jsagent/
-python jsagent.py
+ays start -n jsagent
 ```
 
 Of-course you can put this agent in 'init.d' or so (PS on the roadmap
@@ -59,6 +56,8 @@ python workertest.py
 In case you are wondering, this is the code inside 'workertest.py'
 
 ```python
+#!/usr/bin/env python
+
 from JumpScale import j
 
 j.application.start("jumpscale:workertest")
@@ -66,20 +65,20 @@ j.application.start("jumpscale:workertest")
 import JumpScale.baselib.redisworker
 
 def atest(msg):
-    print msg
+    print(msg)
     # raise RuntimeError("e")
     return msg
 
 w=j.clients.redisworker
 
 def test1():
-    print "START"
+    print("START")
     for i in range(10):
         job=w.execFunction( method=atest, _category='mytest', _organization='unknown', _timeout=60, _queue='default', _log=True,_sync=True, msg="this is a test")
-    print job
-    print "STOP"
+    print(job)
+    print("STOP")
 
-print w.getQueuedJobs()
+print(w.getQueuedJobs())
 
 test1()
 
@@ -90,22 +89,22 @@ Here you execute a function remotely in the worker of the jsagent. This
 will be executed async and result returned. This is handy to schedule &
 launch long running jobs.
 
-Visit Gridportal and see the different nodes (agents)
------------------------------------------------------
+Visit [Gridportal](../GridPortal/Home.md) and see the different nodes (agents)
+------------------------------------------------------------------------------
 
 The grid portal gives you an overview what is going on your environment
 single or multigrid.
 
--   [Nodes](/grid/Nodes)
--   [Jobs](/grid/Jobs)
--   [Errors](/grid/ECOs)
+-   [Nodes](../gridportal/Nodes.md)
+-   [Jobs](../gridportal/Jobs.md)
+-   [Errors](../gridportal/ECOs.md)
 
-It also provides a [status overview](/grid/checkstatus).
+It also provides a [status overview](../gridportal/checkstatus).
 
 Executing Jumpscripts
 ---------------------
 
-One can use [JSAC](JSAC) to interact with the AgentController and
+One can use [JSAC](shellcommands/JSAC) to interact with the AgentController and
 execute remote scripts.
 
 ```
