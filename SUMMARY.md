@@ -42,8 +42,7 @@
             * [Famous Slider](/Portal/Macros/Images/Famous Slider.md)
             * [Gallery](/Portal/Macros/Images/Gallery.md)
             * [ParallaxSlider](/Portal/Macros/Images/ParallaxSlider.md)
-            * [Thumbnail](/Portal/Macros/Images/Thumbnail.md)
-            * [[Macros](/Portal/Macros/Images/Macros.md)]        
+            * [Thumbnail](/Portal/Macros/Images/Thumbnail.md) 
         * [Navigation](/Portal/Macros/Navigation/Home.md)
             * [Children](/Portal/Macros/Navigation/Children.md)
             * [Childrentree](/Portal/Macros/Navigation/Childrentree.md)
@@ -97,9 +96,8 @@
     * [WebServices](/Portal/WebServices/WebServices.md)
         * [RestFullWebservices.md](/Portal/WebServices/RestFullWebservices.md)
         * [RestWebservices.md](/Portal/WebServices/RestWebservices.md)
-    * [Portal Python Client](/Portal//Portal/PortalClient.md)
+    * [Portal Python Client](/Portal/Portal/PortalClient.md)
     * [Development](Devel)
-    * [Macros](Macros)
     * [Modules](Modules)
     * [Pagestructure](Pagestructure)
 * Details
