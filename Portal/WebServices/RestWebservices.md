@@ -57,5 +57,5 @@ method was:/rest/system/contentmanager/modelobjectlist
 
 This format is very difficult to parse but ideal to play around with on webserver.
 
-For machine usage, use `restmachine`
+For machine usage, [RestMachineServices|RestMachineServices] is a better fit
 
