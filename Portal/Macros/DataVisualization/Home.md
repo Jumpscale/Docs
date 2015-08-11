@@ -8,4 +8,4 @@
 
 {% include "./BarChart.md" %}
 {% include "./DataTables.md" %}
-@todo others
+@todo others, make sure section levels are ok (not all H1)
