@@ -11,7 +11,12 @@
     * [Wiki Syntax Confluence](Portal/Wiki Syntax Confluence.md)
     * [Wiki Syntax Markdown](Portal/Wiki Syntax Markdown.md)
     * [Wiki Portal/Pagestructure](Portal/Pagestructure.md)
-    * [Configuration](Portal/Configuration/Configuration.md)
+    * [Configuration]
+        * [Main Configuration](Portal/Configuration/PortalConfiguration.md)
+        * [User Management](/Portal/Configuration/UserManagement.md)
+        * [Space Configuration](/Portal/Configuration/SpaceConfiguration.md)
+        * [Templates](/Portal/Configuration/Templates.md)
+        * [Oauth Support](/Portal/Configuration/Oauth-Support.md)
     * [Development](Devel)
     * [Macros](Macros)
     * [Modules](Modules)
