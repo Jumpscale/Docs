@@ -6,7 +6,7 @@
 * [Howto](Howto)
 * [Architecture](Architecture)
 * [Portal](Portal/Home.md)
-    * [Install](Portal/install.md)
+    * [Install](Portal/Install.md)
     * [How to](Howto)
     * [Instalation](PortalInstall)
     * [Configuration](Configuration)
