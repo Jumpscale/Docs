@@ -1,0 +1,44 @@
+Types
+=====
+
+-   per node (nid)
+    -   cpu.core
+        -   WARNING: when core \> 80% avg over last 1h
+        -   CRITICAL: when core \> 95% avg over last 1h
+        -   testperiod: 15 min
+        -   using OSIS or RRD (TBD)
+        -   resolve SLA: 1h
+    -   cpu.contextswitch
+        -   WARNING: val \> 10000
+        -   CRITICAL: val \> 30000
+        -   testperiod: 1h
+        -   using OSIS or RRD (TBD)
+        -   resolve SLA: 1h
+    -   disk.full
+        -   WARNING: val\>80% avg over 15 min
+        -   CRITICAL: val\>? avg over 15 min
+        -   testperiod: 60 min
+        -   is per partition
+        -   resolve SLA: 2h
+    -   machine.status (vmachine)
+        -   test machine state in osis = on system
+        -   CRITICAL: on system down, in osis up
+        -   WARNING: on system up, in osis down
+        -   resolve SLA: 0.5h
+        -   testperiod: 5 min
+    -   disk.mirror
+        -   check if btrfs or normal mirror
+        -   jumpscript still needs to be created
+        -   we prob needs HRD which specifies how mirroring is locally
+        -   (need to know what to check)
+        -   CRITICAL: mirror broken
+        -   resolve SLA: 1h
+        -   testperiod: 60 min
+-   per grid (gid)
+    -   grid.healthcheck
+        -   existing healthchecker check on gridmaster
+        -   measures issues with workers or ES or redis issue or disks
+        -   CRITICAL: something fails
+        -   resolve SLA: 30h
+        -   testperiod: 15 min
+

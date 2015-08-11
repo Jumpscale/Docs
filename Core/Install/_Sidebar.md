@@ -1,0 +1,3 @@
+# Install
+
+* [[Core](Core)]
