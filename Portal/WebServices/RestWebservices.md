@@ -120,4 +120,4 @@ if error:
 }
 ```
 
-if result is in the 
+if "result" is in the returned dict of the restful call, then no error has occured.
