@@ -1,4 +1,6 @@
-# jsagentcontroller
+jsagentcontroller
+===================
+
 JumpScale Agentcontroller in Go
 
 # Installation
@@ -34,12 +36,18 @@ Note: GID, NID and JID is extracted from URL or from JSON body
 * Push JSON on the right queue based on GID:NID
 
 
-Contents:
-* [JSAgent](JSAgent/Home)
-* [AYS Integration](JSAgent/AYS-Integration)
-* [Command Syntax](JSAgent/Command-Syntax)
-* [Examples](JSAgent/Examples)
-* [Port-forwarding](JSAgent/Port-forwarding)
-* [Stats](JSAgent/Stats)
-* [Using-Client-Certificate-For-Security](JSAgent/Using-Client-Certificate-For-Security)
-* [agent-configuration](JSAgent/agent-configuration)
+
+---
+
+
+JSAgent
+========
+
+* [JSAgent](JSAgent/Home.md)
+* [AYS Integration](JSAgent/AYS-Integration.md)
+* [Command Syntax](JSAgent/Command-Syntax.md)
+* [Examples](JSAgent/Examples.md)
+* [Port-forwarding](JSAgent/Port-forwarding.md)
+* [Stats](JSAgent/Stats.md)
+* [Using-Client-Certificate-For-Security](JSAgent/Using-Client-Certificate-For-Security.md)
+* [agent-configuration](JSAgent/agent-configuration.md)
