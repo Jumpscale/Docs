@@ -1,17 +1,24 @@
-query as json
-=============
 
 ```
-http://localhost:82/rest/system/contentmanager/getSpaces?format=json
+http://localhost:82/rest/system/contentmanager/getSpaces
 ```
-(where 82 is your configured port)
-
-
+(Where 82 is your configured port)
 
 if no error:
 
 ```
+result of rest call
+
+
 ['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']
+
+how to get machine readable output?
+
+if you want to use this rest interface from a machine (so not by browser) use the following url
+
+http://127.0.0.1/restmachine/system/contentmanager/getSpaces?human=falseauthkey=???
+
+Be carefull generated authkey above has been generated for you as administrator.
 ```
 
 
@@ -20,8 +27,7 @@ if error:
 ```
 "Param with name:namespace is missing."
 ```
-
-or
+or 
 
 ```
 Execute method GET_system_contentmanager_modelobjectlist failed.
@@ -42,7 +48,24 @@ raise RuntimeError("Could not find object with category %s key %s"%(category,key
 
 type/level: UNKNOWN/1
 Execute method GET_system_contentmanager_modelobjectlist failed.
-querystr was:category=%27%27&namespace=%27%27&key=1234&format=json
+querystr was:category=%27%27&namespace=%27%27&key=1234&format=str
 method was:/rest/system/contentmanager/modelobjectlist
 ```
 
+
+This format is very difficult to parse but ideal to play around with on webserver.
+
+For machine usage, use `restmachine`
+
+RestMachine Service
+===================
+
+```
+http://localhost:82/restmachine/system/contentmanager/getSpaces
+```
+
+if no error:
+
+```
+['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']
+```
