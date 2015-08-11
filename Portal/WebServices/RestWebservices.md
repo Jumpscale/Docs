@@ -4,12 +4,16 @@ query as json
 ```
 http://localhost:82/rest/system/contentmanager/getSpaces?format=json
 ```
+(where 82 is your configured port)
+
+
 
 if no error:
 
 ```
 {"result": ['tests', 'system', 'testwebsite', 'grid', 'testspace', 'home', 'ays']}
 ```
+
 
 if error:
 
