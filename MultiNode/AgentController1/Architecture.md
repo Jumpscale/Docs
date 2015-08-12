@@ -14,7 +14,7 @@ Architecture and General Overview
 * An abstract layer that supports different backend databases; mainly, [MongoDB](https://www.mongodb.org) & [InfluxDB](https://www.influxdb.com)
 *  [InfluxDB](https://www.influxdb.com) is used to store statistical and log data while [MongoDB](https://www.mongodb.org) is the main database
 * All database operations are handled by OSIS and different components can connect to OSIS server using OSIS client.
-* More info about [OSIS](OSIS)
+* More info about [OSIS](../../OSIS)
 
 ## Centralized HEKA Server
 * Every JS Node has a local [HEKA](https://github.com/mozilla-services/heka) server that pushes local stats and logs into the centralized server.
