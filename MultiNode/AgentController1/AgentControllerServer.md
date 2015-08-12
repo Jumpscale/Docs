@@ -18,7 +18,7 @@ Executing of a task (Jumpscript)
 --------------------------------
 
 In JumpScale one can define a task in a [Jumpscript](Jumpscript.md) as
-[Jumpscript](Jumpscript.md) defines a set of instructions to execute how and
+a Jumpscript defines a set of instructions to execute how and
 where to do so.
 
 Agentcontroller client
