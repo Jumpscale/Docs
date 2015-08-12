@@ -24,6 +24,6 @@ Useful links
 -   [Usage of redis in AgentController and JSAgent](Redis.md)
 -   [Understanding JumpScripts and utilizing them](JumpScript.md)
 -   [Demo Setup for AgentController/JSAgent](DemoSetupTutorial.md)
--   [Visual Management and Overview through the GridPortal](../../GridPortal/Home.md)
+-   [Visual Management and Overview through the GridPortal](../GridPortal/Home.md)
 -   [Useful ShellCommands](ShellCommands/ShellCommands.md)
 
