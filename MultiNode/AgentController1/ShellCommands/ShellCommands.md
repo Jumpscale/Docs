@@ -1,5 +1,4 @@
-Shell commands
-==============
+##Shell commands
 
 -   [JSAC](JSAC.md)
 -   [JSDISK](JSDISK.md)
