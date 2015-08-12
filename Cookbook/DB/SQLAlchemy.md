@@ -83,8 +83,8 @@ class User(Base):
     __tablename__ = 'user'
     _totoml=True
     id = Column(String, primary_key=True, nullable=False)
-    firstname = Column(String,index=True)
-    lastname = Column(String,index=True)
+    firstname = Column(String,index=True,default="")
+    lastname = Column(String,index=True,default="")
     mobiles = relationship("Mobile", backref=backref('user'))
     skype = Column(String,default="",index=True)
     description = Column(String,default="")
@@ -111,8 +111,6 @@ listen(User.lastname, 'set', db.validate_lower_strip, retval=True)
 listen(User.git_aydo, 'set', db.validate_lower_strip, retval=True)
 listen(User.git_github, 'set', db.validate_lower_strip, retval=True)
 
-
-
 ```
 
 ### Example.py
@@ -120,4 +118,19 @@ listen(User.git_github, 'set', db.validate_lower_strip, retval=True)
 
 example to use your model
 ```
+from JumpScale import j
+from Model import *
+
+db=j.db.sqlalchemy
+
+sql=db.get(sqlitepath=j.dirs.varDir+"/toml.db",tomlpath='/tmp/data',connectionstring='')
+
+u=User(id="kds")
+sql.session.add(u)
+sql.session.commit()
+
 ```
+
+### Fine example
+
+@todo
