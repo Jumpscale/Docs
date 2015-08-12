@@ -6,7 +6,7 @@ JumpScale portal comes shipped with a big variety of macros.
 
 The portal supports three kind of macros.
 
-For details how to write macros please see the [howto](HowToWriteMacros) section.
+For details how to write macros please see the [HowTo](Howto.md) section.
 
 ## Description
 
