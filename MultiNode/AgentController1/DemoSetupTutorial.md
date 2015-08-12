@@ -97,7 +97,7 @@ single or multigrid.
 
 -   [Nodes](../GridPortal/Nodes.md)
 -   [Jobs](../GridPortal/Jobs.md)
--   [Errors](../GridPortal/ECOs.md)
+-   [Errors](../GridPortal/Errors.md)
 
 It also provides a [status overview](../GridPortal/CheckStatus.md).
 
@@ -265,10 +265,10 @@ wait: true
 If we now go look at the Jobs (/grid/jobs) we will se our job is in
 status error. And shows a stacktrace of what went wrong.
 
-Recurring Jumpscripts
+Recurring JumpsSripts
 ---------------------
 
-One can schedule Jumpscript on specific nodes by combining roles and
+One can schedule JumpScript on specific nodes by combining roles and
 period.
 
 ```
