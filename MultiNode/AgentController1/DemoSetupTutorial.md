@@ -104,7 +104,7 @@ It also provides a [status overview](../GridPortal/CheckStatus.md).
 Executing Jumpscripts
 ---------------------
 
-One can use [JSAC](shellcommands/JSAC) to interact with the AgentController and
+One can use [JSAC](shellcommands/JSAC.md) to interact with the AgentController and
 execute remote scripts.
 
 ```
