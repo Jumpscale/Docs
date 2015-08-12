@@ -1,6 +1,7 @@
 Architecture and General Overview
 ==================================
 
+@TODO Change image to reflect HEKA being changed to StatsD
 ![Jumpscale Architecture](https://cloud.githubusercontent.com/assets/526328/5579704/a8f9aec8-9047-11e4-9a45-e2c756f15d4f.jpg)
 
 ## JS Node 
@@ -16,15 +17,15 @@ Architecture and General Overview
 * All database operations are handled by OSIS and different components can connect to OSIS server using OSIS client.
 * More info about [OSIS](../../OSIS/OSIS.md)
 
-## Centralized HEKA Server
-* Every JS Node has a local [HEKA](https://github.com/mozilla-services/heka) server that pushes local stats and logs into the centralized server.
+## Master StatsD Server
+* Every JS Node has a local [StatsD](https://github.com/etsy/statsd) that pushes local stats and logs into the centralized master StatsD.
 * Collects logs, aggregates stats and pushes them into [InfluxDB](https://www,influxdb.com)
 
 ## Agent controller
 * It can interact with [OSIS](../../OSIS/OSIS.md)
 * Controls the whole cloud / acts as a Job controller
 * It can schedule tasks on a JS Nodes [i.e start a virtual machine on a CPU Node]
-* Uses [Redis](https://redis.io) database as a task queue system.
+* Uses [Redis](http://www.redis.io) database as a task queue system.
 
 ## JumpScripts
 * Python scripts that are meant to do certain tasks
