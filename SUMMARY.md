@@ -134,7 +134,7 @@
             * [Stats](/Portal/Macros/Experimental/Stats.md)
             * [Toggle](/Portal/Macros/Experimental/Toggle.md)
     * [WebServices](/Portal/WebServices/WebServices.md)
-        * [RestFullWebservices.md](/Portal/WebServices/RestFullWebservices.md)
+        * [RestFullWebservices.md](/Portal/WebServices/RestMachineServices.md)
         * [RestWebservices.md](/Portal/WebServices/RestWebservices.md)
     * [Portal Python Client](/Portal/Portal/PortalClient.md)
 * [SSH System Management](SSHSystemManagement/Home.md)
