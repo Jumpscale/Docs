@@ -22,4 +22,4 @@ The `agent.toml` is described in details in [Agent Configuration](agent-configur
 see section about cmd syntax
 
 ## Stats
-Check [[Stats]] page for more details on how stats aggregation works, and how scripts/external processes can send stats messages to the stats aggregator.
+Check [Stats](Stats.md) page for more details on how stats aggregation works, and how scripts/external processes can send stats messages to the stats aggregator.
