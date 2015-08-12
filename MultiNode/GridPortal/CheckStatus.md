@@ -1,9 +1,7 @@
 ##Grid HealthCheck
 One of the most obvious and important concerns of any grid manager is being able to check if all nodes of a grid are healthy or not and pinpoint any problems easily and efficiently.
 
-
 The grid healthchecker runs periodically, ascertaining just that.
-
 
 ###Grid healthchecker checks on:
  * That all nodes are ping-able synchoronously and asynchronously.
@@ -17,8 +15,13 @@ The grid healthchecker runs periodically, ascertaining just that.
 
 ###Ways to monitoring your grid's health:
 * Check raised warnings and errors. The grid healthcheker runs periodically and raises different errors depending on severity.
-* Check the GridPortal landing page (http://localhost:82/grid) for an overview of the grid's health.
-* Check the GridPortals StatusCheck (http://localhost:82/grid/checkstatus) page for a more detailed status.
 * Run `jsgrid healthcheck` from the command line. Optionally add `--nodeid ` with the node ID you want checked if not all.
 * Run `j.core.grid.healthchecker.runAll()` from the jsshell
 * Run `j.core.grid.healthchecker.runAllOnNode(nodeid)` from jsshell to check the health of only one specific node. 
+* Check the GridPortal landing page (http://localhost:82/grid) for an overview of the grid's health.
+* Check the GridPortals StatusCheck (http://localhost:82/grid/checkstatus) page for a more detailed status.
+ 
+
+![](HealthCheck.png)
+![](CheckStatus.png)
+![](NodeStatus.png)
