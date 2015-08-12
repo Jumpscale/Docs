@@ -209,7 +209,7 @@ timeout: 600
 wait: true
 ```
 
-You can find the Job result in the [Portal](/grid/jobs)
+You can find the Job result in the portal
 
 What happens when error accurs.
 -------------------------------
@@ -262,7 +262,7 @@ timeout: 600
 wait: true
 ```
 
-If we now go look at the [Jobs](/grid/jobs) we will se our job is in
+If we now go look at the Jobs (/grid/jobs) we will se our job is in
 status error. And shows a stacktrace of what went wrong.
 
 Recurring Jumpscripts
