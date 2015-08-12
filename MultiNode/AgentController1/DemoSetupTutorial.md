@@ -176,7 +176,7 @@ Reload Agentcontroller / JSAgent
 jsac reload
 ```
 
-Execute Newly created Jumpscript and see it in the portal
+Execute Newly created JumpScript and see it in the portal
 ---------------------------------------------------------
 
 ```
