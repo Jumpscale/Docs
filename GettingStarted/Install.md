@@ -48,7 +48,7 @@ the standard branch = master
 More Information About Installation Process
 =======================
 
-- [Install Process Details](Install Details.md)
+- [Install Process Details](Install%20Process%20Details.md.md)
 
 Install Needed Packages
 =======================
