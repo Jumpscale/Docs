@@ -19,9 +19,13 @@ The grid healthchecker runs periodically, ascertaining just that.
 * Run `j.core.grid.healthchecker.runAll()` from the jsshell
 * Run `j.core.grid.healthchecker.runAllOnNode(nodeid)` from jsshell to check the health of only one specific node. 
 * Check the GridPortal landing page (http://localhost:82/grid) for an overview of the grid's health.
-* Check the GridPortals StatusCheck (http://localhost:82/grid/checkstatus) page for a more detailed status.
  
 
 ![](HealthCheck.png)
+
+
+* Check the GridPortals StatusCheck (http://localhost:82/grid/checkstatus) page for a more detailed status.
 ![](CheckStatus.png)
+
+* For an even more detailed report on the health of each node, check the NodeStatus (http://localhost:82/grid/NodeStatus?nid=1&gid=1  (Make sure to use your own grid ID and node ID))
 ![](NodeStatus.png)
