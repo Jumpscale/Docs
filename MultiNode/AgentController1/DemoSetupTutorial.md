@@ -89,17 +89,17 @@ Here you execute a function remotely in the worker of the jsagent. This
 will be executed async and result returned. This is handy to schedule &
 launch long running jobs.
 
-Visit [Gridportal](/MultiNode/GridPortal/Home.md) and see the different nodes (agents)
+Visit [Gridportal](../GridPortal/Home.md) and see the different nodes (agents)
 ------------------------------------------------------------------------------
 
 The grid portal gives you an overview what is going on your environment
 single or multigrid.
 
--   [Nodes](/MultiNode/gridportal/Nodes.md)
--   [Jobs](/MultiNode/gridportal/Jobs.md)
--   [Errors](/MultiNode/gridportal/ECOs.md)
+-   [Nodes](../gridportal/Nodes.md)
+-   [Jobs](../gridportal/Jobs.md)
+-   [Errors](../gridportal/ECOs.md)
 
-It also provides a [status overview](/MultiNode/gridportal/checkstatus).
+It also provides a [status overview](../gridportal/checkstatus).
 
 Executing Jumpscripts
 ---------------------
