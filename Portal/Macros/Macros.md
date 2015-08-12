@@ -6,7 +6,7 @@ JumpScale portal comes shipped with a big variety of macros.
 
 The portal supports three kind of macros.
 
-For details how to write macros please see the [howto](HowToWriteMacros) section.
+For details how to write macros please see the [HowTo](Howto.md) section.
 
 ## Description
 
@@ -36,6 +36,6 @@ Page macros work on a high level of the document and manipulate the HTML itself.
 
 ## Preprocess macros
 
-Currently only [include](include) uses the preprocessor macro.
+Currently only [include](https://github.com/Jumpscale/jumpscale_portal/tree/master/apps/portalbase/macros/preprocess/include) uses the preprocessor macro.
 
 [Examples](https://github.com/Jumpscale/jumpscale_portal/tree/master/apps/portalbase/macros/preprocess)

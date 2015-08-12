@@ -12,7 +12,7 @@ It does not support all platforms as well.
 c=j.remote.cuisine.connect("localhost",22)
 ```
 
-for documentation see [Cuisine](Cuisine)
+for documentation see [Cuisine](https://github.com/sebastien/cuisine)
 
 ### how to make cuisine more silent
 

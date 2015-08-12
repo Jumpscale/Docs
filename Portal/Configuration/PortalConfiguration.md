@@ -63,7 +63,7 @@ It is possible to use this to overwrite the visibles spaces by defining `instanc
 
 ## OAuth
 
-[See](Oauth-Support)
+[See](Oauth-Support.md)
 
 ## Gitlab Authentication
 

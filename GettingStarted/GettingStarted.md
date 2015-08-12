@@ -1,9 +1,6 @@
-# GettingStarted
+# Getting Started
 
-* [Configuration Files](Configuration Files)
-* [GettingStartedBasic](GettingStartedBasic)
-* [IPythonTricks](IPythonTricks)
-* [JSCode](JSCode)
-* [JumpScale License](JumpScale License)
-* [Shell + debugging](Shell + debugging)
-* [[Core](Core)]
+* [Configuration Files](Configuration Files.md)
+* [IPython Tricks](IPythonTricks.md)
+* [JSCode](JSCode.md)
+* [[Core](../Core/Core.md)]

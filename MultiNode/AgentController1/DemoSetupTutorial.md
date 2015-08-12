@@ -10,8 +10,8 @@ Requirements
 
 -   Ubuntu 14.04 64-bit (It possibly works on other ubuntu versions too
     but is not tested)
--   [Install jumpscale in debug mode
-    see](/GettingStarted/Install.md)
+-   Install jumpscale in debug mode
+    [see](../../GettingStarted/Install.md)
 
 Installation
 ------------
@@ -23,7 +23,7 @@ A grid master has everything required to manage a grid
 ### Working with multiple agents in debug mode
 
 On a new Ubuntu 14.04 server, [install jumpscale in debug
-mode](../GettingStarted/Install.md), then run the following
+mode](../../GettingStarted/Install.md), then run the following
 command
 
 ```shell
@@ -89,22 +89,22 @@ Here you execute a function remotely in the worker of the jsagent. This
 will be executed async and result returned. This is handy to schedule &
 launch long running jobs.
 
-Visit [Gridportal](/MultiNode/GridPortal/Home.md) and see the different nodes (agents)
+Visit [GridPortal](../GridPortal/Home.md) and see the different nodes (agents)
 ------------------------------------------------------------------------------
 
 The grid portal gives you an overview what is going on your environment
 single or multigrid.
 
--   [Nodes](/MultiNode/gridportal/Nodes.md)
--   [Jobs](/MultiNode/gridportal/Jobs.md)
--   [Errors](/MultiNode/gridportal/ECOs.md)
+-   [Nodes](../GridPortal/Nodes.md)
+-   [Jobs](../GridPortal/Jobs.md)
+-   [Errors](../GridPortal/Errors.md)
 
-It also provides a [status overview](/MultiNode/gridportal/checkstatus).
+It also provides a [status overview](../GridPortal/CheckStatus.md).
 
 Executing Jumpscripts
 ---------------------
 
-One can use [JSAC](shellcommands/JSAC) to interact with the AgentController and
+One can use [JSAC](ShellCommands/JSAC.md) to interact with the AgentController and
 execute remote scripts.
 
 ```
@@ -176,7 +176,7 @@ Reload Agentcontroller / JSAgent
 jsac reload
 ```
 
-Execute Newly created Jumpscript and see it in the portal
+Execute Newly created JumpScript and see it in the portal
 ---------------------------------------------------------
 
 ```
@@ -209,7 +209,7 @@ timeout: 600
 wait: true
 ```
 
-You can find the Job result in the [Portal](/grid/jobs)
+You can find the Job result in the portal
 
 What happens when error accurs.
 -------------------------------
@@ -262,13 +262,13 @@ timeout: 600
 wait: true
 ```
 
-If we now go look at the [Jobs](/grid/jobs) we will se our job is in
+If we now go look at the Jobs (/grid/jobs) we will se our job is in
 status error. And shows a stacktrace of what went wrong.
 
-Recurring Jumpscripts
+Recurring JumpsSripts
 ---------------------
 
-One can schedule Jumpscript on specific nodes by combining roles and
+One can schedule JumpScript on specific nodes by combining roles and
 period.
 
 ```

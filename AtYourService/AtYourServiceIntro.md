@@ -6,7 +6,7 @@
 
 **Modelisation tool**:
 AtYourService let you create so called 'service templates' that can be used to represent nearly anything. From your datacenter infrastructure to a server cluster.
-AtYourService will create a hierarchy of folder in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote) for examples)
+AtYourService will create a hierarchy of folder in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote.md) for examples)
 
 **Package manager**
 It's kind of like Ubuntu's ```apt-get & service``` and ```ant``` tools all together in one easy command line tool that can control a whole cloud.
@@ -55,8 +55,8 @@ ays install -n mongodb -i mongo2 #instance name is (mongo2)
 - A service data is separated into 2 types
     - Metadata (configuration files to determine how to manage the whole life cycle)
     - Binary data (Actual service data)
-- By default, Metadata are saved into [Metadata Repo](https://github.com/jumpscale/ays_jumpscale7) & binaries into [Binary Repo](http://git.aydo.com/org/binary)
-- After a clean installation of jumpscale framework, both [Metadata Repo](https://github.com/jumpscale/ays_jumpscale7) & [Binary Repo](http://git.aydo.com/org/binary) will be cloned locally to paths:  ```/opt/code/github/jumpscale/ays_jumpscale7/``` & ```/opt/code/git/binary/``` respectively.
+- By default, Metadata are saved into [Metadata Repo](https://github.com/jumpscale/ays_jumpscale7) & binaries into [Binary Repo](http://git.aydo.com/binary)
+- After a clean installation of jumpscale framework, both [Metadata Repo](https://github.com/jumpscale/ays_jumpscale7) & [Binary Repo](http://git.aydo.com/binary) will be cloned locally to paths:  ```/opt/code/github/jumpscale/ays_jumpscale7/``` & ```/opt/code/git/binary/``` respectively.
 - When installing locally links will be made between local system & repo, when installing remotely rsync will be used over SSH to push the files to remote location.
 
 - To install mongodb we do:

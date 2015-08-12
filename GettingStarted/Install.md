@@ -48,7 +48,7 @@ the standard branch = master
 More Information About Installation Process
 =======================
 
-- [Install Process Details](Install Process Details)
+- [Install Process Details](Install%20Process%20Details.md)
 
 Install Needed Packages
 =======================
@@ -62,7 +62,7 @@ ays install -n singlenode_portal
 ays install -n singlenode_grid
 ```
 
-You can read more about AtYourService [here](https://github.com/Jumpscale/jumpscale_core7/wiki/AtYourServiceCmd)
+You can read more about AtYourService [here](../AtYourService/AtYourServiceIntro.md)
 
 to use in sandbox
 -----------------

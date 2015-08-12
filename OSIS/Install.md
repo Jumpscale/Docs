@@ -3,7 +3,7 @@
 ### Requirements
 
 The JumpScale portal requires the JumpScale framework to be installed.
-So if you didn't do so [install JumpScale](/GettingStarted/Install.md).
+So if you didn't do so [install JumpScale](../GettingStarted/Install.md).
 
 
 ### Install OSIS service

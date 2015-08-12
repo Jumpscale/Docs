@@ -5,4 +5,3 @@
 * [Gallery](Gallery.html)
 * [ParallaxSlider](ParallaxSlider.html)
 * [Thumbnail](Thumbnail.html)
-* [[Macros](Macros.html)]

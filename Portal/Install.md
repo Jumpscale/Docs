@@ -3,7 +3,7 @@
 ## requirements
 
 The JumpScale portal requires the JumpScale framework to be installed.
-So if you didn't do so [install JumpScale](http://github.com/Jumpscale/jumpscale_core7/wiki/Install).
+So if you didn't do so [install JumpScale](../GettingStarted/Install.md).
 
 ## To make your own portal
 

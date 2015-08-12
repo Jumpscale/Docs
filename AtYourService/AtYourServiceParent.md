@@ -15,6 +15,7 @@ parent
      | service.hrd
  | action.py
  | service.hrd
+ 
 ```
 
 A service is also identified by its parent, so two services with the same domain/name/instance can exits if they have different parents.
@@ -22,7 +23,7 @@ A service is also identified by its parent, so two services with the same domain
 This is useful for grouping services of a certain location/node together. Then, performing any action is made easier.
 
 #To create a nested child service:
-#```
+```
 # First, create the parent
 # Note that the parent can be any service
 ays install -n location -i europe --data 'instance.name:Europe'
@@ -50,5 +51,5 @@ ays install -n redis -i test --parent jumpscale__location__europe:jumpscale__red
 # To perform an action on location__europe/redis__test specifically without matching on location__europe/redis__test/redis__test, you'll have to use the '--immediate' argument. This implies that the parent is precisely the one specified.
 ays start -n redis -i test --parent jumpscale__location__europe --immediate
 
-
+```
 
