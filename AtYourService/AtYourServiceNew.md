@@ -34,4 +34,4 @@ the 3 important files
 - **service.hrd**
 - **instance.hrd**
 
-You can find in a next section more details about the HRD format.
+You can read more about the HRD format [here](HRD.md).
