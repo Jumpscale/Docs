@@ -1,7 +1,7 @@
 > WORK IN PROGRESS 
 
 # Installation under JS
-> For testing make sure to install `singlenode_grid` (`ays install -n singlenode_grid`) which will provide redis and influxdb to be able to go through the coming tutorial. Make sure that [Jumpscale is installedd](../../GettingStarted/Install.md)
+> For testing make sure to install `singlenode_grid` (`ays install -n singlenode_grid`) which will provide redis and influxdb to be able to go through the coming tutorial. Make sure that [Jumpscale is installed](../../GettingStarted/Install.md)
 
 ## Installing needed packages
 
