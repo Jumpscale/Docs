@@ -1,7 +1,7 @@
 Architecture and General Overview
 ==================================
 
-@TODO Change image to reflect HEKA being changed to StatsD
+
 ![Jumpscale Architecture](https://cloud.githubusercontent.com/assets/526328/5579704/a8f9aec8-9047-11e4-9a45-e2c756f15d4f.jpg)
 
 ## JS Node 
