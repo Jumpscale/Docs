@@ -7,7 +7,7 @@ About JumpScale
 License
 ========
 
-[JumpScale](http://www.jumpscale.com/) is a [BSD 2-Clause License](JumpScale-License)
+[JumpScale](http://www.jumpscale.com/) is a BSD 2-Clause License
 
 Changes From JumpScale 6
 ========================
