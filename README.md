@@ -29,10 +29,9 @@ Known Issues
 Help us improve JumpScale
 =============================
 * for feedbacks, or to get access to this repo, contact us on info@incubaid.com
-* Help us [improve documentation](ContributeToDocs)
 * Check out other repos related to [JumpScale](https://github.com/Jumpscale/jumpscale_core7):
  * [Jumpscale Prototypes](https://github.com/jumpscale/jumpscale_prototypes)
- * [AtYourService metadata](https://github.com/Jumpscale/ays_jumpscale7) & [AtYourService binaries / Aydo](http://git.aydo.com/org/binary) repos
+ * [AtYourService metadata](https://github.com/Jumpscale/ays_jumpscale7) & [AtYourService binaries / Aydo](http://git.aydo.com/binary) repos
 
 How To Get Started
 ------------------
