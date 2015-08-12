@@ -11,7 +11,7 @@ Requirements
 -   Ubuntu 14.04 64-bit (It possibly works on other ubuntu versions too
     but is not tested)
 -   [Install jumpscale in debug mode
-    see](/GettingStarted/Install.md)
+    see](../../GettingStarted/Install.md)
 
 Installation
 ------------
@@ -23,7 +23,7 @@ A grid master has everything required to manage a grid
 ### Working with multiple agents in debug mode
 
 On a new Ubuntu 14.04 server, [install jumpscale in debug
-mode](../GettingStarted/Install.md), then run the following
+mode](../../GettingStarted/Install.md), then run the following
 command
 
 ```shell
