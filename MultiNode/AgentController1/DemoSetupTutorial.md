@@ -89,7 +89,7 @@ Here you execute a function remotely in the worker of the jsagent. This
 will be executed async and result returned. This is handy to schedule &
 launch long running jobs.
 
-Visit [Gridportal](../GridPortal/Home.md) and see the different nodes (agents)
+Visit [GridPortal](../GridPortal/Home.md) and see the different nodes (agents)
 ------------------------------------------------------------------------------
 
 The grid portal gives you an overview what is going on your environment
