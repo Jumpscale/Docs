@@ -21,7 +21,7 @@ Architecture and General Overview
 * Collects logs, aggregates stats and pushes them into [InfluxDB](https://www,influxdb.com)
 
 ## Agent controller
-* It can interact with [OSIS](OSIS)
+* It can interact with [OSIS](../../OSIS)
 * Controls the whole cloud / acts as a Job controller
 * It can schedule tasks on a JS Nodes [i.e start a virtual machine on a CPU Node]
 * Uses [Redis](https://redis.io) database as a task queue system.
