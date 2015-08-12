@@ -35,11 +35,11 @@ Help us improve JumpScale
 
 How To Get Started
 ------------------
--   [Architecture and General Overview](Architecture)
--   [Installation](Install)
--   [Getting Started: The Basics](GettingStartedBasic)
--   [How to work with AtYourService](AtYourServiceIntro)
--   [Tricks in IPython with JumpScale](IPythonTricks)
+-   [Architecture and General Overview](MultiNode/AgentController1/Architecture.md)
+-   [Installation](GettingStarted/Install.md)
+-   [Getting Started](GettingStarted/GettingStarted.md)
+-   [How to work with AtYourService](AtYourService/AtYourServiceIntro.md)
+-   [Tricks in IPython with JumpScale](GettingStarted/IPythonTricks.md)
 
 Concepts
 --------
