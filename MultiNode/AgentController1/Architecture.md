@@ -19,7 +19,7 @@ Architecture and General Overview
 
 ## Master StatsD Server
 * Every JS Node has a local [StatsD](https://github.com/etsy/statsd) that pushes local stats and logs into the centralized master StatsD.
-* Collects logs, aggregates stats and pushes them into [InfluxDB](https://www,influxdb.com)
+* Collects logs, aggregates stats and pushes them into [InfluxDB](http://www,influxdb.com)
 
 ## Agent controller
 * It can interact with [OSIS](../../OSIS/OSIS.md)
