@@ -40,4 +40,4 @@ Architecture and General Overview
 
 ## AtYourService
 
-* Jumpscale comes with its own packaging system that enables you to create/install/update/ [services](../AtYourService/AtYourServiceIntro.md)
+* Jumpscale comes with its own packaging system that enables you to create/install/update/ [services](../../AtYourService/AtYourServiceIntro.md)
