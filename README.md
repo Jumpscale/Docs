@@ -2,7 +2,7 @@ About JumpScale
 ===================
 
 [JumpScale](http://www.jumpscale.com/) is **A cloud automation product** and a branch from what used to be Pylabs. About 5 years ago Pylabs was the basis of a cloud automation product which was acquired by
-[SUN Microsystems](http://www.oracle.com/us/sun/index.html) from a company called [Q-Layer](http://www.incubaid.com/www_incubaid/Q-Layer). In the mean time we are 3 versions further and we rebranded to [JumpScale](http://www.jumpscale.com/).
+[SUN Microsystems](http://www.oracle.com/us/sun/index.html) from a company called [Q-Layer](http://incubaid.com/successes/Q-Layer/). In the mean time we are 3 versions further and we rebranded to [JumpScale](http://www.jumpscale.com/).
 
 License
 ========
