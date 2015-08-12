@@ -5,7 +5,7 @@ Defining users
 --------------
 
 User management is done by [OSIS](../OSIS/OSIS.md).  
-Users can be added via [JSUser](..MultiNode/AgentController1/ShellCommands/JSUser.md)
+Users can be added via [JSUser](../MultiNode/AgentController1/ShellCommands/JSUser.md)
 
 Allow guest access
 ------------------
