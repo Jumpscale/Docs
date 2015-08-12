@@ -95,11 +95,11 @@ Visit [GridPortal](../GridPortal/Home.md) and see the different nodes (agents)
 The grid portal gives you an overview what is going on your environment
 single or multigrid.
 
--   [Nodes](../gridportal/Nodes.md)
--   [Jobs](../gridportal/Jobs.md)
--   [Errors](../gridportal/ECOs.md)
+-   [Nodes](../GridPortal/Nodes.md)
+-   [Jobs](../GridPortal/Jobs.md)
+-   [Errors](../GridPortal/ECOs.md)
 
-It also provides a [status overview](../gridportal/checkstatus).
+It also provides a [status overview](../GridPortal/CheckStatus.md).
 
 Executing Jumpscripts
 ---------------------
