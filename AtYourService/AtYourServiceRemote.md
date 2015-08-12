@@ -92,6 +92,6 @@ mongo.install()
 
 Have a look at the services template used in this example :
 - [sshkey](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_ays/sshkey)
-- [location](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_ays/location)
+- [location](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_aggregattion/location)
 - [node.ssh](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_ays/node.ssh)
 - [mongodb](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_servers/mongodb)
