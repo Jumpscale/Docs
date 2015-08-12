@@ -35,7 +35,7 @@ Architecture and General Overview
 
 ## Portal
 * A web application to control the cloud, see logs, errors, manage users and execute tasks.
-* [Portal](../Portal/Home.md) has a special and powerful wiki syntax to create new pages very quickly.
+* [Portal](../../Portal/Home.md) has a special and powerful wiki syntax to create new pages very quickly.
 * Portal supports Markdown as well.
 
 ## AtYourService
