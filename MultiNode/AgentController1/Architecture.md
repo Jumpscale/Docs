@@ -35,9 +35,9 @@ Architecture and General Overview
 
 ## Portal
 * A web application to control the cloud, see logs, errors, manage users and execute tasks.
-* Portal has a special and powerful wiki syntax to create new pages very quickly.
+* [Portal](../Portal/Home.md) has a special and powerful wiki syntax to create new pages very quickly.
 * Portal supports Markdown as well.
 
-## JPackage
+## AtYourService
 
-* Jumpscale comes with its own packaging system that enables you to create/install/update/ packages
+* Jumpscale comes with its own packaging system that enables you to create/install/update/ [services](../AtYourService/AtYourServiceIntro.md)
