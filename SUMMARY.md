@@ -45,7 +45,7 @@
         * [Nodes](MultiNode/GridPortal/Nodes.md)
         * [Errors](MultiNode/GridPortal/Errors.md)
         * [Jobs](MultiNode/GridPortal/Jobs.md)
-* [Grid HealthCheck](MultiNode/GridPortal/CheckStatus.md)
+        * [Grid HealthCheck](MultiNode/GridPortal/CheckStatus.md)
 * [OSIS](OSIS/OSIS.md)
     * [OSIS Installation](OSIS/Install.md)
     * [OSIS Model Specs](OSIS/ModelSpec.md)
