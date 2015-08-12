@@ -31,7 +31,7 @@
         * [Redis in Agent/AgentController](MultiNode/AgentController1/Redis.md)
         * [JumpScripts](MultiNode/AgentController1/JumpScript.md)
         * [Schedule Work](MultiNode/AgentController1/ScheduleWork.md)
-* [Demo Setup Tutorial](MultiNode/AgentController1/DemoSetupTutorial.md)
+        * [Demo Setup Tutorial](MultiNode/AgentController1/DemoSetupTutorial.md)
     * [Agent Controller 2](MultiNode/AgentController2/Home.md)
         * [JSAgent](MultiNode/AgentController2/Home.md)
         * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
