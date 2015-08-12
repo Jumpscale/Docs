@@ -2,7 +2,7 @@
 
 An overview of all nodes in a set up. Shown under [http:localhost:82/Grid/Nodes](http:localhost:82/grid/Nodes)
 
-Jobs are sortable and filterable by time of occurrence, command, result and STATE. Further details show Grid and node IDs where the job ran, roles the job ran by, the executed [JumpScript](../AgentController1/JumpScript.md) if one was, which queue the job ran on and logs from the job.
+Nodes are sortable and filterable by grid and node IDs, node name, roles the nodes have and their IPs.
 
 Job states can be:
 * "OK" for jobs that have been executed successfully.
