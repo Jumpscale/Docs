@@ -16,7 +16,7 @@ cd $GOPATH/src/github.com/Jumpscale/jsagent
 go superagent.go -c agent.toml
 ```
 
-The `agent.toml` is described in details in [Agent Configuration](Agent Configuration) page
+The `agent.toml` is described in details in [Agent Configuration](agent-configuration.md) page
 
 ## Command syntax
 see section about cmd syntax
