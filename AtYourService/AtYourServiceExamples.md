@@ -10,7 +10,7 @@ In case there are binary files then they can be uploaded to any binary git repos
 This is optional, can also use a packaging system of the OS or any other download mechanism.
 We explain here how to put binaries on one of our GIT repo's, this is just as example
 
-- Create a repo on [Aydo](https://git.aydo.com) with the name: *nodejs* - [Contact us](info@incubaid.com) if you need access.
+- Create a repo on [Aydo](https://git.aydo.com) with the name: *nodejs* - Contact us on *info@incubaid.com* if you need access.
 - Download Linux binaries service of nodejs from [here](http://nodejs.org/)
 - Extract the contents of that service in a directory called (nodejs)
 - Initialize a git Repo in that directory, commit changes and push to remote nodejs repo on [Aydo](https://git.aydo.com)
