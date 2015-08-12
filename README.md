@@ -44,7 +44,7 @@ How To Get Started
 Concepts
 --------
 
--   [Human Readable Data Format](Human%20Readable%20Data%20Format)
+-   [Human Readable Data Format](AtYourService/HRD.md)
 
 Extensions
 ----------
