@@ -1,4 +1,4 @@
-# GettingStarted
+# Getting Started
 
 * [Configuration Files](Configuration Files)
 * [GettingStartedBasic](GettingStartedBasic)
