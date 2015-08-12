@@ -34,7 +34,6 @@
         * [Examples](MultiNode/AgentController2/Examples.md)
     * [Grid Portal](MultiNode/GridPortal/Home.md)
         * TODO
-* [Development](Devel)
 * [Portal](Portal/Home.md)
     * [Install](Portal/Install.md)
     * [Get Started](Portal/GetStarted.md)
@@ -138,6 +137,7 @@
     * [How to connect to api jportal](Howto/How To Use JSPortal APIs Non Generated.md)
     * [How to use a mail client in jumpscale](Howto/HowtoMailClient.md)
     * [How To FS Walker](Howto/HowToFSWalker.md)
+    * [How To Shell DebuggingHowto/](Howto/HowtoShellDebugging.md)
 * [CookBook](Cookbook/Home.md)
     * [Bots](Cookbook/Bots.md) 
         * [Telegram](Cookbook/Bots/Telegram.md)
@@ -145,4 +145,3 @@
         * [Mothership1 Cloud](Cookbook/CloudAutomation/MS1.md)
     * [DB](Cookbook/Home.md)
         *  [SQLAlchemy](Cookbook/DB/SQLAlchemy.md)
-* [Modules](Modules)

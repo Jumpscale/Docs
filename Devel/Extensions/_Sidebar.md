@@ -1,3 +1,0 @@
-# Extensions
-
-* [[Devel](Devel)]

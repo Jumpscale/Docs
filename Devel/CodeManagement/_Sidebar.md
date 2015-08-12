@@ -1,3 +1,0 @@
-# CodeManagement
-
-* [[Devel](Devel)]
