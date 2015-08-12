@@ -45,8 +45,3 @@ Concepts
 --------
 
 -   [Human Readable Data Format](AtYourService/HRD.md)
-
-Extensions
-----------
-
--   [Code Management](CodeManagement)
