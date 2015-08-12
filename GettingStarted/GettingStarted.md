@@ -1,7 +1,7 @@
 # Getting Started
 
 * [Configuration Files](Configuration Files.md)
-* [IPythonTricks](IPythonTricks)
+* [IPython Tricks](IPythonTricks)
 * [JSCode](JSCode)
 * [JumpScale License](JumpScale License)
 * [Shell + debugging](Shell + debugging)
