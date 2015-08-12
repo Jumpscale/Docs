@@ -20,7 +20,7 @@ Changes From JumpScale 6
 * **j.do**: more powerful and a good way to create bootstrap scripts *(look at [installer] (Install))*
 * **Removed**: blobstor !!! and replaced by git based repositories for binary files
 * **In progress**: a new agent written in golang
-* **In progress**: [python3](https://www.python.org/download/releases/3.0/) support, [AtYourService](/AtYourService/AtYourServiceIntro) drivers for [[KVM](http://www.linux-kvm.org/page/Main_Page), [Docker](https://www.docker.com/), [Ubuntu](www.ubuntu.com), [OpenWRT](https://openwrt.org/), [Windows](http://windows.microsoft.com/en-us/windows/home), ..]
+* **In progress**: [python3](https://www.python.org/download/releases/3.0/) support, [AtYourService](/AtYourService/AtYourServiceIntro.md) drivers for [[KVM](http://www.linux-kvm.org/page/Main_Page), [Docker](https://www.docker.com/), [Ubuntu](www.ubuntu.com), [OpenWRT](https://openwrt.org/), [Windows](http://windows.microsoft.com/en-us/windows/home), ..]
 
 Known Issues
 =============
