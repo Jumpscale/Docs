@@ -5,7 +5,7 @@
 
 
 -   make sure jumpscale is installed properly (see [JumpScale Installation](../../GettingStarted/Install.md)) 
--   make sure osis & portal are installed (see [Portal Installation](../Portal/Install.md) and [OSIS Installation](../OSIS/Install.md))
+-   make sure osis & portal are installed (see [Portal Installation](../../Portal/Install.md) and [OSIS Installation](../../OSIS/Install.md))
 
 ###install locally as all in 1 install
 
