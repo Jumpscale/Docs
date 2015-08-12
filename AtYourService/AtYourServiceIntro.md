@@ -6,7 +6,7 @@
 
 **Modelisation tool**:
 AtYourService let you create so called 'service templates' that can be used to represent nearly anything. From your datacenter infrastructure to a server cluster.
-AtYourService will create a hierarchy of folder in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote) for examples)
+AtYourService will create a hierarchy of folder in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote.md) for examples)
 
 **Package manager**
 It's kind of like Ubuntu's ```apt-get & service``` and ```ant``` tools all together in one easy command line tool that can control a whole cloud.
