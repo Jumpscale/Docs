@@ -159,6 +159,6 @@
        * [Telegram](Cookbook/Bots/Telegram.md)
     * [CloudAutomation](Cookbook/CloudAutomation.md)
        * [Mothership1 Cloud](Cookbook/CloudAutomation/MS1.md)
-    * [DB](Cookbook/Home.md)
+    * [DB](Cookbook/DB.md)
        * [SQLAlchemy](Cookbook/DB/SQLAlchemy.md)
 
