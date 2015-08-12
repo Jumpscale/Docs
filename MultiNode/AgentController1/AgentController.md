@@ -16,7 +16,7 @@ Those tasks can be executed in different ways
 
 Read more about the AgentController [here](AgentControllerServer.md)
 
-Useful linkst
+Useful links
 -------------
 
 -   [Install AgentController](AgentControllerInstall.md)
