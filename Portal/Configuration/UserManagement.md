@@ -4,7 +4,7 @@ User Management
 Defining users
 --------------
 
-User management is done by [OSIS](https://github.com/Jumpscale/jumpscale_core7/wiki/OSIS).  
+User management is done by [OSIS](../OSIS/OSIS.md).  
 Users can be added via [JSUser](https://github.com/Jumpscale/jumpscale_core7/wiki/JSUser)
 
 Allow guest access
