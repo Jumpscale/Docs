@@ -154,7 +154,7 @@
    * [How to use a mail client in jumpscale](Howto/HowtoMailClient.md)
    * [How To FS Walker](Howto/HowToFSWalker.md)
    * [How To Shell DebuggingHowto/](Howto/HowtoShellDebugging.md)
-   * How To Use Git
+   * [How To Use Git](Howto/how_to_use_git.md)
 * [CookBook](Cookbook/Home.md)
    * [Bots](Cookbook/Bots.md)
        * [Telegram](Cookbook/Bots/Telegram.md)
