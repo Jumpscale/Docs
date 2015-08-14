@@ -1,4 +1,17 @@
-## How To Use Git
+## How To Use Git Automated
+
+```
+jscode init
+```
+
+- this will check if there is ~/.ssh/id_rsa
+- if not keys will be generated
+- your git configuration will be done (email, username)
+- your bashrc will be adjusted to make sure your ssh-agent gets loaded properly
+
+best is to read below to really understand what is happening
+
+## How To Use Git Manual Way
 
 ### Generate Keys
 
