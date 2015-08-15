@@ -13,6 +13,10 @@ How To Get Started
 
 More Info
 --------
+- [Jumpscale Docs In PDF](https://www.gitbook.com/download/pdf/book/despiegk/jumpscale)
+- [Jumpscale Docs In EBook (epub)](https://www.gitbook.com/download/epub/book/despiegk/jumpscale)
+- [Jumpscale API Docs In PDF](https://www.gitbook.com/download/pdf/book/despiegk/jumpscaleapi)
+- [Jumpscale API Docs In EBook (epub)](https://www.gitbook.com/download/epub/book/despiegk/jumpscaleapi)
 - [API Documentation](http://despiegk.gitbooks.io/jumpscaleapi/content/)
 - Main gitgub repo's
     - [JumpScale Core Repo](https://github.com/Jumpscale/jumpscale_core7):
