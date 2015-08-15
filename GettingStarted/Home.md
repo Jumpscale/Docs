@@ -6,4 +6,3 @@
 * [JSCode](JSCode)
 * [JumpScale License](JumpScale License)
 * [Configuration Files](Configuration Files)
-* 
