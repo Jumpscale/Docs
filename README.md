@@ -7,7 +7,7 @@ About JumpScale
 How To Get Started
 ------------------
 -   [Installation](GettingStarted/Install.md)
--   [Getting Started](GettingStarted/GettingStarted.md)
+-   [Getting Started](GettingStarted/Home.md)
 -   [How to work with AtYourService](AtYourService/AtYourServiceIntro.md)
 -   [Tricks in IPython with JumpScale](GettingStarted/IPythonTricks.md)
 
