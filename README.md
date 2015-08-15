@@ -6,7 +6,6 @@ About JumpScale
 
 How To Get Started
 ------------------
--   [Architecture and General Overview](MultiNode/AgentController1/Architecture.md)
 -   [Installation](GettingStarted/Install.md)
 -   [Getting Started](GettingStarted/GettingStarted.md)
 -   [How to work with AtYourService](AtYourService/AtYourServiceIntro.md)
