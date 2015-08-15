@@ -25,17 +25,27 @@ Main Features
 
 roadmap
 --------
-- 8.0
+- 8.0 (Q4 2015)
     - we are porting certain area's to golang
         - our agent/agentcontroller (done but still need to integrate in our portal)
     - lots better documentation, looking for help, over the years this documentation came together but its not consistent enough & not clear enough, we need lots of improvements. 
     - new version of osis (based on even) and fully integrated in our portal
     - safekeeper (an exciting system to securely remotely manage an environment)
     - reactivate our cloudrobot (is message based robot for automating your daily sysadmin life)
+    - ays (at your service)
+        - better support for docker
+        - UI in portal on top of ays
+        - bot integration (by means of telegram)
+        - maybe toml support in stead of our own hrd (maybe)
+    - support for more OS'es
+        - more proven support for mac & windows (its +- working today)
+        - non sandboxed install on ubuntu
+        - more linuxes (its working on most already today)
 - 8.1
     - we are porting certain area's to golang
-        - portal framework (planned but not for 8.0)
-        - ays (planned but not for 8.0)
+        - portal framework
+        - ays
+    - ...
 
 How To Get Started
 ------------------
