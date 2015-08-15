@@ -4,6 +4,39 @@ About JumpScale
 [JumpScale](http://www.jumpscale.com/) is **A cloud automation product** and a branch from what used to be Pylabs. About 5 years ago Pylabs was the basis of a cloud automation product which was acquired by
 [SUN Microsystems](http://www.oracle.com/us/sun/index.html) from a company called [Q-Layer](http://incubaid.com/successes/Q-Layer/). In the mean time we are 3 versions further and we rebranded to [JumpScale](http://www.jumpscale.com/).
 
+Main Features
+-------------
+- a large library of convencience functions for mainly system automation
+- portal framework (markdown & confluence format, very easy to create macro's)
+- osis = object storage & indexing system (db layer on top of mongogb, mysql, postgreswl, ...)
+- a system abstraction layer to manage many applications, services & clouds
+- a ssh management layer (use ssh to manage large amounts of apps, os'es, ...)
+- a package management system (called at your service (AYS))
+- a full life cycle management system for apps (called at your service (AYS))
+- a agent & agentcontroller (1 in python, 1 in golang) for managing thousands of nodes
+- a framework to manage a grid of nodes like 1 with lots of macro's created for the portal
+- a rest based application server (as part of the portal)
+- lots of best practicices how to do things
+- a portforwarding system to allow secure access to all your services even if behind firewalls (part of agentcontroller 2)
+
+    Jumpscale is the result of 15 years of developing cloud products & tools to support us.
+    Its being used in most of our products in the incubaid group.
+    We are 100% committed to make this an even more mature framework with community backing (which is today not the case mainly because of the poor documentation)
+
+roadmap
+--------
+- 8.0
+    - we are porting certain area's to golang
+        - our agent/agentcontroller (done but still need to integrate in our portal)
+    - lots better documentation, looking for help, over the years this documentation came together but its not consistent enough & not clear enough, we need lots of improvements. 
+    - new version of osis (based on even) and fully integrated in our portal
+    - safekeeper (an exciting system to securely remotely manage an environment)
+    - reactivate our cloudrobot (is message based robot for automating your daily sysadmin life)
+- 8.1
+    - we are porting certain area's to golang
+        - portal framework (planned but not for 8.0)
+        - ays (planned but not for 8.0)
+
 How To Get Started
 ------------------
 -   [Installation](GettingStarted/Install.md)
