@@ -1,3 +1,5 @@
+
+
 > Currently generating and using client certificates is not automated. So the page will requires some manual intervention from you to get things working.
 
 # Introduction
@@ -9,7 +11,7 @@ ays install -n nginx
 ```
 
 # Generating the certificates.
-Under jsagent repo, there is tools folder with 2 scripts to help you generating a self signed keys for testing.
+Under agent2 repo, there is tools folder with 2 scripts to help you generating a self signed keys for testing.
 
 - Run servercerts.sh to generate a self signed server certificate and key. Answer the questions as seems appropriate.
 ```bash
@@ -113,10 +115,11 @@ server {
 > Make sure to restart nginx after updating its configuration and that it started without error.
 
 # Configuring the agent.
-Now open `superagent.toml` file (located under `/opt/jumpscale7/apps/superagent`) and change the following:
+Now open `agent2.toml` file (located under `/opt/jumpscale7/apps/agent2`) and change the following:
 * change `main.agent_controllers` to `["https://localhost/controller/"]
 * set `security.client_certificate` to `/path/to/generated/client-testagent.crt`
 * set `security.client_certificate_key` to `/path/to/generated/client-testagent.key`
 * set `security.certificate_authority` to `/path/to/generated/server.crt` (This is only needed because we are using a self-signed certificate so we all telling the agent to trust this certificate, if this is not set agent will refuse to connect to the controller because it doesn't provide a trusted certificate)
 
 Then restart the agent.
+
