@@ -1,6 +1,6 @@
 # osis2
 
-* osis2 is a serious update t osis and supports both mongodb, as well as sqldatabases via [SQLALCHEMY](http://www.sqlalchemy.org)
+* osis2 is a serious update to osis and supports both mongodb, as well as sqldatabases via [SQLALCHEMY](http://www.sqlalchemy.org)
 * osis2 uses the powerful [Python-Eve](http://www.python-eve.org/) framework 
 * Currently osis2 works besides osis side by side, in master branch
 
