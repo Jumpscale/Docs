@@ -18,4 +18,4 @@ The Agent will also monitor the jobs, updating the AC with `stats` and `logs`. A
 ### Architecture
 
 - https://docs.google.com/drawings/d/1qsOzbv2XbwChgsLVV8qCydmH0ki9QLkaB336kt7D1Cg/pub?w=960&h=720
-- [edit](https://docs.google.com/drawings/d/1qsOzbv2XbwChgsLVV8qCydmH0ki9QLkaB336kt7D1Cg/edit)
+[edit](https://docs.google.com/drawings/d/1qsOzbv2XbwChgsLVV8qCydmH0ki9QLkaB336kt7D1Cg/edit)
