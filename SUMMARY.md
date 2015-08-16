@@ -164,5 +164,5 @@
    * [DB](Cookbook/DB/DB.md)
        * [SQLAlchemy](Cookbook/DB/SQLAlchemy.md)
 * [API Documentation](http://despiegk.gitbooks.io/jumpscaleapi/content/)
-* Developers
+* [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
