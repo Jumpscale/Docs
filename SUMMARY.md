@@ -38,8 +38,7 @@
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
        * [Stats](MultiNode/AgentController2/Stats.md)
-       * [Security Certificates](MultiNode/AgentController2/Security.md)
-       
+       * [Security Certificates](MultiNode/AgentController2/Security.md)       
        * [Tutorial](MultiNode/AgentController2/Tutorial.md)
    * [Grid Portal](MultiNode/GridPortal/Home.md)
        * [Nodes](MultiNode/GridPortal/Nodes.md)
