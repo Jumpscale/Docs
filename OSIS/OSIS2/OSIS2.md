@@ -1,18 +1,17 @@
-# ROS
+# osis2
 
-* Ros is a replacement for OSIS and supports both mongodb, as well as sqldatabases via [SQLALCHEMY](http://www.sqlalchemy.org)
-* ROS uses the powerful [Python-Eve](http://www.python-eve.org/) framework 
-* Currently ROS works besides OSIS side by side, in master branch
-* ROS as a full replacement for OSIS is found at branch `ros`
+* osis2 is a serious update t osis and supports both mongodb, as well as sqldatabases via [SQLALCHEMY](http://www.sqlalchemy.org)
+* osis2 uses the powerful [Python-Eve](http://www.python-eve.org/) framework 
+* Currently osis2 works besides osis side by side, in master branch
 
-## Structure of ROS
+## Structure of osis2
 
 ```
-basepath -> /opt/jumpscale7/apps/ros/
+basepath -> /opt/jumpscale7/apps/osis2/
      |
      |__ app -> code for launching the app and generating models
      |__ models
-     |__osis -> Contains models for ros
+     |__osis -> Contains models for osis2
      |    |
      |    |__ mongo -> mongodb models here
      |    |     |__ $namespacename/model.spec  (spec file)                                    
@@ -24,15 +23,27 @@ basepath -> /opt/jumpscale7/apps/ros/
                   hooks can be globally or per object
                   put your own business logic at this level
 ```
-## Installing ROS
+## Installing osis2
 
 ```
-ays install -n ros    (SERVER)
-ays install -n ros_client  (CLIENT)
+#SERVER
+ays install -n osis2    
+#CLIENT
+ays install -n osis2_client
 ```
+the ays install will launch osis as a tmux screen
+to investigate do 'tmux a' and look  for osis2_main screen
+
+to play with osis client change/use
+- /opt/jumpscale7/apps/osis2/osis2play.py
+
+to see web go to
+- http://localhost:5545/
+
+
 ## Docs
 
-* ROS uses [Swagger.io](http://swagger.io/) to generate docs for us.
+* osis2 uses [Swagger.io](http://swagger.io/) to generate docs for us.
 * you can see them at `http://<serverip>:5545/models/$namespace/docs`
 * You can see a generated swagger spec json for the models definitions at  `http://<serverip>:5545/models/$namespace/docs.json`
 
@@ -46,9 +57,9 @@ see dir structure higher defined where the namespaces are
 
 
 ## Using the client
-Below are some examples and you can read more in [ROS TESTS](https://github.com/Jumpscale/jumpscale_core7/blob/master/apps/ros/tests/ros_test.py)
+Below are some examples and you can read more in [osis2 TESTS](https://github.com/Jumpscale/jumpscale_core7/blob/master/apps/osis2/tests/osis_test.py)
 ```python
-In [1]: cl = j.clients.ros.get()  // main instance, otherwise : j.clients.ros.get(instance='myinst') 
+In [1]: cl = j.clients.osis2.get()  // main instance, otherwise : j.clients.osis2.get(instance='myinst') 
 In [2]: cl.
 cl.sqlnamespace  cl.system
 In [2]: cl.system.
@@ -122,16 +133,38 @@ In [23]:  [<user id admin>]
   * For SQL namespaces we use [SQLAlchemy Expressions](http://eve-sqlalchemy.readthedocs.org/en/stable/tutorial.html#sqlalchemy-expressions)
   * For more examples, check the section above.
 
+```
+MONGO namespaces search                                                                                             
+***********************                                                                                             
+- Same search format found at:                                                                                      
+  http://docs.mongodb.org/manual/reference/method/db.collection.find/                                               
+
+- Examples:                                                                                                         
+    - Search for records with name=ali:                                                                             
+            client.mymongonamespace.user.search({'name':'ali'})                                                     
+    - Search for users with age > 20                                                                                
+            client.mymongonamespace.user.search({'age':{'$gt':20}})                                                 
+
+SQL namespace search                                                                                                
+*******************                                                                                                 
+Same search format found at:                                                                                        
+http://eve-sqlalchemy.readthedocs.org/en/stable/tutorial.html#sqlalchemy-expressions                                
+
+Examples:                                                                                                           
+----------                                                                                                          
+    - Search for records with name starts with ali                                                                  
+            client.mysaqlnamespace.user.search(.search({'name':'like("ali%")'})) 
+```
 
 ## How to add a new namespace
 
-* for mongo namespaces, create a directory under  /opt/jumpscale7/apps/ros/models/osis/mongo/myNewNameSpace
-* For sql namespaces, create a directory under  /opt/jumpscale7/apps/ros/models/osis/sql/myNewNameSpace
+* for mongo namespaces, create a directory under  /opt/jumpscale7/apps/osis2/models/osis/mongo/myNewNameSpace
+* For sql namespaces, create a directory under  /opt/jumpscale7/apps/osis2/models/osis/sql/myNewNameSpace
 * The directory name determines the namespace (name)
 * Inside the directory put your models.spec file
 
 ## For sql namespaces, can I add python modules defining Sqlalchemy models directly?
-* Yes absolutely, under ```/opt/jumpscale7/apps/ros/models/osis/sql/myNewNameSpace``` add your files
+* Yes absolutely, under ```/opt/jumpscale7/apps/osis2/models/osis/sql/myNewNameSpace``` add your files
 * Example
 ``` python
 from app.sqlalchemy.common import CommonColumns, typemap
@@ -164,43 +197,47 @@ class audit(CommonColumns):
 * 2 Types of Hooks
   * **Per name space hooks**
     * Run before any CRUD operation on all models in a name space
-    * defined in /opt/jumpscale7/apps/ros/models/$namespace/__init__.py
+    * defined in /opt/jumpscale7/apps/osis2/models/$namespace/__init__.py
   * **per model hooks**
     * Run before any CRUD operation on certain model
     * You can override behaviors defined in (per name space) hooks
   * Types of hooks
     * Example
+
 ``` python
-           from .helpers import roshelpers
+ from .helpers import osis2helpers
 
-           def pre_create(items):
-               pass
+ def pre_create(items):
+     pass
 
-           def post_create(items):
-               pass
+ def post_create(items):
+     pass
 
-           def pre_replace(item, original):
-                pass
+ def pre_replace(item, original):
+      pass
 
-           def post_replace(item, original):
-                pass
+ def post_replace(item, original):
+      pass
 
-           def pre_update(updates, original):
-                 pass
+ def pre_update(updates, original):
+       pass
 
-           def post_update(updates, original):
-                 pass
+ def post_update(updates, original):
+       pass
 
-           def pre_delete(item):
-                 pass
+ def pre_delete(item):
+       pass
 
-           def post_delete(item):
-                 pass
+ def post_delete(item):
+       pass
 
-           def get(response):
-                 pass
+ def get(response):
+       pass
 ```
-## ROS Tests
-* ROS comes with unit tests in```/opt/code/github/jumpscale/jumpscale_core7/apps/ros/tests```
-* ROS tests do tests on MONGO/SQL namespaces
-* To run the tests use the command ```python ros_test.py```
+
+## osis2 Tests
+
+* osis2 comes with unit tests in```/opt/code/github/jumpscale/jumpscale_core7/apps/osis2/tests```
+* osis2 tests do tests on MONGO/SQL namespaces
+* To run the tests use the command ```python osis2_test.py```
+
