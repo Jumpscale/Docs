@@ -33,6 +33,7 @@
        * [Schedule Work](MultiNode/AgentController1/ScheduleWork.md)
        * [Demo Setup Tutorial](MultiNode/AgentController1/DemoSetupTutorial.md)
    * [Agent Controller 2](MultiNode/AgentController2/AgentController2.md)
+       * [Install](MultiNode/AgentController2/Install.md)
        * [JSAgent](MultiNode/AgentController2/Home.md)
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)

@@ -7,16 +7,16 @@
 ```bash
 pip install --upgrade contoml
 
-ays install -n jsagentcontroller_go
-ays install -n jsagentcontroller_go_client
-ays install -n superagent
+ays install -n agentcontroller2
+ays install -n agentcontroller2_client
+ays install -n agent2
 ```
 
 #### Testing setup
 Start a `jumpscale` shell
 
 ```python
-client = j.clients.ac.Client()
+client = j.clients.agentcontroller2.Client()
 client.get_os_info(1, 1)
 ```
 
