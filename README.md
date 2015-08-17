@@ -57,17 +57,17 @@ How To Get Started
 More Info
 --------
 
-- [API Documentation](http://despiegk.gitbooks.io/jumpscaleapi/content/)
+- [API Documentation](http://gig.gitbooks.io/jumpscaleapi/content/)
 - Main gitgub repo's
     - [JumpScale Core Repo](https://github.com/Jumpscale/jumpscale_core7):
     - [Jumpscale Prototypes](https://github.com/jumpscale/jumpscale_prototypes)
     - [AtYourService metadata](https://github.com/Jumpscale/ays_jumpscale7) 
     - [AtYourService binary repo's](http://git.aydo.com/binary)
 - Docs in other format
-    - [Jumpscale Docs In PDF](https://www.gitbook.com/download/pdf/book/despiegk/jumpscale)
-    - [Jumpscale Docs In EBook (epub)](https://www.gitbook.com/download/epub/book/despiegk/jumpscale)
-    - [Jumpscale API Docs In PDF](https://www.gitbook.com/download/pdf/book/despiegk/jumpscaleapi)
-    - [Jumpscale API Docs In EBook (epub)](https://www.gitbook.com/download/epub/book/despiegk/jumpscaleapi)
+    - [Jumpscale Docs In PDF](https://www.gitbook.com/download/pdf/book/gig/jumpscale)
+    - [Jumpscale Docs In EBook (epub)](https://www.gitbook.com/download/epub/book/gig/jumpscale)
+    - [Jumpscale API Docs In PDF](https://www.gitbook.com/download/pdf/book/gig/jumpscaleapi)
+    - [Jumpscale API Docs In EBook (epub)](https://www.gitbook.com/download/epub/book/gig/jumpscaleapi)
 
 Known Issues
 =============
