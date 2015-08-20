@@ -36,3 +36,16 @@ dependencies.2               =
 
 ```
 
+### Pre-filled hrd
+When instanciating  a new service, it is also possible to pass an hrd file prefilled with the arguments. This is particuly usefull when you want to configure your service more deeply or when you have services that has lot of depencecies.
+
+#### format
+Pre-filled HRD should follow this format :
+```
+domaine.name.instance.argument = value
+```
+e.g. :
+To set the value of ```param.disk``` of the ```redis``` service, one would do
+```
+jumpscale.redis.main.param.disk = 1
+```
