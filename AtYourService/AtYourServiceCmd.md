@@ -69,6 +69,13 @@ Package Selection:
   -f, --force           auto answer yes on every question
   --nodeps              Don't perfomr action on dependencies, default False
   --verbose             Verbose output.
+  -tn TARGETNAME, --targetname TARGETNAME
+                        node instance on which to execute the action
+  -tt TARGETTYPE, --targettype TARGETTYPE
+                        node type on which to execute the action
+  -hs HRDSEED, --hrdseed HRDSEED
+                        path to an hrd file that contains
+
 
 Install/Update/Expand/Configure:
   --data DATA           use this to pass hrd information to ays e.g.
@@ -121,6 +128,7 @@ List:
 * ```--console``` to access the console of a remote service
 * ```--targetname serviceInstance --targettype serviceName``` to specify action on remote node
 * ```consume --category categoryName producerInstanceName``` to consume specified producer category and instance for this service
+* --hrdseed ```prefilledHRD.hrd``` to give the path to an hrd file that contains the instance arguments of a services.
 * ```--immediate``` to indicate provided parent path is the exact one to use. If neither path nor parent is path, action will be performed on the root of the configured directory.
 
 ## AYS cmd line examples:
