@@ -6,13 +6,13 @@
 ## Installing needed packages
 
 ```bash
-ays install -n jsagentcontroller_go
+ays install -n agentcontroller2
 # make sure to provide redis password "rooter" (if needed)
 
-ays install -n superagent
+ays install -n agent2
 # accept the defaults
 
-ays install -n jsagentcontroller_go_client
+ays install -n agentcontroller2_client
 # python client and js extension
 ```
 
@@ -20,6 +20,8 @@ If everything went smooth, test your installation by starting a `jumpscale shell
 
 ```python
 client = j.clients.ac.get(password='rooter')
+#OR 
+client = j.client.ac.getByInstance('main')
 
 client.get_os_info(1, 1)
 ```
@@ -69,13 +71,13 @@ runargs = j.clients.ac.runArgs(domain='jumpscale', name='ls', args=['-l', '/opt'
 ### Starting nginx (long running process)
 
 ```python
-args = j.clients.ac.runArgs(domain='js', name='nginx', args=['-c', '/etc/nginx/nginx.conf'], max_time=-1)
+args = j.clients.ac.getRunArgs(domain='js', name='nginx', args=['-c', '/etc/nginx/nginx.conf'], max_time=-1)
 client = j.clients.ac.get(password='<redis-password>')
 
 cmd = client.cmd(gid, nid, 'execute', args)
 
 #Same can be approached by doing the following
-args = j.clients.ac.runArgs(domain='js', max_time=-1)
+args = j.clients.ac.getRunArgs(domain='js', max_time=-1)
 client = j.clients.ac.get(password='<redis-password>')
 
 cmd = client.execute(gid, nid, 'nginx', ['-c', '/etc/nginx/nginx.conf'], args)
@@ -132,12 +134,15 @@ drwxr-xr-x 1 root root  94 Jul 15 12:00 nodejs
 drwxr-xr-x 1 root root 442 Jul 15 12:00 statsd-collector
 drwxr-xr-x 1 root root 436 Jul 15 12:00 statsd-master
 ```
+>Note: `get_result()` will block for the  available result with optional timeout (default to zero which means wait forever). The next call on get_result() will block until another reult is ready. This is useful in case the job is `fanedout` or runs on multiple agents.
+
+>Note: `cmd` also provides a `noblock_get_result()` method that will not block for results, instead will return a list with all the (available) job results.
 
 # Adding custom execute cmd to Agent
 According to [[agent configuration]] you can add custom execution commands to execute arbitrary scripts.
 
 ```bash
-vi /opt/jumpscale7/cfg/superagent.toml
+vi /opt/jumpscale7/apps/agent2/agent2.toml
 ```
 You can find this under the cmds secion
 ```toml
