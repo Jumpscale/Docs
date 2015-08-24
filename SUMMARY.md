@@ -38,7 +38,7 @@
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Security Certificates](MultiNode/AgentController2/Security.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
-       * [Scripts Distribution](ScriptsDistributionmd.md)
+       * [Scripts Distribution](scriptsdistributionmdmd.md)
        * [Stats](MultiNode/AgentController2/Stats.md)
        * [Tutorial](MultiNode/AgentController2/Tutorial.md)
        * [Test on OpenVCloud](MultiNode/AgentController2/MS1driver.md)
