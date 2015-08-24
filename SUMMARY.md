@@ -38,7 +38,7 @@
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
        * [Stats](MultiNode/AgentController2/Stats.md)
-       * [Security Certificates](MultiNode/AgentController2/Security.md)       
+       * [Security Certificates](MultiNode/AgentController2/Security.md)
        * [Tutorial](MultiNode/AgentController2/Tutorial.md)
        * [Test on OpenVCloud](MultiNode/AgentController2/MS1driver.md)
    * [Grid Portal](MultiNode/GridPortal/Home.md)
@@ -163,6 +163,7 @@
        * [Mothership1 Cloud](Cookbook/CloudAutomation/MS1.md)
    * [DB](Cookbook/DB/DB.md)
        * [SQLAlchemy](Cookbook/DB/SQLAlchemy.md)
-* [API Documentation](http://despiegk.gitbooks.io/jumpscaleapi/content/)
+* [API Documentation](http:/despiegk.gitbooks.io/jumpscaleapi/content/)
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
+
