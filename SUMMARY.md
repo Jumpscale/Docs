@@ -144,6 +144,7 @@
        * [Rest WebServices](Portal/WebServices/RestWebservices.md)
        * [Portal Python Client](Portal/PortalClient.md)
 * [SSH System Management](SSHSystemManagement/Home.md)
+   * [SSH keys & key mgmt](SSHSystemManagement/SSHKeysAgent.md)
    * [SSH connections & Basic SSH Info](SSHSystemManagement/SSHBasics.md)
    * [SSH Remote System](SSHSystemManagement/SSHRemoteSystem.md)
    * [SSH Cuisine](SSHSystemManagement/Cuisine.md)
