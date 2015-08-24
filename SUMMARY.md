@@ -39,6 +39,7 @@
        * [Security Certificates](MultiNode/AgentController2/Security.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
        * [Stats](MultiNode/AgentController2/Stats.md)
+           * Script Distribution
        * [Tutorial](MultiNode/AgentController2/Tutorial.md)
        * [Test on OpenVCloud](MultiNode/AgentController2/MS1driver.md)
    * [Grid Portal](MultiNode/GridPortal/Home.md)
