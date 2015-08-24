@@ -35,6 +35,7 @@ Basic arguments support the following args:
     seconds between recurring execute this cmd
     0 is default means not recurring, so only once
 * stats_interval: 120 means we overrule the default for this process and only monitor this porcess every 120 seconds.
+* queue: If queue is set, the command will wait on a job queue for serial execution. In other words no 2 processes with the same queue name will get executed on the same agent at the same. time
 
 #Built in commands
 * execute
