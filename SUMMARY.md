@@ -41,6 +41,7 @@
        * [Stats](MultiNode/AgentController2/Stats.md)
        * [Tutorial](MultiNode/AgentController2/Tutorial.md)
        * [Test on OpenVCloud](MultiNode/AgentController2/MS1driver.md)
+       * Scripts Distribution
    * [Grid Portal](MultiNode/GridPortal/Home.md)
        * [Nodes](MultiNode/GridPortal/Nodes.md)
        * [Errors](MultiNode/GridPortal/Errors.md)
