@@ -1,11 +1,8 @@
 ### How to install
 
-- Currently, installation requires the contoml module which is still not part of base. 
-- So we need to pip this module before we can continue with the installation. 
-- This step will get dropped once `contoml` is integrated with `jumpscale` base
 
 ```bash
-pip install --upgrade contoml
+# make sure you have a redis instance installed.
 
 ays install -n agentcontroller2
 ays install -n agentcontroller2_client
@@ -16,7 +13,7 @@ ays install -n agent2
 Start a `jumpscale` shell
 
 ```python
-client = j.clients.agentcontroller2.Client()
+client = j.clients.ac.getByInstance('main')
 client.get_os_info(1, 1)
 ```
 

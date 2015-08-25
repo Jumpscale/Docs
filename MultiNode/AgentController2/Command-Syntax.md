@@ -11,6 +11,8 @@ Commands are delivered to the `Agent` from the `Agent Controller` over long poll
         ...
     },
     "data": "<data-string>",
+    "role": "<optional role>",
+    "fanout": true or false,
 }
 ```
 
@@ -19,6 +21,10 @@ Commands are delivered to the `Agent` from the `Agent Controller` over long poll
 * nid: Node ID
 * args: Command specific arguments.
 * data (optional): Data string, will be fed to the sub-process over `stdin`. So it actually can be anything including serialized json data.
+* role: (mutual exclusive with `gid`) specifies agent role that must execute this job. If provided the first agent to satisfy this role will get the job. There is a special role `*` which means (any agent).
+* fanout: Fanout only effective when a `role` is provided. Basically all agents that satisfy the given role will get the job.
+
+> If `role=*` and `fanout=true` this basically means **ALL** agents.
 
 # args
 Arguments fine-tunes the process. The arguments are interpreted by the Agent itself to control the behavior of the sub-process, unlike `data` which is passed unprocessed to the sub-process itself.
@@ -35,6 +41,7 @@ Basic arguments support the following args:
     seconds between recurring execute this cmd
     0 is default means not recurring, so only once
 * stats_interval: 120 means we overrule the default for this process and only monitor this porcess every 120 seconds.
+* queue: If queue is set, the command will wait on a job queue for serial execution. In other words no 2 processes with the same queue name will get executed on the same agent at the same. time
 
 #Built in commands
 * execute
