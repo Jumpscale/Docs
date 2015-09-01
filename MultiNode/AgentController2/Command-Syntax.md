@@ -30,17 +30,17 @@ Commands are delivered to the `Agent` from the `Agent Controller` over long poll
 Arguments fine-tunes the process. The arguments are interpreted by the Agent itself to control the behavior of the sub-process, unlike `data` which is passed unprocessed to the sub-process itself.
 Basic arguments support the following args:
 
-* maxtime: How long the sub-process can run, 0 for (forever) or long running process
-* max_restart: max times the process will be restarted if failed, if max_restart = 0 then no restart. If the process lived for more than 5 min before it failes the counter will be reset.
-* domain: domain of jumpscript (to do categorization)
-* name: name of jumpscript or cmd to execute (will give all a name)
-* loglevels: list of log levels to process
-* loglevels_db: list of log levels to be processed by DB logger (overrides the logger defaults)
-* loglevels_ac: list of log levels to be processed by AC logger (overrides the logger defaults)
-* recurring_period: 0 or 100
+* `max_time`: How long the sub-process can run, 0 for (forever) or long running process, value > 0 means kill the process of execution time takes more than `max_time`. If max time is set to -1 this instructs the agent to *remember* the job and will rerun it on agent start (useful with `recurring_period`).
+* `max_restart`: max times the process will be restarted if failed, if max_restart = 0 then no restart. If the process lived for more than 5 min before it failes the counter will be reset.
+* `domain`: domain of jumpscript (to do categorization)
+* `name`: name of jumpscript or cmd to execute (will give all a name)
+* `loglevels`: list of log levels to process
+* `loglevels_db`: list of log levels to be processed by DB logger (overrides the logger defaults)
+* `loglevels_ac`: list of log levels to be processed by AC logger (overrides the logger defaults)
+* `recurring_period`: 0 or 100
     seconds between recurring execute this cmd
     0 is default means not recurring, so only once
-* stats_interval: 120 means we overrule the default for this process and only monitor this porcess every 120 seconds.
+* `stats_interval`: 120 means we overrule the default for this process and only monitor this porcess every 120 seconds.
 * queue: If queue is set, the command will wait on a job queue for serial execution. In other words no 2 processes with the same queue name will get executed on the same agent at the same. time
 
 #Built in commands
@@ -53,5 +53,5 @@ Basic arguments support the following args:
 * killall
 * ping
 * restart
-* get_msgs (Not Implemented Yet)
-* del_msgs (Not Implemented Yet)
+* get_msgs
+* del_msgs
