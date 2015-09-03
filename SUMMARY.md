@@ -21,6 +21,7 @@
    * [AYS Remote](AtYourService/AtYourServiceRemote.md)
    * [Human Readable Data Format (HRD)](AtYourService/HRD.md)
    * [AYS Migration](AtYourService/AtYourServiceMigration.md)
+   * [AYS Visualization in Portal](AtYourService/AtYourServicePortal.md)
 * [Multi Node Features](MultiNode.md)
    * [Agent Controller 1](MultiNode/AgentController1/AgentController.md)
        * [Architecture](MultiNode/AgentController1/Architecture.md)
