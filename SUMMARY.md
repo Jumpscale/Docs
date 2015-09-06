@@ -159,6 +159,7 @@
    * [How To FS Walker](Howto/HowToFSWalker.md)
    * [How To Shell DebuggingHowto/](Howto/HowtoShellDebugging.md)
    * [How To Use Git](Howto/how_to_use_git.md)
+   * How To Use Docker
 * [CookBook](Cookbook/Home.md)
    * [Bots](Cookbook/Bots.md)
        * [Telegram](Cookbook/Bots/Telegram.md)
