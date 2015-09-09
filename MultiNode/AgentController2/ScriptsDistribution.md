@@ -21,3 +21,15 @@ ays install -n agent2
 #then install the legacy scripts package
 ays install -n legacy_js_core
 ```
+
+To run the scripts, make sure you have the `agentcontroller2_client` installed
+```bash
+ays install -n agentcontroller2_client
+```
+
+then in a js shell do
+
+```python
+legacy = j.clients.ac.getLegacyClient()
+legacy.executeJumpscript(...)
+```
