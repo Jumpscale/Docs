@@ -7,7 +7,7 @@ ays install -n docker
 ```
 
 ## Use docker
-We already have a base docker image ready to use `despiegk/mc`. You also can [build your own docker image](Howto/How To Build Docker Image With JumpScale.md).
+We already have a base docker image ready to use `despiegk/mc`. You also can [build your own docker image](How To Build Docker Image With JumpScale.md).
 
 ```bash
 docker pull despiegk/mc
