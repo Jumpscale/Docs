@@ -54,3 +54,30 @@ Will have this in its output
 REPOSITORY                   TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
 jumpscale/ubuntu             15.04               6cc68f352eb8        20 hours ago        630.4 MB
 ```
+
+To run the image
+```bash
+docker run --rm -ti --name test jumpscale/ubuntu:15.04
+```
+> You can use -d instead to run in the background, but the `-ti` option is good for testing so you can see the boot sequence
+
+```bash
+docker inspect test | grep IPAddress
+# "IPAddress": "172.17.0.1",
+```
+> IPAddress might be different in your case.
+
+```bash
+ssh root@172.17.0.1
+# Password: js007
+```
+
+```bash
+test:/# ays status
+DOMAIN          NAME                 Instance   Prio Status   Ports
+======================================================================
+
+jumpscale       redis                main          1 RUNNING  9999
+```
+
+> Installed AYS services already running.
