@@ -160,7 +160,7 @@
    * [How To Shell DebuggingHowto/](Howto/HowtoShellDebugging.md)
    * [How To Use Git](Howto/how_to_use_git.md)
    * [How To Use Docker](Howto/How To Use Docker.md)
-   * [How To Build Docer Image](Howto/How To Build Docker Image With JumpScale.md)
+   * [How To Build Docker Image](Howto/How To Build Docker Image With JumpScale.md)
 * [CookBook](Cookbook/Home.md)
    * [Bots](Cookbook/Bots.md)
        * [Telegram](Cookbook/Bots/Telegram.md)
