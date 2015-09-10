@@ -55,7 +55,7 @@ REPOSITORY                   TAG                 IMAGE ID            CREATED    
 jumpscale/ubuntu             15.04               6cc68f352eb8        20 hours ago        630.4 MB
 ```
 
-To run the image
+## To run the image
 ```bash
 docker run --rm -ti --name test jumpscale/ubuntu:15.04
 ```
@@ -81,3 +81,28 @@ jumpscale       redis                main          1 RUNNING  9999
 ```
 
 > Installed AYS services already running.
+
+## To run the image with jsdocker
+Jumpscale comes with a command line tool that abstract working with dockers. To run a new jsdocker image simply do
+
+```bash
+jsdocker new -n test -b jumpscale/agentcontroller2:15.04
+```
+This will output something like
+```raw
+create:test
+SSH PORT WILL BE ON:9022
+MAP:
+ /var/jumpscale       /var/docker/test
+ /tmp/dockertmp/test  /tmp
+install docker with name 'jumpscale/agentcontroller2:15.04'
+test docker internal port:22 on ext port:9022
+connect ssh2
+[localhost:9022] Login password for 'root': js007
+
+```
+Note that `jsdocker` will auto map container ssh port to a free local port (9022 in this example)
+so to connect to the new running container simply do:
+```bash
+ssh -p 9022 root@localhost
+```
