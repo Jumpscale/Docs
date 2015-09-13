@@ -9,11 +9,103 @@ client = j.clients.ac.getByInstance('main')
 #OR if you have `redis` info.
 client = j.clients.ac.get(address, port, password)
 ```
-
 <div class="section" id="welcome-to-acclient-s-documentation">
 <div class="toctree-wrapper compound">
 </div>
 <span class="target" id="module-acclient"></span><dl class="class">
+<dt id="acclient.BaseCmd">
+<em class="property">class </em><code class="descclassname">acclient.</code><code class="descname">BaseCmd</code><span class="sig-paren">(</span><em>client</em>, <em>id</em>, <em>gid</em>, <em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base command. You never need to create an instance of this class, always use <a class="reference internal" href="#acclient.Client.cmd" title="acclient.Client.cmd"><code class="xref py py-func docutils literal"><span class="pre">acclient.Client.cmd()</span></code></a> or any of
+the other shortcuts.</p>
+<dl class="method">
+<dt id="acclient.BaseCmd.get_msgs">
+<code class="descname">get_msgs</code><span class="sig-paren">(</span><em>levels='*'</em>, <em>limit=20</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_msgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets job log messages from agent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>levels</strong> – Log levels to retrieve, default to ‘*’ (all)</li>
+<li><strong>limit</strong> – Max number of log lines to retrieve (max to 1000)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.BaseCmd.get_result">
+<code class="descname">get_result</code><span class="sig-paren">(</span><em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pops and returns the first available result for that job. It blocks until the result is givent</p>
+<dl class="docutils">
+<dt>The result is POPed out of the result queue, so a second call to the same method will block until a new</dt>
+<dd>result object is available for that job. In case you don’t want to wait use noblock_get_result()</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> – Waits for this amount of seconds before giving up on results. 0 means wait forever.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.BaseCmd.get_stats">
+<code class="descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the job cpu and memory stats on agent. Only valid if job is still running on
+agent. otherwise will give a ‘job id not found’ error.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.BaseCmd.gid">
+<code class="descname">gid</code><a class="headerlink" href="#acclient.BaseCmd.gid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid ID</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.BaseCmd.id">
+<code class="descname">id</code><a class="headerlink" href="#acclient.BaseCmd.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command ID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.BaseCmd.kill">
+<code class="descname">kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.kill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kills this command on agent (if it’s running)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.BaseCmd.nid">
+<code class="descname">nid</code><a class="headerlink" href="#acclient.BaseCmd.nid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Node ID</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.BaseCmd.noblock_get_result">
+<code class="descname">noblock_get_result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.noblock_get_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list with all available job results (non-blocking)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of dicts</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
 <dt id="acclient.Client">
 <em class="property">class </em><code class="descclassname">acclient.</code><code class="descname">Client</code><span class="sig-paren">(</span><em>address='localhost'</em>, <em>port=6379</em>, <em>password=None</em>, <em>db=0</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new client instance. You need a client to send jobs to the agent-controller
@@ -89,6 +181,14 @@ There is a special role ‘*’ which means ANY.</li>
 </tr>
 </tbody>
 </table>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#acclient.Cmd" title="acclient.Cmd"><code class="xref py py-class docutils literal"><span class="pre">acclient.Cmd</span></code></a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -143,8 +243,15 @@ enabled and configured correctly on the agent.</p>
 <dl class="method">
 <dt id="acclient.Client.get_by_id">
 <code class="descname">get_by_id</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_by_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get a command descriptor by an ID. So you can read command result later if the ID is known.
-:rtype: <code class="xref py py-class docutils literal"><span class="pre">acclient.BaseCmd</span></code></p>
+<dd><p>Get a command descriptor by an ID. So you can read command result later if the ID is known.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#acclient.BaseCmd" title="acclient.BaseCmd"><code class="xref py py-class docutils literal"><span class="pre">acclient.BaseCmd</span></code></a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -276,7 +383,8 @@ dns names lookup is not supported.</li>
 <dl class="class">
 <dt id="acclient.Cmd">
 <em class="property">class </em><code class="descclassname">acclient.</code><code class="descname">Cmd</code><span class="sig-paren">(</span><em>client</em>, <em>id</em>, <em>gid</em>, <em>nid</em>, <em>cmd</em>, <em>args</em>, <em>data</em>, <em>role</em>, <em>fanout</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Cmd" title="Permalink to this definition">¶</a></dt>
-<dd><p>You probably don’t need to make an instance of this class manually. Alway use <a class="reference internal" href="#acclient.Client.cmd" title="acclient.Client.cmd"><code class="xref py py-func docutils literal"><span class="pre">acclient.Client.cmd()</span></code></a> or
+<dd><p>Child of <a class="reference internal" href="#acclient.BaseCmd" title="acclient.BaseCmd"><code class="xref py py-class docutils literal"><span class="pre">acclient.BaseCmd</span></code></a></p>
+<p>You probably don’t need to make an instance of this class manually. Alway use <a class="reference internal" href="#acclient.Client.cmd" title="acclient.Client.cmd"><code class="xref py py-func docutils literal"><span class="pre">acclient.Client.cmd()</span></code></a> or
 ony of the client shortcuts.</p>
 <dl class="attribute">
 <dt id="acclient.Cmd.args">
