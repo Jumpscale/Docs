@@ -558,3 +558,23 @@ other values is timeout</li>
 </dd></dl>
 
 </div>
+
+#Examples
+## Working with commands
+Invoking a command via `client.cmd` or `client.execute` will always return a `Cmd` object. `Cmd` objects provides few useful methods:
+- `kill`: to kill the running command, of course this only valid for commands in running state
+- `get_stats`: gets the current consumption of the process
+- `get_msgs`: get log messages (doesn't require the job to be running, and can be called anytime even when the job is done.)
+
+The `kill`, and `get_stats` methods require that the process is already in the `RUNNING` state.
+
+>If the command was executed with the `role` method or with the fanout, those 2 methods will not work because they don't know where to execute!
+>To overcome this issue, you need to first find where the job is actually running (of if it's running on multiple agents) and then on each
+>agent, run the desired command
+
+```python
+cmd = client.execute(None, None, 'command', [], role='*', fanout=True) # run on all known agents.
+result = cmd.get_result() # get the first available result from the first agent to respond.
+ref = clieng.get_by_id(result['gid'], result['nid'], result['id'])
+logs = ref.get_msgs() #gets this job log messages from that specific agent.
+```
