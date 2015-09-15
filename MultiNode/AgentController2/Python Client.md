@@ -218,8 +218,8 @@ with gid/nid compo in that case, the gid/nid values must be None or a ValueError
 </dd></dl>
 
 <dl class="method">
-<dt id="acclient.Client.execute_js_py">
-<code class="descname">execute_js_py</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em>, <em>domain</em>, <em>name</em>, <em>data=None</em>, <em>args=None</em>, <em>role=None</em>, <em>fanout=False</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.execute_js_py" title="Permalink to this definition">¶</a></dt>
+<dt id="acclient.Client.execute_jumpscript">
+<code class="descname">execute_jumpscript</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em>, <em>domain</em>, <em>name</em>, <em>data=None</em>, <em>args=None</em>, <em>role=None</em>, <em>fanout=False</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.execute_jumpscript" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes jumpscale script (py) on agent. The execute_js_py extension must be
 enabled and configured correctly on the agent.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -232,7 +232,11 @@ enabled and configured correctly on the agent.</p>
 <li><strong>domain</strong> – Domain of script</li>
 <li><strong>name</strong> – Name of script</li>
 <li><strong>data</strong> – Data object (any json serializabl struct) that will be sent to the script.</li>
-<li><strong>args</strong> – Optional run arguments</li>
+<li><strong>args</strong> (<a class="reference internal" href="#acclient.RunArgs" title="acclient.RunArgs"><code class="xref py py-class docutils literal"><span class="pre">acclient.RunArgs</span></code></a>) – Optional run arguments</li>
+<li><strong>role</strong> – Optional role, only agents that satisfy this role can process this job. This is mutual exclusive
+with gid/nid compo in that case, the gid/nid values must be None or a ValueError will be raised.
+chceck <a class="reference internal" href="#acclient.Client.cmd" title="acclient.Client.cmd"><code class="xref py py-func docutils literal"><span class="pre">acclient.Client.cmd()</span></code></a> for more info.</li>
+<li><strong>fanout</strong> – Fanout job to all agents with given role (only effective if role is set)</li>
 </ul>
 </td>
 </tr>
