@@ -42,6 +42,7 @@
        * [Stats](MultiNode/AgentController2/Stats.md)
        * [Scripts Distribution](MultiNode/AgentController2/ScriptsDistribution.md)
        * [Python Client](MultiNode/AgentController2/Python Client.md)
+       * [Jumpscripts](MultiNode/AgentController2/Jumpscripts.md)
        * [Tutorial](MultiNode/AgentController2/Tutorial.md)
        * [Test on OpenVCloud](MultiNode/AgentController2/MS1driver.md)
    * [Grid Portal](MultiNode/GridPortal/Home.md)
