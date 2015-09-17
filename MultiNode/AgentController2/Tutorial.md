@@ -135,7 +135,7 @@ drwxr-xr-x 1 root root 442 Jul 15 12:00 statsd-collector
 drwxr-xr-x 1 root root 436 Jul 15 12:00 statsd-master
 ```
 
-An alternative approach would be enabling stdout capture but setting the `logging_db` `runargs`
+An alternative approach would be enabling stdout capturing by setting `loglevels_db` `runargs`
 
 ```python
 args = j.clients.ac.getRunArgs(loglevels_db='1')
@@ -145,7 +145,7 @@ print job.state # should be SUCCESS
 msgs = job.get_msgs(limit=100) # default limit is set to 20
 for msg in msgs[::-1]:  # logs are ordered from new to old
     print msg['data']
-``
+```
 
 >Note: `get_next_result()` will block for the  available result with optional timeout (default to zero which means wait forever). The next call on get_next_result() will block until another result is ready. This is useful in case the job is `faneout` or runs on multiple agents.
 
