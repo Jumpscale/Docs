@@ -6,7 +6,7 @@ The action can return a json serializable object as well
 Let's assume we have this jumpscript wich increments any given number by 1
 
 ```python
-form JumpScript import j
+from JumpScale import j
 
 
 def action(data):
