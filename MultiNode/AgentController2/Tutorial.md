@@ -149,7 +149,7 @@ for msg in msgs[::-1]:  # logs are ordered from new to old
 
 >Note: `get_next_result()` will block for the  available result with optional timeout (default to zero which means wait forever). The next call on get_next_result() will block until another result is ready. This is useful in case the job is `faneout` or runs on multiple agents.
 
->Note: `cmd` also provides a `noblock_get_result()` method that will not block for results, instead will return a list with all the (available) job results.
+>Note: `cmd` also provides a `get_jobs()` method that will not block for results, instead will return a dict with all the (available) job results where the keys are tuples `(<gid>, <nid>)`.
 
 # Adding custom execute cmd to Agent
 According to [[agent configuration]] you can add custom execution commands to execute arbitrary scripts.
