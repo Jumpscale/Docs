@@ -37,11 +37,12 @@ Now to execute your script do the following in a `js` shell. Make sure you have 
 ```python
 client =  j.clients.ac.getByInstance('main')
 
-job = client.execute_jumpscript(1, 1, 'test', 'incrementer', data=10)
+cmd = client.execute_jumpscript(1, 1, 'test', 'incrementer', data=10)
 
-result = job.get_next_result()
+job = cmd.get_next_result()
 
-#`result` should be like this:
+#`job` should be like this:
+
 {u'args': {u'domain': u'test',
   u'loglevels': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21, 22, 23, 30],
   u'name': u'test',
@@ -57,8 +58,8 @@ result = job.get_next_result()
  u'time': 1058}
 ```
 
-Note that, `result['data']` is the json (`level 20`) serialized return of the jumpscript, to get it's value you can do:
+Note that, `job.data` is the json (`level 20`) serialized return of the jumpscript, to get it's value you can do:
 
 ```python
-data = json.loads(result['data'])
+data = json.loads(job.data)
 ```
