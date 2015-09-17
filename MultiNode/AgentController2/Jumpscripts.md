@@ -39,7 +39,7 @@ client =  j.clients.ac.getByInstance('main')
 
 job = client.execute_jumpscript(1, 1, 'test', 'incrementer', data=10)
 
-result = job.get_result()
+result = job.get_next_result()
 
 #`result` should be like this:
 {u'args': {u'domain': u'test',
