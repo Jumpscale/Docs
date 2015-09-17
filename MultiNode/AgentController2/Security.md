@@ -3,7 +3,7 @@
 > Currently generating and using client certificates is not automated. So the page will requires some manual intervention from you to get things working.
 
 # Introduction
-To secure the controller/agent communication, the agent was built with SSL client certificate support. So to make sure you have a secure setup. the Agent Controller must run behind an ssl protected proxy that only allows clients with valid certificates, and the agent must be configured to use the correct certificate which is accepted by the proxy.
+To secure the controller/agent communication, the agent was built with SSL client certificate support. So to make sure you have a secure setup. the Agent Controller must run behind an SSL protected proxy that only allows clients with valid certificates, and the agent must be configured to use the correct certificate which is accepted by the proxy.
 
 We will use `nginx` as the `ssl` proxy, in this walk through. So make sure it's installed or install it as
 ```bash
