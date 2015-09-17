@@ -94,7 +94,7 @@ Agent can also run short running jobs that do some action and optionally returns
 
 ```python
 cmd = client.execute(1, 1, 'ls', ['-l', '/root'])
-result = cmd.get_result()
+job = cmd.get_next_result()
 
 #Result will look like that
 {u'args': {u'args': [u'-l', u'/opt'],
@@ -116,10 +116,10 @@ returned results represents the `execution` results, the `result['data']` should
 To work around this we can simply rerun the command as following
 ```python
 cmd = client.execute(1, 1, 'bash', ['-c', 'echo 20::: && ls -l /opt && echo :::'])
-result = cmd.get_result()
+job = cmd.get_next_result()
 
 #then 
-print cmd.get_result()['data']
+print job.data
 ```
 will output
 ```raw
@@ -134,7 +134,20 @@ drwxr-xr-x 1 root root  94 Jul 15 12:00 nodejs
 drwxr-xr-x 1 root root 442 Jul 15 12:00 statsd-collector
 drwxr-xr-x 1 root root 436 Jul 15 12:00 statsd-master
 ```
->Note: `get_result()` will block for the  available result with optional timeout (default to zero which means wait forever). The next call on get_result() will block until another reult is ready. This is useful in case the job is `fanedout` or runs on multiple agents.
+
+An alternative approach would be enabling stdout capture but setting the `logging_db` `runargs`
+
+```python
+args = j.clients.ac.getRunArgs(loglevels_db='1')
+cmd = client.execute(1, 1, 'bash', ['-c', 'ls -l /opt'], args=args)
+job = cmd.get_next_result()
+print job.state # should be SUCCESS
+msgs = job.get_msgs(limit=100) # default limit is set to 20
+for msg in msgs[::-1]:  # logs are ordered from new to old
+    print msg['data']
+``
+
+>Note: `get_next_result()` will block for the  available result with optional timeout (default to zero which means wait forever). The next call on get_next_result() will block until another result is ready. This is useful in case the job is `faneout` or runs on multiple agents.
 
 >Note: `cmd` also provides a `noblock_get_result()` method that will not block for results, instead will return a list with all the (available) job results.
 
