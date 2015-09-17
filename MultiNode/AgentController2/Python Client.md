@@ -18,86 +18,14 @@ client = j.clients.ac.get(address, port, password)
 <dd><p>Base command. You never need to create an instance of this class, always use <a class="reference internal" href="#acclient.Client.cmd" title="acclient.Client.cmd"><code class="xref py py-func docutils literal"><span class="pre">acclient.Client.cmd()</span></code></a> or any of
 the other shortcuts.</p>
 <dl class="method">
-<dt id="acclient.BaseCmd.get_msgs">
-<code class="descname">get_msgs</code><span class="sig-paren">(</span><em>levels='*'</em>, <em>limit=20</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_msgs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets job log messages from agent</p>
+<dt id="acclient.BaseCmd.get_jobs">
+<code class="descname">get_jobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list with all available job results</p>
 <table class="docutils field-list" frame="void" rules="none">
 <colgroup><col class="field-name">
 <col class="field-body">
 </colgroup><tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>levels</strong> – Log levels to retrieve, default to ‘*’ (all)</li>
-<li><strong>limit</strong> – Max number of log lines to retrieve (max to 1000)</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of dict</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="acclient.BaseCmd.get_result">
-<code class="descname">get_result</code><span class="sig-paren">(</span><em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_result" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pops and returns the first available result for that job. It blocks until the result is givent</p>
-<dl class="docutils">
-<dt>The result is POPed out of the result queue, so a second call to the same method will block until a new</dt>
-<dd>result object is available for that job. In case you don’t want to wait use noblock_get_result()</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<colgroup><col class="field-name">
-<col class="field-body">
-</colgroup><tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> – Waits for this amount of seconds before giving up on results. 0 means wait forever.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="acclient.BaseCmd.get_stats">
-<code class="descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.get_stats" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the job cpu and memory stats on agent. Only valid if job is still running on
-agent. otherwise will give a ‘job id not found’ error.</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="acclient.BaseCmd.gid">
-<code class="descname">gid</code><a class="headerlink" href="#acclient.BaseCmd.gid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Grid ID</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="acclient.BaseCmd.id">
-<code class="descname">id</code><a class="headerlink" href="#acclient.BaseCmd.id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Command ID</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="acclient.BaseCmd.kill">
-<code class="descname">kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.kill" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kills this command on agent (if it’s running)</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="acclient.BaseCmd.nid">
-<code class="descname">nid</code><a class="headerlink" href="#acclient.BaseCmd.nid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Node ID</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="acclient.BaseCmd.noblock_get_result">
-<code class="descname">noblock_get_result</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.BaseCmd.noblock_get_result" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a list with all available job results (non-blocking)</p>
-<table class="docutils field-list" frame="void" rules="none">
-<colgroup><col class="field-name">
-<col class="field-body">
-</colgroup><tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of dicts</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict of <a class="reference internal" href="#acclient.Job" title="acclient.Job"><code class="xref py py-class docutils literal"><span class="pre">acclient.Job</span></code></a></td>
 </tr>
 </tbody>
 </table>
@@ -259,21 +187,23 @@ chceck <a class="reference internal" href="#acclient.Client.cmd" title="acclient
 </dd></dl>
 
 <dl class="method">
-<dt id="acclient.Client.get_cpu_info">
-<code class="descname">get_cpu_info</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_cpu_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get CPU info of the agent node</p>
+<dt id="acclient.Client.get_cmd_jobs">
+<code class="descname">get_cmd_jobs</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_cmd_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dict with all available job results</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict of <a class="reference internal" href="#acclient.Job" title="acclient.Job"><code class="xref py py-class docutils literal"><span class="pre">acclient.Job</span></code></a></td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
-<dt id="acclient.Client.get_disk_info">
-<code class="descname">get_disk_info</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_disk_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get disk info of the agent node</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="acclient.Client.get_jobs">
-<code class="descname">get_jobs</code><span class="sig-paren">(</span><em>start=0</em>, <em>count=100</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_jobs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves jobs losgs. This by default returns the latest 100 jobs. You can
+<dt id="acclient.Client.get_cmds">
+<code class="descname">get_cmds</code><span class="sig-paren">(</span><em>start=0</em>, <em>count=100</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_cmds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves cmds history. This by default returns the latest 100 cmds. You can
 change the <cite>start</cite> and <cite>count</cite> argument to thinking of the jobs history as a list where
 the most recent job is at index 0</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -288,6 +218,18 @@ the most recent job is at index 0</p>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.Client.get_cpu_info">
+<code class="descname">get_cpu_info</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_cpu_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get CPU info of the agent node</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.Client.get_disk_info">
+<code class="descname">get_disk_info</code><span class="sig-paren">(</span><em>gid</em>, <em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Client.get_disk_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get disk info of the agent node</p>
 </dd></dl>
 
 <dl class="method">
@@ -428,10 +370,128 @@ ony of the client shortcuts.</p>
 <dd><p>Either to fanout command</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="acclient.Cmd.get_next_result">
+<code class="descname">get_next_result</code><span class="sig-paren">(</span><em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Cmd.get_next_result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pops and returns the first available result for that job. It blocks until the result is givent</p>
+<dl class="docutils">
+<dt>The result is POPed out of the result queue, so a second call to the same method will block until a new</dt>
+<dd>result object is available for that job. In case you don’t want to wait use noblock_get_next_result()</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> – Waits for this amount of seconds before giving up on results. 0 means wait forever.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.Cmd.iter_results">
+<code class="descname">iter_results</code><span class="sig-paren">(</span><em>timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Cmd.iter_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over the jobs. It blocks until the job is finished</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> – Waits for this amount of seconds before giving up on results. 0 means wait forever.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="attribute">
 <dt id="acclient.Cmd.role">
 <code class="descname">role</code><a class="headerlink" href="#acclient.Cmd.role" title="Permalink to this definition">¶</a></dt>
 <dd><p>Command role</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="acclient.Job">
+<em class="property">class </em><code class="descclassname">acclient.</code><code class="descname">Job</code><span class="sig-paren">(</span><em>client</em>, <em>jobdata</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Job" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job Information</p>
+<dl class="attribute">
+<dt id="acclient.Job.args">
+<code class="descname">args</code><a class="headerlink" href="#acclient.Job.args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job args</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.Job.cmd">
+<code class="descname">cmd</code><a class="headerlink" href="#acclient.Job.cmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job cmd</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.Job.data">
+<code class="descname">data</code><a class="headerlink" href="#acclient.Job.data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.Job.get_msgs">
+<code class="descname">get_msgs</code><span class="sig-paren">(</span><em>levels='*'</em>, <em>limit=20</em><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Job.get_msgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets job log messages from agent</p>
+<table class="docutils field-list" frame="void" rules="none">
+<colgroup><col class="field-name">
+<col class="field-body">
+</colgroup><tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>levels</strong> – Log levels to retrieve, default to ‘*’ (all)</li>
+<li><strong>limit</strong> – Max number of log lines to retrieve (max to 1000)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.Job.get_stats">
+<code class="descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Job.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the job cpu and memory stats on agent. Only valid if job is still running on
+agent. otherwise will give an error.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="acclient.Job.kill">
+<code class="descname">kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#acclient.Job.kill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kills this command on agent (if it’s running)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.Job.level">
+<code class="descname">level</code><a class="headerlink" href="#acclient.Job.level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job level</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.Job.starttime">
+<code class="descname">starttime</code><a class="headerlink" href="#acclient.Job.starttime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job starttime</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.Job.state">
+<code class="descname">state</code><a class="headerlink" href="#acclient.Job.state" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job state</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="acclient.Job.time">
+<code class="descname">time</code><a class="headerlink" href="#acclient.Job.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Job runtime in miliseconds</p>
 </dd></dl>
 
 </dd></dl>
