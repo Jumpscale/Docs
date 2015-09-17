@@ -58,7 +58,7 @@ job = cmd.get_next_result()
  u'time': 1058}
 ```
 
-Note that, `job.data` is the json (`level 20`) serialized return of the jumpscript, to get it's value you can do:
+Note that, `job.data` is the json (`level 20`) serialized return of the JumpScript, to get it's value you can do:
 
 ```python
 data = json.loads(job.data)
