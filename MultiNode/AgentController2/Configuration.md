@@ -22,10 +22,11 @@ roles = []
 
         #certificate_authority = "/path/to/server.crt"
 
-[cmds]
-    [cmds.execute_js_py]
+[extensions]
+    [extensions.do_something]
     binary = "python2.7"
     cwd = "./python"
+    script = "{domain}/{name}.py"
 
 [channel]
 cmds = ["main"] # long polling from agent 'main'
@@ -50,6 +51,14 @@ cmds = ["main"] # long polling from agent 'main'
 [stats]
 interval = 60 # seconds
 controllers = []
+
+[startup]
+    [startup.intialize_something]
+    name = "do_something"
+        [startup.syncthing.args]
+        domaine = 'test'
+        name = 'startup'
+        loglevels_db = '*'
 ```
 
 # Breaking down the configuration
@@ -76,21 +85,25 @@ Configures agent security. Agent support the option of using a client certificat
 * `client_certificate_key`: client certificate key file
 * `certificate_authority`: server certificate to trust (Only required in case `controller` is using a self signed certificate). In that case you have to tell the agent to trust this certificate.
 
-## cmds
+## extensions
 Agent support lots of built in commands (check the specifications). But you still can extend this list with custom `execute` commands.
 ### Example
 ```toml
-[cmds.execute_js_py]
+[extensions.do_something]
     binary = "python2.7"
     cwd = "./python"
+    script = "{domain}/{name}.py"
 ```
 the cmd section accepts the following parameters:
 * `binary`: name of the executable, must be in `$PATH`, or set with full path.
 * `cwd`: Working directory of binary
-* `script`: By default the executable runs in the form `binary args['name'], by setting the 'script' parameter, you will override this to `binary script`. Script attribute can have place holders of format `{key}` that get replaced by values from the args. For example `script` can be set to `{name}.py` so the final script name to run will be `args['name'].py` 
+* `script`: Script, specify the first argument value to the binary as `# <binary> <script>`. If not set in the config `<script>` value is set to `runargs['name']`.
+This value can be overriden in the configuration to any value, and can contain place holders to be replaced from values from the `runargs`.
+In the above example the execution of the `do_something` command will be done as `python2.7 {domain}/{name}.py` where domain and name are the values from the runargs.
+* `args`: List with extra arguments to the `binary`. Also can use the {key} notation to replace with values from the `runargs`.
 * `env`: Dict with env variables that will be accessible to the binary (and the script)
 
-By adding this section, you tell the agent to interpret all `execute_js_py` as `execute` command
+By adding this section, you tell the agent to interpret all `do_something` as `execute` command
 
 Internally, agent can receive CMD
 ```json
@@ -98,9 +111,10 @@ Internally, agent can receive CMD
     "id": "<job-id>",
     "gid": 1,
     "nid": 10,
-    "name": "execute_js_py",
+    "name": "do_something",
     "args": {
         "name": "test.py"
+        "domain": "test"
     }
 }
 ```
@@ -114,7 +128,7 @@ That will be internally interpreted as
     "name": "execute",
     "args": {
         "name": "python2.7",
-        "args": ["test.py"],
+        "args": ["test/test.py"],
         "working_dir": "./python"
     }
 }
@@ -197,3 +211,19 @@ levels = [2]
 * `controllers`: References which controller to update with the logs, empty list `[]` for ALL. Or define which one using the controller keys (as defined under `controllers`)
 
 > Note: `levels` can be overridden by the cmd args. So you can force certain levels to be stored in DB (or sent to AC)
+
+## startup
+Startup specify tasks that the agent must execute once on agent boot. For example
+```toml
+[startup]
+    [startup.intialize_something]
+    name = "do_something"
+        [startup.intialize_something.args]
+        domaine = 'test'
+        name = 'startup'
+        loglevels_db = '*'
+```
+
+Tells the agent to run a task with id `intialize_something`. This task cmd is `do_something` with the runargs `startup.intialize_something.args`
+> The output of this task will be discarded and never reported to the AC since it was initialized by the agent itself, but you still
+can query the task log using the job ID (`intialize_something` in this case).

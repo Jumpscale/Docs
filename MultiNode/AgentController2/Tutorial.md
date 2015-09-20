@@ -1,4 +1,4 @@
-> WORK IN PROGRESS 
+> WORK IN PROGRESS
 
 ##  Installation under JS
 > For testing make sure to install `singlenode_grid` (`ays install -n singlenode_grid`) which will provide redis and influxdb to be able to go through the coming tutorial. Make sure that [Jumpscale is installed](../../GettingStarted/Install.md)
@@ -20,7 +20,7 @@ If everything went smooth, test your installation by starting a `jumpscale shell
 
 ```python
 client = j.clients.ac.get(password='rooter')
-#OR 
+#OR
 client = j.client.ac.getByInstance('main')
 
 client.get_os_info(1, 1)
@@ -118,7 +118,7 @@ To work around this we can simply rerun the command as following
 cmd = client.execute(1, 1, 'bash', ['-c', 'echo 20::: && ls -l /opt && echo :::'])
 job = cmd.get_next_result()
 
-#then 
+#then
 print job.data
 ```
 will output
@@ -157,18 +157,15 @@ According to [[agent configuration]] you can add custom execution commands to ex
 ```bash
 vi /opt/jumpscale7/apps/agent2/agent2.toml
 ```
-You can find this under the cmds secion
+You can find this under the `extensions` secion
 ```toml
-[cmds.execute_js_py]
-Binary = "python2.7"
-Path = "./python"
+[extensions.execute_js_py]
+binary = "python2.7"
+cwd = "/opt/scripts"
 ```
-It basically tells the agent that the `execute_js_py` command will Run the python2.7 ./python/<ARGS[Name]>
->Note the `CWD` for the `superagent` is `/opt/jumpscale7` so the `./python/` refers to `/opt/jumpscale7/python`. This will probably change in the future.
+It basically tells the agent that the `execute_js_py` command will Run the python2.7 /opt/scripts/<ARGS[Name]>
 
-> Also note that this is not the correct `execute_js_py` execution behavior, but this cfg section is added for testing. execute_js_py behavior will be changed in the future.
-
-To test this add a python file under `/opt/jumpscale7/python/`
+To test this add a python file under `/opt/scripts/`
 
 ```python
 #file test.py
@@ -183,5 +180,5 @@ print ':::'
 
 Running the command
 ```python
-cmd = client.cmd(1, 1, 'execute_js_py', j.clients.ac.runArgs(name='test.py'))
+cmd = client.cmd(1, 1, 'execute_js_py', j.clients.ac.getRunArgs(name='test.py'))
 ```

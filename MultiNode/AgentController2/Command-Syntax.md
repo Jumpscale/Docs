@@ -19,7 +19,7 @@ Commands are delivered to the `Agent` from the `Agent Controller` over long poll
 * id: Job ID. Chosen by the caller
 * gid: Grid ID
 * nid: Node ID
-* args: Command specific arguments.
+* args: Agent speicific RUN arguments (also called `runargs` in some parts of the documentation).
 * data (optional): Data string, will be fed to the sub-process over `stdin`. So it actually can be anything including serialized json data.
 * role: (mutual exclusive with `gid`) specifies agent role that must execute this job. If provided the first agent to satisfy this role will get the job. There is a special role `*` which means (any agent).
 * fanout: Fanout only effective when a `role` is provided. Basically all agents that satisfy the given role will get the job.
@@ -27,7 +27,7 @@ Commands are delivered to the `Agent` from the `Agent Controller` over long poll
 > If `role=*` and `fanout=true` this basically means **ALL** agents.
 
 # args
-Arguments fine-tunes the process. The arguments are interpreted by the Agent itself to control the behavior of the sub-process, unlike `data` which is passed unprocessed to the sub-process itself.
+Arguments fine-tunes the process. The arguments are interpreted by the Agent itself to control the behavior of the sub-process, unlike `data` which is passed unprocessed to the sub-process itself. Also called `runargs` in some parts of the documentation.
 Basic arguments support the following args:
 
 * `max_time`: How long the sub-process can run, 0 for (forever) or long running process, value > 0 means kill the process of execution time takes more than `max_time`. If max time is set to -1 this instructs the agent to *remember* the job and will rerun it on agent start (useful with `recurring_period`).
