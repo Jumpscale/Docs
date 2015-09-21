@@ -26,7 +26,7 @@ roles = []
     [extensions.do_something]
     binary = "python2.7"
     cwd = "./python"
-    script = "{domain}/{name}.py"
+    args = ["{domain}/{name}.py"]
 
 [channel]
 cmds = ["main"] # long polling from agent 'main'
@@ -92,14 +92,11 @@ Agent support lots of built in commands (check the specifications). But you stil
 [extensions.do_something]
     binary = "python2.7"
     cwd = "./python"
-    script = "{domain}/{name}.py"
+    args = ["{domain}/{name}.py"]
 ```
 the cmd section accepts the following parameters:
 * `binary`: name of the executable, must be in `$PATH`, or set with full path.
 * `cwd`: Working directory of binary
-* `script`: Script, specify the first argument value to the binary as `# <binary> <script>`. If not set in the config `<script>` value is set to `runargs['name']`.
-This value can be overriden in the configuration to any value, and can contain place holders to be replaced from values from the `runargs`.
-In the above example the execution of the `do_something` command will be done as `python2.7 {domain}/{name}.py` where domain and name are the values from the runargs.
 * `args`: List with extra arguments to the `binary`. Also can use the {key} notation to replace with values from the `runargs`.
 * `env`: Dict with env variables that will be accessible to the binary (and the script)
 
