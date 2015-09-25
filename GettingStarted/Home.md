@@ -50,6 +50,9 @@ ays list
 #configure git & make sure ssh-agent is configured & ready to go
 jscode init
 
+#to go to ssh based login for git do, if you want login/passwd use login=... see help of method
+j.do.changeLoginPasswdGitRepos()
+
 #pull git repo with jumpscale docs, feel free to contribute
 j.do.installer.installJSDocs()
 
