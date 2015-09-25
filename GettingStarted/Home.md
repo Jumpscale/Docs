@@ -41,8 +41,20 @@ ays list
     - this will start sshagent if required & load all the keys it can find in ```$homedir/.ssh```
     - you only need to do this once on a system, from now on the .bashrc file will make sure that in every new terminal you have access to your keys
     - remark: if this is the first time then your current session does not have access to sshkeys yet, go into a new terminal to see the results & start using ssh
-- if you wan to read more about key mgmt see
+- if you want to read more about key mgmt see
     - [tips & tricks about ssh keys & agents (e.g. how to create your keys)](SSHSystemManagement/SSHKeysAgent.md)
+
+## Some handy shortcuts
+
+```
+#configure git & make sure ssh-agent is configured & ready to go
+jscode init
+
+#pull git repo with jumpscale docs, feel free to contribute
+j.do.installer.installJSDocs()
+
+
+```
 
 ## further
 
