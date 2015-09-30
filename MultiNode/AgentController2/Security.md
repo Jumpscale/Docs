@@ -109,7 +109,9 @@ server {
                 proxy_pass http://localhost:8966/;
                 # the proxy read timeout must be set to a value bigger than the long poll timeout (of 60s)
                 # other wise agent will start getting Bad Gateway errors.
-                proxy_read_timeout 90s;
+                proxy_read_timeout 300s;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
         }
 }
 ```
