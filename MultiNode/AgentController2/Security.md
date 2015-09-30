@@ -14,6 +14,7 @@ ays install -n nginx
 Under agent2 repo, there is tools folder with 2 scripts to help you generating a self signed keys for testing.
 
 - Run servercerts.sh to generate a self signed server certificate and key. Answer the questions as seems appropriate.
+
 ```bash
 ./servercerts.sh 
 
