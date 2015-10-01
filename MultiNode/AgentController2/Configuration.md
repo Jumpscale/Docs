@@ -78,7 +78,7 @@ Define controllers
 * `url`: The controller base URL
 * `security`: Defines certificates to use with this controller as defined below.
 
-### secruity
+### security
 Configures agent security. Agent support the option of using a client certificate for its communication with the controller
 
 * `client_certificate`: client certificate file
