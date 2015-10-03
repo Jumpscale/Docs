@@ -8,7 +8,6 @@ Let's assume we have this jumpscript wich increments any given number by 1
 ```python
 from JumpScale import j
 
-
 def action(data):
     # do stuff with the data
     j.logger.log('Received data is: %s' % data)
@@ -30,6 +29,12 @@ Then place this file under in
 > Also note that after placing the folder under `agentcontroller2/jumpscripts` it can take up to a minute until the
 script is distributed to all agents as descriped per [Scripts Distribution](ScriptsDistribution.md)
 
+
+## use of std client
+
+#@todo
+
+## use client_advanced
 
 Now to execute your script do the following in a `js` shell. Make sure you have latest  agentcontroller2_client installed:
 

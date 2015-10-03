@@ -154,23 +154,7 @@ controllers = []
 > Note: `controllers` reference which agents to update with stats (by controller key). Empty for all controllers.
 
 ## logging
-Logging configure what to do with log messages coming from the sub-processes or scripts. Scripts can output logs with log levels as described in the specifications
-
-* 1: stdout
-* 2: stderr
-* 3: message for endusers / public message
-* 4: message for operator / internal message
-* 5: log msg (unstructured = level5, cat=unknown)
-* 6: log msg structured
-* 7: warning message
-* 8: ops error
-* 9: critical error
-* 10: statsd message(s)
-* 20: result message, json
-* 21: result message, yaml
-* 22: result message, toml
-* 23: result message, hrd
-* 30: job, json (full result of a job)
+see [logging](LogLevels.md)
 
 > Note: scripts doesn't have to explicitly output levels 1 and 2. All the porcess stdout that doesn't have an explicit level will be considered of level 1. Same for stderr.
 

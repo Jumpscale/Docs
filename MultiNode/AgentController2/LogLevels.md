@@ -1,6 +1,8 @@
 
 ##loglevels
 
+following loglevels are used
+
 * 1: stdout
 * 2: stderr
 * 3: message for endusers / public message
