@@ -25,6 +25,10 @@ rc,stdout,stderror=cl.execute(cmd,path=None,gid=None,nid=None,roles=[],die=True,
 * if nid specified then roles not used, roles=[] means we ignore it and then we execute over gid & nid
     * gid==None: means all gids
     * nid==None: means all nids
+
+>Q: Does this mean when roles is given (nid=None) we should fanout by default (to all agents that satisfies the set of given roles). I think we need to add a specific `fanout` flag in case roles is given so we either run
+on all `nids` or execute on 1 agent that satisfies the roles
+
 * die is std True
 * timeout is std 5 sec, if timeout raise an error
 * if more than 1 agent involved, then output is concatenation per agent of
@@ -48,6 +52,8 @@ $stdout
 ...
 
 ```
+
+> Q: Why this weird not machine friendly format, why not return a list of tubles instead liek [(rc, stdout, stderr), ...]
 
 - only show ##ERROR if there was an error
 - only show ##RC if RC>0
