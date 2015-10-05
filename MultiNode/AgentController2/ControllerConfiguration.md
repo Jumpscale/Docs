@@ -51,4 +51,4 @@ If the certificate is signed by a CA, this certificate file should be a concaten
 
 The cert and key files must contain PEM encoded data.
 
-Multiple `[[listen.tls]]` block may be specified to allow multiple dns entries and corresponding certificates to be served from the same address.
+Multiple `[[listen.tls]]` blocks may be specified to allow multiple dns entries and corresponding certificates to be served from the same address.
