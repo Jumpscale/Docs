@@ -102,6 +102,10 @@ remarks
 * if no domain/name path or content need to be specified, content get's prio otherwise read from path
     * implementation remark: make sure from jumpscale import get's removed (otherwise double, because i gets reinserted)
 * data send to jumpscript over stdin (data can be anything !!!,text, binary, ...)
+
+> Do we really need to send data over stdin to the script? This can be implemented but I really don't see a use case
+since you can send anything (including binary) using the `args`.
+
 * args is what will be send to the action(**args) 
 * if nid specified then roles not used, roles=[] means we ignore it and then we execute over gid & nid
     * gid==None: means all gids
