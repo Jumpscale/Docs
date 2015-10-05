@@ -36,7 +36,7 @@ On production environments this should always be configured.
 * **cert** is the certificate file. 
 If the certificate is signed by a CA, this certificate file should be a concatenation of the server's certificate followed by the CA's certificate.
 * **key** is the server's private key file which matches the certificate file.
-* 
+
 
 The cert and key files must contain PEM encoded data.
 
