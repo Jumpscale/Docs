@@ -35,7 +35,9 @@
        * [Demo Setup Tutorial](MultiNode/AgentController1/DemoSetupTutorial.md)
    * [Agent Controller 2](MultiNode/AgentController2/AgentController2.md)
        * [Install](MultiNode/AgentController2/Install.md)
-       * [Configuration](MultiNode/AgentController2/Configuration.md)
+       * Configuration
+          * [Controller](MultiNode/AgentController2/ControllerConfiguration.md)
+          * [Agent](MultiNode/AgentController2/AgentConfiguration.md)
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Security Certificates](MultiNode/AgentController2/Security.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
