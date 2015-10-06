@@ -97,7 +97,7 @@ there are 4 ways to execute a jumpscript
 remarks
 
 * domain & name does not have to be specified 
-    * if specified then jumpscript needs to be in right location see [Jumpscripts.md]
+    * if specified then jumpscript needs to be in right location see [Jumpscripts.md](Jumpscripts.md)
     * @TODO format needs to be different for a jumpscript then specified in Jumpscripts.md
 * if no domain/name path or content need to be specified, content get's prio otherwise read from path
     * implementation remark: make sure from jumpscale import get's removed (otherwise double, because i gets reinserted)
