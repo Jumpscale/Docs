@@ -1,6 +1,3 @@
-
-
-
 # Introduction
 To secure the controller/agent communication, the agent was built with SSL client certificate support. 
 
