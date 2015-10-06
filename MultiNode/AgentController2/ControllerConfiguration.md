@@ -67,6 +67,6 @@ Multiple `[[listen.tls]]` blocks may be specified to allow multiple dns entries 
 
 ### Client certificates
 If tls is enabled by specifying a `[[listen.tls]]` block, client certificates can be configured by adding `[[listen.clientCA]]` configurations. 
-* **cert** is a CA certificate file.
+* **cert** is a CA certificate file. Must be PEM encoded.
 
 Clients connecting to this endpoint will then be required to provide a client certificate. The certificate will be verified against the CA certificate. Multiple `[[listen.clientCA]]` blocks may be specified and a client certificate will be accepted if it is accepted by at least 1 of the CA's.
