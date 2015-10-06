@@ -27,9 +27,9 @@ redis_password = ""
     cert = "/path/to/domain1_certificate.cert"
     key = "/path/to/domain1_keyfile.key"
   [[listen.clientCA]]
-    cert= "/path/to/CA1_certificate.cert"
+    cert = "/path/to/CA1_certificate.cert"
   [[listen.clientCA]]
-    cert= "/path/to/CA2_certificate.cert"
+    cert = "/path/to/CA2_certificate.cert"
 
 [influxdb]
 host = "127.0.0.1:8086"
