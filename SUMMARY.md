@@ -53,7 +53,7 @@
        * [Errors](MultiNode/GridPortal/Errors.md)
        * [Jobs](MultiNode/GridPortal/Jobs.md)
        * [Grid HealthCheck](MultiNode/GridPortal/CheckStatus.md)
-   * [TLS Management](TLS management/cfssl.md)
+   * [TLS Management](MultiNode/TLS management/cfssl.md)
 * [OSIS]
    * [OSIS 1](OSIS/OSIS1/OSIS.md)
        * [OSIS Installation](OSIS/OSIS1/Install.md)
