@@ -18,6 +18,18 @@ redis_password = ""
   [[listen.tls]]
     cert = "/path/to/domain2_certificate.cert"
     key = "/path/to/domain2_keyfile.key"
+    
+    
+#Example for https with client certificates
+[[listen]]
+  Address = ":8445"
+  [[listen.tls]]
+    cert = "/path/to/domain1_certificate.cert"
+    key = "/path/to/domain1_keyfile.key"
+  [[listen.clientCA]]
+    cert= "/path/to/CA1_certificate.cert"
+  [[listen.clientCA]]
+    cert= "/path/to/CA2_certificate.cert"
 
 [influxdb]
 host = "127.0.0.1:8086"
