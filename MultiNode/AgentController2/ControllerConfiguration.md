@@ -64,3 +64,9 @@ If the certificate is signed by a CA, this certificate file should be a concaten
 The cert and key files must contain PEM encoded data.
 
 Multiple `[[listen.tls]]` blocks may be specified to allow multiple dns entries and corresponding certificates to be served from the same address.
+
+### client certificates
+If tls is enabled by specifying a `[[listen.tls]]` block, client certificates can be configured by adding `[[listen.clientCA]]` configurations. 
+* **cert** is a CA certificate file.
+
+Clients connecting to this endpoint will then be required to provide a client certificate. The certificate will be verified against the CA certificate. Multiple `[[listen.clientCA]]` blocks may be specified and a client certificate will be accepted if is accepted by by at least 1 of the CA's.
