@@ -65,7 +65,7 @@ The cert and key files must contain PEM encoded data.
 
 Multiple `[[listen.tls]]` blocks may be specified to allow multiple dns entries and corresponding certificates to be served from the same address.
 
-### client certificates
+### Client certificates
 If tls is enabled by specifying a `[[listen.tls]]` block, client certificates can be configured by adding `[[listen.clientCA]]` configurations. 
 * **cert** is a CA certificate file.
 
