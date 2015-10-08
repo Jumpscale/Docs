@@ -1,5 +1,6 @@
 ## AtYourService Dependencies
 
+## DEPRECATED
 
 ### Basics
 dependencies are marked in the service template hrd as follows
