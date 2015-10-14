@@ -9,6 +9,9 @@ client = j.clients.ac.getByInstance('main')
 #OR if you have `redis` info.
 client = j.clients.ac.get(address, port, password)
 ```
+
+> The next documentation is generated from python `docstr` using Sphinx tool
+
 <div class="section" id="welcome-to-acclient-s-documentation">
 <div class="toctree-wrapper compound">
 </div>
