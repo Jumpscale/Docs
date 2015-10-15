@@ -3,24 +3,28 @@
 ```
 ays commands:
 
+ays commands:
+    init:
+    - is the start of everthing, this action makes sure that the ays instance gets created locally & all arguments properly filled in
+    - do not forget to specify which other service you consume e.g. $role/$domain|$name!$instance,$role2/$domain2|$name2!$instance2|$role
     install:
-    - download all related git repo's (if not downloaded yet, otherwise update)
+    - download all related git repos (if not downloaded yet, otherwise update)
     - prepare & copyfiles & configure
     - start the app
     list:
-    - list the ayss
+    - list the ayses
     stop-start-restart
     build
-    - if build instructions are given the build repo's will be downloaded & build started
+    - if build instructions are given the build repos will be downloaded & build started
     - build happens to production dir
     mdupdate
-    - update all git repo's which have services metadata
+    - update all git repos which have services metadata
     update
-    - go over all related repo's & do an update
+    - go over all related repos & do an update
     - copy the files again
     - restart the app
     reset
-    - remove build repo's !!!
+    - remove build repos !!!
     - remove state of the app (same as resetstate) in jumpscale (the configuration info)
     - remove data of the app
     resetstate
@@ -28,7 +32,7 @@ ays commands:
     removedata
     - remove data of app (e.g. database, e.g. vmachine when node ays)
     execute
-    - execute cmd on service e.g. ssh cmd on node jp or sql statement on database ...
+    - execute cmd on service e.g. ssh cmd on node ays or sql statement on database ...
     - use --cmd with to specify command to be execute
     monitor
     - do uptime check, local monitor & remote monitor check, if all ok return True
@@ -41,25 +45,29 @@ ays commands:
     create
     - interactively create a ays
     status
-    - display status of installed ayss (domain, name, priority, version, port)
+    - display status of installed ayses (domain, name, priority, version, port)
     nodes
     - display all remote nodes available for ays remote execution
+    console
+    - connect thourgh ssh to remote node
+    hrdpath
+    - return the path to the hrd directory
 
-usage: ays [-h] [--path PATH] [--noremote] [-q] [-n NAME] [-d DOMAIN]
-           [-i INSTANCE] [-f] [--nodeps] [--verbose] [--data DATA] [--cmd CMD]
-           [--parent PARENT] [--immediate] [-r] [-s] [--url URL] [--installed]
-           {install,list,stop,start,restart,build,prepare,mdupdate,update,reset,resetstate,removedata,monitor,configure,cleanup,export,import,uninstall,push,execute,status,nodes}
+usage: ays [-h] [--noremote] [-q] [-n NAME] [-d DOMAIN] [-i INSTANCE] [-f]
+           [--nodeps] [--verbose] [--local] [--data DATA] [--cmd CMD]
+           [--parent PARENT] [-r] [-s] [-c CONSUME] [--url URL] [--installed]
+           [--tolocal TOLOCAL]
+           {init,install,list,stop,start,restart,build,prepare,mdupdate,update,reset,resetstate,removedata,monitor,configure,cleanup,export,import,uninstall,push,execute,status,nodes,console,hrdpath,makelocal}
 
 positional arguments:
-  {install,list,stop,start,restart,build,prepare,mdupdate,update,reset,resetstate,removedata,monitor,configure,cleanup,export,import,uninstall,push,execute,status,nodes}
+  {init,install,list,stop,start,restart,build,prepare,mdupdate,update,reset,resetstate,removedata,monitor,configure,cleanup,export,import,uninstall,push,execute,status,nodes,console,hrdpath,makelocal}
                         Command to perform
 
 optional arguments:
   -h, --help            show this help message and exit
-  --path PATH           path to git config repo to be use
   --noremote            bypass the @remote wrapper
 
-Package Selection:
+Service Selection:
   -q, --quiet           Put in quiet mode
   -n NAME, --name NAME  Name of ays to be installed
   -d DOMAIN, --domain DOMAIN
@@ -67,33 +75,28 @@ Package Selection:
   -i INSTANCE, --instance INSTANCE
                         Instance of ays (default main)
   -f, --force           auto answer yes on every question
-  --nodeps              Don't perfomr action on dependencies, default False
+  --nodeps              Dont perfomr action on dependencies, default False
   --verbose             Verbose output.
-  -tn TARGETNAME, --targetname TARGETNAME
-                        node instance on which to execute the action
-  -tt TARGETTYPE, --targettype TARGETTYPE
-                        node type on which to execute the action
-  -hs HRDSEED, --hrdseed HRDSEED
-                        path to an hrd file that contains
-
+  --local               Apply action locally. No remote services will be
+                        executed.
 
 Install/Update/Expand/Configure:
   --data DATA           use this to pass hrd information to ays e.g.
                         'redis.name:system redis.port:9999 redis.disk:0'
   --cmd CMD             use this to pass cmd to services e.g. 'ls -l'
-  --parent PARENT       parent services (domain__name__instance). Can also
-                        define ancestors through 'grandparentdomain__grandpare
-                        ntname__grandparentinstance__
-                        parentdomain__parentname__parentinstance'
-  --immediate           use this to get the first level match of services
+  --parent PARENT       parent service (domain|name!instance).
   -r, --reinstall       Reinstall found service
   -s, --single          Do not install dependencies
+  -c CONSUME, --consume CONSUME
+                        specify which services you consume example syntax:
+                        e.g. $role/$domain|$name!$instance,$role2/$domain2|$na
+                        me2!$instance2|$role
 
 Export/Import:
   --url URL             uncpath to export to or import from
 
 List:
-  --installed           List installed ayss
+  --installed           List installed ayses
 
 ```
 
@@ -137,22 +140,27 @@ List:
 #updates the metadata
 ays mdupdate
 
-#updates selected ayss from domain jumpscale
-ays install -d jumpscale
-
 #select osis, install osis and its dependencies
-ays install -n osis
+ays init -n osis -c "mongodb|mongodb!main"
+#many consumptions are done automatically e.g. the mongodb one if you don't specify 
+#ays will look for a preconfigured instance mongodb and if only 1 found will use that one
+
 #next will not look at dependencies
-ays install -n osis --nodeps
+ays init -n osis --nodeps
 
 #Install with hrd configuration
-ays install -n redis -i system --data 'redis.name:system redis.port:7766 redis.disk:0  redis.mem:100'
+ays init -n redis -i system --data 'param.name:system param.port:7766 param.disk:0  param.mem:100 param.ip:127.0.0.1 param.unixsocket:0 param.passwd:'
 #whatever you pass with --data is used to populate the hrd of the instance
+
+#this is the main command which will ask ays go over all init'ed ays recipe's and try to install them if anything changed
+#so already installed/configured ays will not be touched unless if some configuration change was made
+ays apply
 
 # Show current status of installed AYSes
 ays status
 
 # Show current status of locally installed AYSes
 ays status --local
+
 ```
 
