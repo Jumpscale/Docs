@@ -64,7 +64,7 @@ ays init -n mongodb -i mongo2 #instance name is (mongo2)
 
 #### Each AtYourService instance (aysi) has a unique key
 
-key in format $domain|$name:$instance@role ($version)
+key in format $domain|$name!$instance@role ($version)
 
 different format examples
 + $domain|$name!$instance
