@@ -35,7 +35,9 @@
        * [Demo Setup Tutorial](MultiNode/AgentController1/DemoSetupTutorial.md)
    * [Agent Controller 2](MultiNode/AgentController2/AgentController2.md)
        * [Install](MultiNode/AgentController2/Install.md)
-       * [Configuration](MultiNode/AgentController2/Configuration.md)
+       * Configuration
+          * [Controller](MultiNode/AgentController2/ControllerConfiguration.md)
+          * [Agent](MultiNode/AgentController2/AgentConfiguration.md)
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Security Certificates](MultiNode/AgentController2/Security.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
@@ -51,6 +53,7 @@
        * [Errors](MultiNode/GridPortal/Errors.md)
        * [Jobs](MultiNode/GridPortal/Jobs.md)
        * [Grid HealthCheck](MultiNode/GridPortal/CheckStatus.md)
+   * [TLS Management](MultiNode/TLS management/cfssl.md)
 * [OSIS]
    * [OSIS 1](OSIS/OSIS1/OSIS.md)
        * [OSIS Installation](OSIS/OSIS1/Install.md)

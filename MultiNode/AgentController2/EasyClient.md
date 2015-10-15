@@ -25,6 +25,10 @@ rc,stdout,stderror=cl.execute(cmd,path=None,gid=None,nid=None,roles=[],die=True,
 * if nid specified then roles not used, roles=[] means we ignore it and then we execute over gid & nid
     * gid==None: means all gids
     * nid==None: means all nids
+
+>Q: Does this mean when roles is given (nid=None) we should fanout by default (to all agents that satisfies the set of given roles). I think we need to add a specific `fanout` flag in case roles is given so we either run
+on all `nids` or execute on 1 agent that satisfies the roles
+
 * die is std True
 * timeout is std 5 sec, if timeout raise an error
 * if more than 1 agent involved, then output is concatenation per agent of
@@ -48,6 +52,8 @@ $stdout
 ...
 
 ```
+
+> Q: Why this weird not machine friendly format, why not return a list of tubles instead liek [(rc, stdout, stderr), ...]
 
 - only show ##ERROR if there was an error
 - only show ##RC if RC>0
@@ -91,11 +97,15 @@ there are 4 ways to execute a jumpscript
 remarks
 
 * domain & name does not have to be specified 
-    * if specified then jumpscript needs to be in right location see [Jumpscripts.md]
+    * if specified then jumpscript needs to be in right location see [Jumpscripts.md](Jumpscripts.md)
     * @TODO format needs to be different for a jumpscript then specified in Jumpscripts.md
 * if no domain/name path or content need to be specified, content get's prio otherwise read from path
     * implementation remark: make sure from jumpscale import get's removed (otherwise double, because i gets reinserted)
 * data send to jumpscript over stdin (data can be anything !!!,text, binary, ...)
+
+> Do we really need to send data over stdin to the script? This can be implemented but I really don't see a use case
+since you can send anything (including binary) using the `args`.
+
 * args is what will be send to the action(**args) 
 * if nid specified then roles not used, roles=[] means we ignore it and then we execute over gid & nid
     * gid==None: means all gids
