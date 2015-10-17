@@ -12,7 +12,7 @@ class ActionsBase():
     """
 
 
-    def init_pre(self,serviceobj):
+    def init_pre(self,serviceObj):
         """
         gets executed before init happens of this ays
         use this method to manipulate the arguments which are given or already part of ays instance
@@ -22,15 +22,15 @@ class ActionsBase():
 
         ```
         #call parent, to make sure std init_post is executed 
-        ActionsBase.init_pre(self,serviceobj)
-        if serviceobj.name.startswith("node"):
-            serviceobj.hrd.set("something","data") #can ofcourse come from everywhere
+        ActionsBase.init_pre(self,serviceObj)
+        if serviceObj.name.startswith("node"):
+            serviceObj.hrd.set("something","data") #can ofcourse come from everywhere
 
         ```        
 
         """
 
-    def init_post(self,serviceobj):
+    def init_post(self,serviceObj):
         """
         gets executed after init happens of all ays recipe's
         use this method to manipulate the hrd's as they are applied (inited) after init
@@ -51,15 +51,15 @@ class ActionsBase():
         
         ```
         #call parent, to make sure std init_post is executed 
-        ActionsBase.init_post(self,serviceobj)
-        serviceobj.hrd.set("something","data") #can ofcourse come from everywhere
+        ActionsBase.init_post(self,serviceObj)
+        serviceObj.hrd.set("something","data") #can ofcourse come from everywhere
 
         ```
 
         """
 
 
-    def prepare(self,serviceobj):
+    def prepare(self,serviceObj):
         """
         this gets executed before the files are downloaded & installed on approprate spots
         this gets done remotely
@@ -69,7 +69,7 @@ class ActionsBase():
         return True
 
 
-    def configure(self,serviceobj):
+    def configure(self,serviceObj):
         """
         this gets executed after the files are installed
         this step is used to do configuration steps to the platform
@@ -80,23 +80,23 @@ class ActionsBase():
         """
         return True
 
-    def configureLocal(self,serviceobj):
+    def configureLocal(self,serviceObj):
         """
         this gets executed just before configure and only if we work in remote mode e.g. over ssh
         """
         return True
 
-    def start(self,serviceobj):
+    def start(self,serviceObj):
         """
         start happens because of info from main.hrd file but we can overrule this
-        make sure to also call ActionBase.start(serviceobj) in your implementation otherwise the default behaviour will not happen
+        make sure to also call ActionBase.start(serviceObj) in your implementation otherwise the default behaviour will not happen
 
         only use when you want to overrule
 
         """
         return True
 
-    def stop(self, serviceobj):
+    def stop(self, serviceObj):
         """
         if you want a gracefull shutdown implement this method
         a uptime check will be done afterwards (local)
@@ -104,13 +104,13 @@ class ActionsBase():
         """
         return True
 
-    def halt(self,serviceobj):
+    def halt(self,serviceObj):
         """
         hard kill the app, std a linux kill is used, you can use this method to do something next to the std behaviour
         """
         return True
 
-    def build(self,serviceobj):
+    def build(self,serviceObj):
         """
         build instructions for the service
         as part of this action you should copy the builded files to binary repository
@@ -127,14 +127,14 @@ class ActionsBase():
         """
         return True
 
-    def check_up_local(self, serviceobj, wait=True):
+    def check_up_local(self, serviceObj, wait=True):
         """
         do checks to see if process(es) is (are) running.
         this happens on system where process is
         """
         return True
 
-    def check_down_local(self,serviceobj):
+    def check_down_local(self,serviceObj):
         """
         do checks to see if process(es) are all down
         this happens on system where process is
@@ -142,35 +142,35 @@ class ActionsBase():
         """
         return True
 
-    def check_requirements(self,serviceobj):
+    def check_requirements(self,serviceObj):
         """
         do checks if requirements are met to install this app
         e.g. can we connect to database, is this the right platform, ...
         """
         return True
 
-    def monitor_local(self,serviceobj):
+    def monitor_local(self,serviceObj):
         """
         do checks to see if all is ok locally to do with this service
         this happens on system where process is
         """
         return True
 
-    def monitor_remote(self,serviceobj):
+    def monitor_remote(self,serviceObj):
         """
         do checks to see if all is ok from remote to do with this service
         this happens on system from which we install or monitor (unless if defined otherwise in hrd)
         """
         return True
 
-    def cleanup(self,serviceobj):
+    def cleanup(self,serviceObj):
         """
         regular cleanup of env e.g. remove logfiles, ...
         is just to keep the system healthy
         """
         return True
 
-    def data_export(self,serviceobj):
+    def data_export(self,serviceObj):
         """
         export data of app to a central location (configured in hrd under whatever chosen params)
         return the location where to restore from (so that the restore action knows how to restore)
@@ -178,32 +178,32 @@ class ActionsBase():
         """
         return False
 
-    def data_import(self,id,serviceobj):
+    def data_import(self,id,serviceObj):
         """
         import data of app to local location
         if specifies which retore to do, id corresponds with line item in the $name.export file
         """
         return False
 
-    def uninstall(self,serviceobj):
+    def uninstall(self,serviceObj):
         """
         uninstall the apps, remove relevant files
         """
         return False
 
-    def removedata(self,serviceobj):
+    def removedata(self,serviceObj):
         """
         remove all data from the app (called when doing a reset)
         """
         return False
 
-    def test(self,serviceobj):
+    def test(self,serviceObj):
         """
         test the service on appropriate behaviour
         """
         pass
 
-    def execute(self,serviceobj, cmd):
+    def execute(self,serviceObj, cmd):
         """
         execute is not relevant for each type of service
         for e.g. a node.ms1 service it would mean remote some shell command on that machine

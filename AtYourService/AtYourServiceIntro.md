@@ -145,6 +145,16 @@ dependencies.node              = portal_lib,influxdb_client,mongodb_client
 - if the local & global deps. are properly defined then there is no need to specify the consumption flag
   - ays will lookup a service with specified role on global or node level, if only 1 is found the the consumption will configured automatically
 
+### some special atyourserive recipe args
+
+```
+ns.enable = True
+hrd.return = True
+```
+
+- ns.enable means we will be using the nameservice service, is not relevant for all services
+- hrd.return means that after install the hrd needs to be copied back to the site from which we install (only relevant for remote working)
+
 ### Remarks (BAD)
 
 @todo do better
