@@ -43,6 +43,17 @@ Basic arguments support the following args:
 * `stats_interval`: 120 means we overrule the default for this process and only monitor this porcess every 120 seconds.
 * queue: If queue is set, the command will wait on a job queue for serial execution. In other words no 2 processes with the same queue name will get executed on the same agent at the same. time
 
+## execution environment
+When using command `execute` or any of the external extensions the agent defines a set of environment variables that
+can be accessed by the child process:
+* `AGENT_HOME`: `CWD` of the agent
+* `AGENT_GID`: Gid of the agent
+* `AGENT_NID`: Nid of the agent
+* `AGENT_CONTROLLER_NAME`: Name of the agent controller that intiated this command (As defined in the agent config)
+* `AGENT_CONTROLLER_URL`: Base url of the agent controller
+* `AGENT_CONTROLLER_CLIENT_CERT`: Path to agent client certificates
+* `AGENT_CONTROLLER_CLIENT_CERT_KEY`: Path to agent client certificates key
+
 #Built in commands
 * execute
 * get_cpu_info
