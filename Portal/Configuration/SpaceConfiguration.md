@@ -84,69 +84,6 @@ template.wiki
 The template.wiki file is the default wiki file which is used as
 template when a new page is created in the space.
 
-Saving the space to Mercurial
-=============================
-
-Adding the space to bitbucket helps you save your work & share your work
-with other team members.
-
-Create Mercurial repository for the space
------------------------------------------
-
--   Open ssh to the server
--   'cd' to the directory containing the code
--   Create a repo 'hg init'
--   Add all files to the repo 'hg add .'
--   Commit the files (save the files) 'hg commit -u my\_username -m
-    "Commit message describing what I did"'
-
-Committing after changing files
--------------------------------
-
--   Tell Mercurial to consider missing files deleted, and add any new
-    files to the repo 'hg addremove'
--   Commit the files (save the files) 'hg commit -u my\_username -m
-    "Commit message describing what I did"'
-
-Push your changes to bitbucket
-------------------------------
-
--   Make sure everything is comitted
--   Inside this directory, add this content
-
-```cfg
-[paths]
-default = https://bitbucket.org/incubaid/repo_name
-```
-
--   To push 'hg push'
--   Enter your bitbucket credentials
-
-How to pull the latest changes from bitbucket
----------------------------------------------
-
--   To pull all the changes from bitbucket & update to the latest
-    version 'hg pull -u'
-
-How to pull & update from the admin menu
-----------------------------------------
-
-If you're logged in to the portal as admin, you will see the admin menu
-on the top. This allows you to pull & update without being logged in to
-the server with ssh. To work, it requires the credentials to be
-configured on the server.
-
-To configure the credentials, add them to your '\~/.hgrc' as the
-following example
-
-```cfg
-[auth]
-bb_incubaid.prefix = bitbucket.org/incubaid    # Apply these credentials when the bitbucket repo URL starts with this prefix
-bb_incubaid.schemes = http https
-bb_incubaid.username = qp55pq                  # bitbucket username
-bb_incubaid.password = qp55pq                  # bitbucket password
-```
-
 Publishing the space on its URL
 ===============================
 
