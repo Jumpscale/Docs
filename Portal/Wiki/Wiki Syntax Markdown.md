@@ -93,7 +93,6 @@ JumpScale markdown format.
 ### Ordered List
 
 ```
-Test
 - A
 - B
 - C
