@@ -1,52 +1,99 @@
 ## AtYourService Dependencies
 
-## DEPRECATED
-
 ### Basics
 dependencies are marked in the service template hrd as follows
 
 ```
-dependencies.1                 =
-    name:'ubuntukernel',
-    domain:,
-    instance:,
-
-```
-
-### more complex example where arguments are embedded
-
-```
-dependencies.1                 =
-    args:'dep.args.redis',
-    instance:'system',
-    name:'redis',
-
-dep.args.redis                 =
-    param.disk:1,
-    param.mem:100,
-    param.passwd:'$(param.rootpasswd)',
-    param.port:9999,
-    param.unixsocket:0,
-
-#next dependency will only be used when doing a build
-dependencies.2               =
-    instance:'main',
-    name:'gcc',
-    type:'build',
+dependencies.global            = mongodb, influxdb
+dependencies.node              = portal_lib, influxdb_client, mongodb_client, redis
 
 
 ```
+This denotes that this service requires portal_lib, influxdb_client, mongodb_client and redis to be locally installed on the same node.
 
-### Pre-filled hrd
-When instanciating  a new service, it is also possible to pass an hrd file prefilled with the arguments. This is particuly usefull when you want to configure your service more deeply or when you have services that has lot of depencecies.
+It also has global dependencies on mongodb and influxdb which means it needs them to be installed but not necessarily on the same node.
 
-#### format
-Pre-filled HRD should follow this format :
+
+### More complex example where arguments are embedded
+
+In the *actions.py* of service template:
+
 ```
-domaine.name.instance.argument = value
-```
-e.g. :
-To set the value of ```param.disk``` of the ```redis``` service, one would do
-```
-jumpscale.redis.main.param.disk = 1
+from JumpScale import j
+
+ActionsBase=j.atyourservice.getActionsBaseClass()
+
+
+class Actions(ActionsBase):
+
+    def init(self, serviceObj, args):
+        for k, v in args.iteritems():
+            _, content = j.tools.text.ask(v)
+            args[k] = content
+
+        data = {
+            'param.disk': '1',
+            'param.mem': '100',
+            'param.passwd': '',
+            'param.port': '9999',
+            'param.unixsocket': '0',
+            'param.ip': 'localhost',
+        }
+        j.atyourservice.new(name='redis', instance='system', args=data, parent=serviceObj.parent)
+
+        j.atyourservice.new(name='web', parent=serviceObj.parent)
+
+        data = {
+            'tcp.addr': 'localhost',
+            'tcp.port.service': '27017',
+            'param.replicaset': '',
+        }
+        j.atyourservice.new(name='mongodb', args=data, parent=serviceObj.parent)
+
+        data = {
+            'tcp.addr': 'localhost',
+            'param.influxdb.client.dbname': 'main',
+            'param.influxdb.client.login': 'root',
+            'param.influxdb.client.passwd': args['param.rootpasswd'],
+            'tcp.port.service': '8086',
+        }
+        j.atyourservice.new(name='influxdb', args=data, parent=serviceObj.parent)
+
+        data = {
+            'param.osis.connection.influxdb': 'main',
+            'param.osis.connection.mongodb': 'main',
+            'param.osis.superadmin.passwd': args['param.rootpasswd'],
+        }
+        j.atyourservice.new(name='osis', args=data, parent=serviceObj.parent)
+
+        j.atyourservice.new(name='influxdb_client', parent=serviceObj.parent)
+        j.atyourservice.new(name='mongodb_client', parent=serviceObj.parent)
+        j.atyourservice.new(name='osis_client', parent=serviceObj.parent)
+
+        data = {
+            'smtp.login': '',
+            'smtp.passwd': '',
+            'smtp.port': '25',
+            'smtp.sender': 'info@jumpscale.com',
+            'smtp.server': 'localhost',
+        }
+        j.atyourservice.new(name='mailclient', args=data, parent=serviceObj.parent)
+
+        data = {
+            'param.cfg.admingroups': 'admin,',
+            'param.cfg.authentication.method': 'osis',
+            'param.cfg.contentdirs': '',
+            'param.cfg.defaultspace': 'home',
+            'param.cfg.force_oauth_instance': '',
+            'param.cfg.gitlab.connection': 'main',
+            'param.cfg.ipaddr': 'localhost',
+            'param.cfg.port': '82',
+            'param.cfg.secret': args['param.rootpasswd'],
+            'param.portal.name': 'main',
+            'param.portal.rootpasswd': args['param.rootpasswd'],
+        }
+        j.atyourservice.new(name='portal', args=data, parent=serviceObj.parent)
+        j.atyourservice.new(name='portal_client', parent=serviceObj.parent)
+
+
 ```
