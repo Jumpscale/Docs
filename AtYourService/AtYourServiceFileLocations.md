@@ -21,10 +21,12 @@
 * when a service gets installed the resulting files are put in this location
     - **instance.hrd** : contains all the details relevant to one instance
         - e.g. : instance parameters for configuring a service
+    - **template.hrd**: contains details common to all instances of a service.
+        - e.g. : domain of service
     - **action.py** : This is a copy of the action.py file from the service template. Service.hrd and instance.hrd values are available through the passed object's hrd.
         - e.g. : in instance.hrd there is a line : ```param.color = green``` and in action.py there is a line with ```setColor(serviceObj.hrd.get('param.color'))``` the result will be ```setColor('green')```  
     - **state.hrd** : this file is used to keep installation state of a service. In action.py you can define steps in your actions. During install if an action failed, the reinstallation will start from the last success step, and not do everything again.
-    *Do not modify this file*
+    **Do not modify this file**
     - **log.txt** : simple log file about actions that has been taken with the service
 * when re-installing a service whatever information already present in this folder will be used
 * it can be useful to remove this file if you want to reset the service configuration state
