@@ -26,7 +26,7 @@ Example of a remote node installation
 # Notice that we use "--data" to pass arguments directly to the ays
 # instance to avoid being asked configuration questions during installation.
 
-ays init -n node.local -i local --data 'jumpscale.install:False jumpscale.update:False node.tcp.addr:172.17.0.5
+ays init -n node.local -i local --data 'jumpscale.install:False jumpscale.update:False node.tcp.addr:localhost
 
 
 # Now we're ready to install the service on the defined node
