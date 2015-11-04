@@ -5,7 +5,7 @@
 **AtYourService**: a self-healing application framework
 
 AtYourService let you create so called 'service recipes' that can be used to represent nearly anything. From your datacenter infrastructure to a server cluster.
-AtYourService will create a hierarchy of folder in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote.md) for examples)
+AtYourService will create a hierarchy of folders in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote.md) for examples)
 
 AtYourService will make sure that applications get installed 
 
