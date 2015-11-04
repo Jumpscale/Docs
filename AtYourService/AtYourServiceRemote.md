@@ -20,21 +20,19 @@ Example of a remote node installation
 
 **Through the cmdline**
 ```
-# First, we'll define a location
-ays install -n location -i europe --data 'instance.name:Europe'
+# First, install the node service which will define everything you
+# need to manage a remote node.
 
-# Now, install the sshkey service to generate your sshkey. The empty private key triggers auto generation
-# Notice here how we specifiy the relation between the location and the sshkey service,
-# Just add the '--parent' argument to the service creation and the sshkey will be a child service of the location.
-ays install -n sshkey -i mykey --data 'instance.key.priv:' --parent jumpscale__location__europe
+# Notice that we use "--data" to pass arguments directly to the ays
+# instance to avoid being asked configuration questions during installation.
 
-# Create your node inside the defined location.
-# Pass along the sshkey instance and parent
-ays install -n node.ssh -i main --data 'instance.ip:172.17.0.5 instance.ssh.port:22 instance.sshkey:mykey instance.login:root instance.password:supersecret' --parent jumpscale__location__europe
+ays init -n node.local -i local --data 'jumpscale.install:False jumpscale.update:False node.tcp.addr:172.17.0.5
+
 
 # Now we're ready to install the service on the defined node
-# By defining the targetname and targettype, we're basically saying that this service is to be installed remotely on the previously defined node 'main' of type 'node.ssh'
-ays install -n mongodb --data 'instance.param.replicaset:0 instance.param.host:127.0.0.1 instance.param.port:27017' --targetname main --targettype node.ssh
+# By defining the node as the parent of the singlenode_portal service,
+# we're basically saying it will be installed on that node.
+ays init -n singlenode_portal --parent '!local@node'
 ```
 
 
