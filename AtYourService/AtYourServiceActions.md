@@ -24,7 +24,7 @@ class ActionsBase():
         #call parent, to make sure std init_post is executed 
         ActionsBase.init_pre(self,serviceObj)
         if serviceObj.name.startswith("node"):
-            serviceObj.hrd.set("something","data") #can ofcourse come from everywhere
+            serviceObj.hrd.set("something","data") #can of course come from everywhere
 
         ```        
 
