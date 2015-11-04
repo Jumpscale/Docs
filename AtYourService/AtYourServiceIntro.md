@@ -2,12 +2,12 @@
 
 ### Introduction
 
-**AtYourService** your self healing application framework
+**AtYourService**: a self-healing application framework
 
 AtYourService let you create so called 'service recipes' that can be used to represent nearly anything. From your datacenter infrastructure to a server cluster.
 AtYourService will create a hierarchy of folder in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote.md) for examples)
 
-AtYourService will make sure that applications get intalled 
+AtYourService will make sure that applications get installed 
 
 It's kind of like Ubuntu's ```apt-get & service``` and ```ant``` tools all together in one easy command line tool that can control a whole cloud.
 
