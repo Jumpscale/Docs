@@ -8,11 +8,11 @@
 * /opt/code/github/jumpscale/ays_jumpscale7 is a service domain called jumpscale7
 
 ```
-/opt/jumpscale7/hrd/apps/$serviceName__$instanceName/
-/opt/jumpscale7/hrd/apps/$serviceName__$instanceName/service.hrd
-/opt/jumpscale7/hrd/apps/$serviceName__$instanceName/actions.py
-/opt/jumpscale7/hrd/apps/$serviceName__$instanceName/state.json
-/opt/jumpscale7/hrd/apps/$serviceName__$instanceName/log.txt
+/opt/jumpscale7/hrd/apps/$role!$instanceName/
+/opt/jumpscale7/hrd/apps/$role!$instanceName/service.hrd
+/opt/jumpscale7/hrd/apps/$role!$instanceName/actions.py
+/opt/jumpscale7/hrd/apps/$role!$instanceName/state.json
+/opt/jumpscale7/hrd/apps/$role!$instanceName/log.txt
 ```
 
 * when a service gets installed the resulting files are put in this location
