@@ -21,8 +21,8 @@ AtYourService is able to install several instances of a service on the same mach
 
 ### AtYourService system features
 
-* Powerful Command line tool (One command to rule them all) : see [AtYourServiceCmd](AtYourServiceCmd.md)
-* Install multiple instances of a service on the same node/machine : see [ServiceInstance]
+* Powerful Command line tool (One command to rule them all) : see [AtYourService CMD](AtYourServiceCmd.md)
+* Install multiple instances of a service on the same node/machine : see [Service Instance](ServiceInstance.md)
 * Multiple Operating systems support, virtualization backends, and containers
   - [Docker](http://www.docker.com)
   - [KVM](http://www.linux-kvm.org/)
