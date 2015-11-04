@@ -57,7 +57,7 @@ Example: Running several instances of mongodb on the same machine on different p
 
 ```shell
 #the following will init mongodb template as an instance
-ays init -n mongodb #Use default instance name (main)
+ays init -n mongodb # Use default instance name (main)
 ays init -n mongodb -i mongo2 #instance name is (mongo2)
 ```
 
