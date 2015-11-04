@@ -28,12 +28,16 @@
     - **state.hrd** : this file is used to keep installation state of a service. In action.py you can define steps in your actions. During install if an action failed, the reinstallation will start from the last success step, and not do everything again.
     **Do not modify this file**
     - **log.txt** : simple log file about actions that has been taken with the service
+    - **instance_old.hrd**: is a temporary file use during the init of a service
+
+
 * when re-installing a service whatever information already present in this folder will be used
 * it can be useful to remove this file if you want to reset the service configuration state
-  * 'service resetstate -n $serviceName -i $instanceName'' has the same result
+  * ```service resetstate -n $serviceName -i $instanceName``` has the same result
 
 
+Another interesting HRD file is the `whoami.hrd` under
 ```
 /opt/jumpscale7/hrd/system/
 ```
-there is a whoami.hrd, this hrd makes sure that the right credentials are used when doing a git pull
+This hrd makes sure that the right credentials are used when doing a git pull.
