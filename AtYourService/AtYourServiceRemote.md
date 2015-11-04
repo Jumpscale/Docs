@@ -26,7 +26,7 @@ Example of a remote node installation
 # Notice that we use "--data" to pass arguments directly to the ays
 # instance to avoid being asked configuration questions during installation.
 
-ays init -n node.local -i local --data 'jumpscale.install:False jumpscale.update:False node.tcp.addr:localhost
+ays init -n node.local -i local --data 'jumpscale.install:False jumpscale.update:False node.tcp.addr:localhost'
 
 
 # Now we're ready to install the service on the defined node
@@ -40,35 +40,13 @@ ays init -n singlenode_portal --parent '!local@node'
 ```python
 from JumpScale import j
 
-# creation of a location, this is a container for nodes and it represent the
-# datacenter
-location = "Europe"
+# creation of a node
 data = {}
-data["instance.name"] = location
-data["instance.description"] = "Our %s location." % location
-location = j.atyourservice.new(name="location", instance=location.lower(), args=data)
-location.init()
+data['jumpscale.install'] = False
+data['jumpscale.update'] = False
+data['node.tcp.addr'] = "localhost"
 
-# creation of a sshkey service
-data = {}
-data['instance.key.priv'] = ''  # empty private key trigger auto generation
-# notice here how we specifiy the relation between the location and the sshkey service,
-# just add the 'parent=' parameter to the service creation and the sshkey will be a child service of the location.
-keyInstance = j.atyourservice.new(name='sshkey', instance="mykey", args=data, parent=location)
-keyInstance.init()
-keyInstance.install()
-
-# creation of a node inside the location
-data = {}
-data["instance.ip"] = "172.17.0.5"
-data["instance.ssh.port"] = 22
-# here we give the instance name of the sshkey service to use to connect to this node
-# if the key is not yet present on the node, login/passwd will be use for first
-# connection and to push the key in authorized_key file.
-data['instance.sshkey'] = keyInstance.instance
-data['instance.login'] = 'root'
-data['instance.password'] = 'supersecret'
-node = j.atyourservice.new(name='node.ssh', args=data, parent=location)
+node = j.atyourservice.new(name='node.local', args=data, parent=location)
 node.init()
 node.install()
 
