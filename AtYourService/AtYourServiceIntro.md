@@ -42,7 +42,7 @@ AtYourService is able to install several instances of a service on the same mach
 *ays template* or *ays recipe*
 - are the definition of how a service needs to get deployed
 - in such a recipe we describe
-    - parameters relevant for the aysi (at your service instance)
+    - parameters relevant for the aysi (AtYouService instance)
     - how to startstop the aysi
     - how to monitor the aysi
     - how to install the binary files for the aysi
