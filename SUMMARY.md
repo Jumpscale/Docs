@@ -12,6 +12,7 @@
    * [AYS Actions](AtYourService/AtYourServiceActions.md)
    * [AYS Command Line](AtYourService/AtYourServiceCmd.md)
    * [AYS Dependency Management](AtYourService/AtYourServiceDeps.md)
+   * [AYS Parent](AtYourService/AtYourServiceParent.md)
    * [AYS Hierarchy](AtYourService/AtYourServiceParent.md)
    * [AYS Exports](AtYourService/AtYourServiceExports.md)
    * [AYS FileLocations](AtYourService/AtYourServiceFileLocations.md)
