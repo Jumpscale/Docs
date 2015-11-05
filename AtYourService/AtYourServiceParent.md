@@ -4,6 +4,9 @@ AYS Parent/Child relationship
 A service can be a parent for other services. It's a way of organizing your services and grouping them.
 
 Child services are created under the directory of the parent.
+
+
+### To create a nested child service:
 ```
 # Create a parent node
 ays init -n node.local -i test --data 'jumpscale.install:False jumpscale.update:False'
@@ -49,11 +52,10 @@ ays apply
 
 ```
 
-A service is also identified by its parent, so two services with the same domain/name/instance can exits if they have different parents.
+A service is also identified by its parent, so two services with the same domain/role/instance can exits if they have different parents.
 
 This is useful for grouping services of a certain location/node together. Then, performing any action is made easier.
 
-#To create a nested child service:
 ```
 # First, create the parent
 # Note that the parent can be any service
