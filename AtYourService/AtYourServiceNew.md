@@ -4,7 +4,7 @@ How to configure a new service
 - In order to create a service template called ```fancyPackage``` (Without going into much details) you've to do:
     - Publish service binary data
           - ofcourse only if you have binary data to use which you want to repackage yourselves
-          - Initiate a local git repo anywhere in your file system called ```fancyPackage```.
+          - Initiate a local git repo anywhere in your file system called `fancyPackage`.
           - Add the binary data files to this repo
           - Push this repo to e.g. [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
     - Create service templates
