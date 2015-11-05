@@ -1,6 +1,6 @@
 ## AYS Actions
 
-* Manages the lifecycle of your AYS
+* Manages the life-cycle of your AYS
 * you need to implement one or more methods (actions) on your atyourservice actions.py file
 
 ### Example:
