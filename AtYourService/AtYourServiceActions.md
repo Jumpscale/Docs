@@ -18,16 +18,12 @@ class ActionsBase():
         use this method to manipulate the arguments which are given or already part of ays instance
         this is done as first action on an ays, even at central location 
 
-        example how to use
+        ## example how to use
 
-        ```
-        #call parent, to make sure std init_post is executed 
+        # call parent, to make sure std init_post is executed 
         ActionsBase.init_pre(self,serviceObj)
         if serviceObj.name.startswith("node"):
             serviceObj.hrd.set("something","data") #can of course come from everywhere
-
-        ```        
-
         """
 
     def init_post(self,serviceObj):
@@ -47,14 +43,10 @@ class ActionsBase():
             - $firstpartyaysname is the name of the ays before first . e.g node.ssh becomes 'node'
             - $ns.domain is the specified domain in the nameserver service
 
-        example how to use
-        
-        ```
-        #call parent, to make sure std init_post is executed 
+        ## example how to use
+        # call parent, to make sure std init_post is executed 
         ActionsBase.init_post(self,serviceObj)
         serviceObj.hrd.set("something","data") #can ofcourse come from everywhere
-
-        ```
 
         """
 
