@@ -17,6 +17,7 @@
    * [AYS Exports](AtYourService/AtYourServiceExports.md)
    * [AYS FileLocations](AtYourService/AtYourServiceFileLocations.md)
    * [AYS Process](AtYourService/AtYourServiceProcess.md)
+   * [AYS Instance](AtYourService/AtYourServiceInstance.md)
    * [AYS Ubuntu](AtYourService/AtYourServiceUbuntu.md)
    * [AYS Examples](AtYourService/AtYourServiceExamples.md)
    * [AYS Remote](AtYourService/AtYourServiceRemote.md)
