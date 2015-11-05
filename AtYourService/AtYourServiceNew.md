@@ -1,21 +1,22 @@
 How to configure a new service
 ------------------------------
 
-- In order to create a service template called ```fancyPackage``` (Without going into much details) you've to do:
+- In order to create a service template called `fancyPackage` (Without going into much details) you've to do:
     - Publish service binary data
-          - ofcourse only if you have binary data to use which you want to repackage yourselves
-          - Initiate a local git repo anywhere in your file system called `fancyPackage`.
-          - Add the binary data files to this repo
-          - Push this repo to e.g. [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
+        - ofcourse only if you have binary data to use which you want to repackage yourselves
+        - Initiate a local git repo anywhere in your file system called `fancyPackage`.
+        - Add the binary data files to this repo
+        - Push this repo to e.g. [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
     - Create service templates
-          - create a directory under your ays metadata repo e.g. ```/opt/code/github/jumpscale/ays_jumpscale7/``` called ```fancyPackage```
-          - Inside the service template directory, add 3 files *(actions.py, service.hrd, instance.hrd)*
-          - Those metadata files draw the life cycle plan of the service from creation to monitoring.
-          - Metadata will contain the URL for binary data repo for that service on [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
-          - In the next sections we'll explain in details how to configure and create a new service.
+        - create a directory under your ays metadata repo e.g. ```/opt/code/github/jumpscale/ays_jumpscale7/``` called ```fancyPackage```
+        - Inside the service template directory, add 3 files *(actions.py, service.hrd, instance.hrd)*
+        - Those metadata files draw the life cycle plan of the service from creation to monitoring.
+        - Metadata will contain the URL for binary data repo for that service on [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
+    
+In the next sections we'll explain in details how to configure and create a new service.
 
 
-the 3 important files
+A service has 3 integral files:
 
 - **actions.py**
      - contains ```Actions``` class with predefined functions that do certain actions
