@@ -49,10 +49,11 @@ from JumpScale import j
 
 # creation of a node
 
-data = {}
-data['jumpscale.install'] = False
-data['jumpscale.update'] = False
-data['node.tcp.addr'] = "localhost"
+data = {
+    'jumpscale.install': False,
+    'jumpscale.update': False
+    'node.tcp.addr': "localhost"
+}
 
 node = j.atyourservice.new(name='node.local', args=data)
 node.init()
