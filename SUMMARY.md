@@ -60,6 +60,7 @@
    * [OSIS 1](OSIS/OSIS1/OSIS.md)
        * [OSIS Installation](OSIS/OSIS1/Install.md)
        * [OSIS Model Specs](OSIS/OSIS1/ModelSpec.md)
+       * [Exporting Data](OSIS/OSIS1/export.md)
    * [OSIS 2](OSIS/OSIS2/OSIS2.md)
 * [Portal](Portal/Home.md)
    * [Install](Portal/Install.md)
