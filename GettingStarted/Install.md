@@ -24,14 +24,14 @@ ENV ARGUMENTS which can be set to change behaviour of install
 ------------------------------
 
 ```
-export GITHUBUSER = ''
-export GITHUBPASSWD = ''
-export SANDBOX = 0
-export JSBASE = '/opt/jumpscale7'
-export JSGIT = 'https://github.com/Jumpscale/jumpscale_core7.git'
-export JSBRANCH = 'master'
-export AYSGIT = 'https://github.com/Jumpscale/ays_jumpscale7.git'
-export AYSBRANCH = 'master'
+export GITHUBUSER=''
+export GITHUBPASSWD=''
+export JSBASE='/opt/jumpscale7'
+export SANDBOX=0
+export JSBRANCH='ays_unstable'
+export AYSBRANCH='ays_unstable'
+export JSGIT='https://github.com/Jumpscale/jumpscale_core7.git'
+export AYSGIT='https://github.com/Jumpscale/ays_jumpscale7.git'
 ```
 
 * insystem means use system packaging system to deploy dependencies like python & python packages
