@@ -24,6 +24,7 @@
     - **template.hrd**: contains details common to all instances of a service.
         - e.g. : domain of service
     - **action_mgmt.py** : contains actions executed from the management location.
+        - init 
         - consume 
         - prepare
         - configure
@@ -57,7 +58,6 @@
         - uninstall
         - test
     - **action_tmpl.py** : contains the actions possible for a templates directly without the need to create an instance of the service to call them. Can be seen as "static" method of a service.
-        - init
         - build
     
 These three action files are a copy of the corresponding file from the service template.  
