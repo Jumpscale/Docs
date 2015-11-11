@@ -16,23 +16,34 @@ How to configure a new service
 In the next sections we'll explain in details how to configure and create a new service.
 
 
-A service has 3 integral files:
-
-- **actions.py**
-     - contains ```Actions``` class with predefined functions that do certain actions
-     - here're the steps involved in a service installation
-          - [```prepare```, ```check_requirements```] actions are executed in order.
-          - Then actual service files will be downloaded/installed
-          - [```configure```, ```check_uptime_local```] will be executed in order.
-              * ```check_uptime_local``` : Checks if process already running (from previous installation)
-              * If process running try execute ```stop``` for graceful stop
-              * execute  ```check_uptime_local``` to check if process still running
-              * If process still running try execute ```halt``` for hard stop
-          - execute ```start``` using the config files to start the application
-          - execute ```check_uptime_local``` to check process is started
-          - execute ```monitor_local``` to check local application is running & healthy
-          - execute ```monitor_remote``` to check if remote application is running & healthy
-- **service.hrd**
-- **instance.hrd**
+A service has 2 HRD files and up to 3 python files. HRD files are where configuration is kept, python file describe the actions possible of the services.
+- **service.hrd** : instance specific configuration
+- **instance.hrd**: common configuration for all instance of this service
+- **actions_tmpl.py** : contains the actions possible for a templates directly without the need to create an instance of the service to call them. Can be seen as "static" method of a service.
+- **actions_mgmt.py** : contains actions executed from the management location.
+- **actions_node.py** : contains actions executed remotely on a node.
+     
+    - contains ```Actions``` class with predefined functions that do certain actions
+    - here're the steps involved in a service installation
+      - At management location
+        - ```init``` : instantiate service, check dependencies and install them if possible
+        - ```prepare``` 
+        - ```configure```
+        - ```check_up``` : Checks if process already running (from previous installation)
+          * If process running try execute ```stop``` for graceful stop
+          * execute  ```check_up``` to check if process still running
+          * If process still running try execute ```halt``` for hard stop
+      - ```start``` using the config files to start the application
+      - ```check_up``` to check process is started
+      - ```monitor``` to check local application is running & healthy
+    - If the service is installed on a remote node, after management actions. method from action_node.py are executed on the remote node.
+      - ```configure```
+        - ```check_up``` : Checks if process already running (from previous installation)
+          * If process running try execute ```stop``` for graceful stop
+          * execute  ```check_up``` to check if process still running
+          * If process still running try execute ```halt``` for hard stop
+      - ```start``` using the config files to start the application
+      - ```check_up``` to check process is started
+      - ```monitor``` to check local application is running & healthy
 
 You can read more about the HRD format [here](HRD.md).
