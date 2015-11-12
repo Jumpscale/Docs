@@ -5,17 +5,6 @@ In order to be able to contact the remote machines, you need to write the servic
 
 To have an idea of what can be created, lets have a look at a concrete example.
 
-1. **Situation**
-    - 1 datacenter located in Europe and US
-    - 1 servers running in the datacenter
-2. **Goal**
-    - install mongodb on the server from remote location
-3. **How to do it**
-    - Through the AYS cmd
-    - A simple script
-
-
-
 Example of a remote node installation
 
 **Through the cmdline**
