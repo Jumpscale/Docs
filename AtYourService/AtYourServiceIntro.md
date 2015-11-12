@@ -2,38 +2,97 @@
 
 ### Introduction
 
-**AtYourService**: a self-healing application framework
+**AtYourService**: a self-healing application framework meant for the cloud and can be used remotely
 
-AtYourService let you create so called 'service recipes' that can be used to represent nearly anything. From your datacenter infrastructure to a server cluster.
-AtYourService will create a hierarchy of folders in which are contained all the metadata about your services (see [AtYourServiceRemote](AtYourServiceRemote.md) for examples)
+- Package manager like Ubuntu's ```apt-get```
+- Service manager like Ubuntu's ```service```
+- Configuration manager like [ansible](http://www.ansible.com)
+- Build tool like [ant](http://ant.apache.org)
+- Monitoring tool.
 
-AtYourService will make sure that applications get installed 
+**What is a Service?**
 
-It's kind of like Ubuntu's ```apt-get & service``` and ```ant``` tools all together in one easy command line tool that can control a whole cloud.
+- A service either local or remote is an abstraction for almost anything:
+ - Simple package i.e ```mongodb```
+ - A Server cluster i.e ```mongodb cluster```
+ - Data center Infrastructure i.e ```Rack(s) or a cluster of machines```
+ - Abstraction for several other services
 
-Instead of the traditional (complicated) way of handling services data through databases or file system, AtYourService make use of [Revision Control Systems](http://en.wikipedia.org/wiki/Revision_control), especially [git](git-scm.com) in an elegant and modern way that suits A cloud architecture.
+**One command to rule them all**
 
-AtYourService preserves the installation/build state, so if for example an installation/build attempt fails, next time the process will continue from the last point, this behavior of course could be changed, but it's the default behavior and it's very handy.
+- We use only one command ```ays``` to control everything
+ - Configure a service and all its dependencies (if there):
+ ```ays init -n service-name```
+ - Install service:
+ ```ays apply```
+ - Start a service:
+ ```ays start -n service-name```
+ - Stop a service:
+ ```ays stop -n service-name```
+ - Check status for all installed services:
+ ```ays status```
+ - Check status for only local services (on this machine)
+ ```ays status --local ```
+ - Update metadata (like Ubuntu's ```apt-get update```)
+ ```ays mdupdate``` 
 
-AtYourService is able to install several instances of a service on the same machine.
 
+**Atyourservice structure**
 
+-  (1) Metadata Repos
+ - Metadata repos contain metada required to install services
+ - Metadata for a service defines the life cycle of a service starting from pre-installation to monitoring
+  - An example is [ays_jumpscale7](https://github.com/Jumpscale/ays_jumpscale7)
+  - you can configure atyourservice to use one or more repo(s)
+    - Edit the file ```/opt/jumpscale7/hrd/system/atyourservice.hrd ```
+    - Add new section for every metadata repo you want to add
+    ```sh
+        #here domain=jumpscale, change name for more domains
+        metadata.jumpscale             =
+            branch:'master',
+            url:'https://github.com/Jumpscale/ays_jumpscale7',
+        # add this domain
+            metadata.openvcloud            =
+            url:'https://git.aydo.com/0-complexity/openvcloud_ays',
+```
+   - atyourservice uses [git](http://git-scm.com) to manage its medata data
+     - all metadata repos are cloned into ```/opt/code```
+      - repos from github are cloned into ```/opt/code/github```
+      - repps from other git repos are cloned into ```/opt/code/git/```
+      - ```https://github.com/Jumpscale/ays_jumpscale7``` is cloned into ```/opt/code/github/jumppscale/ays_jumpscale7```
+     - Updating/cloning metadata repos:
+        - Do it manually for individual repos using ```git pull```
+        - Use ```ays mdupdate``` which will update existing repos and clone missing ones
+        - Non cloned repos defined in ```/opt/jumpscale7/hrd/system/atyourservice.hrd ```  cloned automatically when you do ```ays apply```
+  - You can configure a service using only 3 files
+    - service.hrd : is the main metadata file which is valid for all service instances
+    - instance.hrd : is the metadata file relevant for 1 instance of a service
+    - actions.py or actions.lua : the livecycle management actions
 
-### AtYourService system features
+- (2) Installation directory
+ - contains the final configuration files for each installed service either locally or remotely
+ - Installation directory is in ```/opt/jumpscale7/hrd/apps ```
+ - by default the default isntance name of a service is called ```main```
+ - if service is located in ```/opt/code/jumpscale/ays_jumpscale7``` then the domain name is called ```jumpscale```
 
-* Powerful Command line tool (One command to rule them all) : see [AtYourService CMD](AtYourServiceCmd.md)
-* Install multiple instances of a service on the same node/machine : see [Service Instance](ServiceInstance.md)
-* Multiple Operating systems support, virtualization backends, and containers
-  - [Docker](http://www.docker.com)
-  - [KVM](http://www.linux-kvm.org/)
-  - [Ubuntu](http://www.ubuntu.com/)
-  - Other Operating System (OS)
-* Uses [git](http://git-scm.com) powered servers to hold data & metadata
-* Powerful & easy full life cycle management Using only 3 metadata files
-  - service.hrd : is the main metadata file which is valid for all service instances
-  - instance.hrd : is the metadata file relevant for 1 instance of a service
-  - actions.py or actions.lua : the livecycle management actions
+ - Installed services have their config files installed by default into ```/opt/jumpscale7/hrd/apps/{$domain_$name_$instance}```
 
+ - ```sh
+  root@ovc2:~# ls /opt/jumpscale7/hrd/apps/                    
+  jumpscale__agentcontroller__main         jumpscale__osis__main
+  jumpscale__agentcontroller_client__main  jumpscale__osis_client__jsagent
+  jumpscale__base__main                    jumpscale__osis_client__main
+  jumpscale__grafana__main                 jumpscale__osis_eve__main
+  jumpscale__grafana_client__main          jumpscale__portal__main 
+  jumpscale__gridportal__main              jumpscale__portal_client__main 
+  jumpscale__influxdb__main                jumpscale__portal_lib__main
+  jumpscale__influxdb_client__main         jumpscale__redis__system
+  jumpscale__jsagent__main                 jumpscale__singlenode_grid__main
+  jumpscale__mailclient__main              jumpscale__singlenode_portal__main
+  jumpscale__mongodb__main                 jumpscale__statsd-collector__main
+  jumpscale__mongodb_client__main          jumpscale__statsd-master__main
+  jumpscale__nginx__main                   jumpscale__web__main```
+  
 
 ### AtYourService Basics
 
@@ -154,26 +213,3 @@ hrd.return = True
 
 - ns.enable means we will be using the nameservice service, is not relevant for all services
 - hrd.return means that after install the hrd needs to be copied back to the site from which we install (only relevant for remote working)
-
-### Remarks (BAD)
-
-@todo do better
-
-- A service data is separated into 2 types
-    - Metadata (configuration files to determine how to manage the whole life cycle)
-    - Binary data (Actual service data)
-- By default, Metadata are saved into [Metadata Repo](https://github.com/jumpscale/ays_jumpscale7) & binaries into [Binary Repo](http://git.aydo.com/binary)
-- After a clean installation of jumpscale framework, both [Metadata Repo](https://github.com/jumpscale/ays_jumpscale7) & [Binary Repo](http://git.aydo.com/binary) will be cloned locally to paths:  ```/opt/code/github/jumpscale/ays_jumpscale7/``` & ```/opt/code/git/binary/``` respectively.
-- When installing locally links will be made between local system & repo, when installing remotely rsync will be used over SSH to push the files to remote location.
-
-- To install mongodb we do:
-```
-ays mdupdate #Update metadata locally
-ays install -n mongodb #Install
-```
-
-- ```ays install -n mongodb``` will 1st search ```/opt/code/github/jumpscale/ays_jumpscale7/``` for a directory called mongodb which contain info on where to get mongodb binaries and how to install them.
-- If directory found, installation process starts, otherwise aborts.
-- This means we need frequently to do ```ays mdupdate``` to keep local metadata repo @```/opt/code/github/jumpscale/ays_jumpscale7/``` in sync with [Remote Metadata Repo](https://github.com/jumpscale/ays_jumpscale7)
-
-
