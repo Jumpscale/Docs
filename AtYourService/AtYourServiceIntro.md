@@ -2,166 +2,156 @@
 
 ### Introduction
 
-**AtYourService**: a self-healing application framework meant for the cloud and can be used remotely
+**AtYourService** is a self-healing application management framework for cloud infrastructure
 
 - Package manager like Ubuntu's ```apt-get```
 - Service manager like Ubuntu's ```service```
 - Configuration manager like [ansible](http://www.ansible.com)
 - Build tool like [ant](http://ant.apache.org)
-- Monitoring tool.
+- Monitoring tool
 
-**What is a Service?**
+<br/>**What is a service?**
 
-- A service either local or remote is an abstraction for almost anything:
- - Simple package i.e ```mongodb```
- - A Server cluster i.e ```mongodb cluster```
- - Data center Infrastructure i.e ```Rack(s) or a cluster of machines```
- - Abstraction for several other services
+A service, either local or remote, is an abstraction for almost anything:
+- Simple package i.e ```mongodb```
+- A server cluster i.e ```mongodb cluster```
+- Data center infrastructure i.e ```Rack(s) or a cluster of machines```
+- Abstraction for several other services
 
-**One command to rule them all**
+<br/>**One command to rule them all**
 
-- We use only one command ```ays``` to control everything
- - Configure a service and all its dependencies (if there):
- ```ays init -n service-name```
- - Install service:
- ```ays apply```
- - Start a service:
- ```ays start -n service-name```
- - Stop a service:
- ```ays stop -n service-name```
- - Check status for all installed services:
- ```ays status```
- - Check status for only local services (on this machine)
- ```ays status --local ```
- - Update metadata (like Ubuntu's ```apt-get update```)
- ```ays mdupdate``` 
+We use only one command ```ays``` to control everything:
+- Configure a service and all its dependencies (if there): ```ays init -n service-name```
+- Install service: ```ays apply```
+- Start a service: ```ays start -n service-name```
+- Stop a service: ```ays stop -n service-name```
+- Check status for all installed services: ```ays status```
+- Check status for only local services (on this machine) ```ays status --local ```
+- Update metadata (like Ubuntu's ```apt-get update```) ```ays mdupdate```
 
+<br/>**AtYourService structure**
 
-**Atyourservice structure**
-
--  (1) Metadata Repos
- - Metadata repos contain metada required to install services
- - Metadata for a service defines the life cycle of a service starting from pre-installation to monitoring
-  - An example is [ays_jumpscale7](https://github.com/Jumpscale/ays_jumpscale7)
-  - you can configure atyourservice to use one or more repo(s)
-    - Edit the file ```/opt/jumpscale7/hrd/system/atyourservice.hrd ```
-    - Add new section for every metadata repo you want to add
-    ```sh
+- (1) Metadata Repos
+ - Metadata repos contain all the metadata defining the life cycle of a service, from pre-installation to monitoring
+ - An example is [ays_jumpscale7](https://github.com/Jumpscale/ays_jumpscale7), defining the full life cycle of the AYS JumpScale7 services
+ - You can configure AtYourService to use one or more repos:
+  - Edit the file ```/opt/jumpscale7/hrd/system/atyourservice.hrd```
+  - Add new section for every metadata repo you want to add
+    ```shell
         #here domain=jumpscale, change name for more domains
         metadata.jumpscale             =
             branch:'master',
             url:'https://github.com/Jumpscale/ays_jumpscale7',
-        # add this domain
-            metadata.openvcloud            =
+        #add this domain
+            metadata.openvcloud        =
             url:'https://git.aydo.com/0-complexity/openvcloud_ays',
 ```
-   - atyourservice uses [git](http://git-scm.com) to manage its medata data
-     - all metadata repos are cloned into ```/opt/code```
-      - repos from github are cloned into ```/opt/code/github```
-      - repps from other git repos are cloned into ```/opt/code/git/```
-      - ```https://github.com/Jumpscale/ays_jumpscale7``` is cloned into ```/opt/code/github/jumppscale/ays_jumpscale7```
-     - Updating/cloning metadata repos:
-        - Do it manually for individual repos using ```git pull```
-        - Use ```ays mdupdate``` which will update existing repos and clone missing ones
-        - Non cloned repos defined in ```/opt/jumpscale7/hrd/system/atyourservice.hrd ```  cloned automatically when you do ```ays apply```
-  - You can configure a service using only 3 files
-    - service.hrd : is the main metadata file which is valid for all service instances
-    - instance.hrd : is the metadata file relevant for 1 instance of a service
-    - actions.py or actions.lua : the livecycle management actions
+ - AtYourService uses [git](http://git-scm.com) to manage its metadata
+  - All metadata repos are cloned into ```/opt/code```
+   - Repos from github are cloned into ```/opt/code/github```
+   - Repos from other git repos are cloned into ```/opt/code/git/```
+    - So ```https://github.com/Jumpscale/ays_jumpscale7``` is cloned into ```/opt/code/github/jumppscale/ays_jumpscale7```
+  - Updating/cloning metadata repos:
+   - Manually cloning individual repos is achieved with ```git pull```
+   - Use ```ays mdupdate``` in order to update all existing repos and clone missing (not yet cloned) repos
+ - You can configure a service by editing the recipe of the service, which is made of following files
+  - **service.hrd** is the main metadata file which is valid for all service instances
+  - **instance.hrd** is the metadata file relevant for 1 instance of a service
+  - **actions_mgmgt.py** defines actions executed from the management location
+  - **action_node.py** defines executed remotely on a node
+  - **actions_tmpl.py** defines the "static" actions for the recipe itself, that do not require to first create a service instance in order to call them
 
-- (2) Installation directory
- - contains the final configuration files for each installed service either locally or remotely
- - Installation directory is in ```/opt/jumpscale7/hrd/apps ```
- - by default the default isntance name of a service is called ```main```
- - if service is located in ```/opt/code/jumpscale/ays_jumpscale7``` then the domain name is called ```jumpscale```
+- (2) Installation Directory
+ -  For each locally and remotely installed service instance a sub directory under ```/opt/jumpscale7/hrd/apps``` will contain the configuration files, the recipe of the running service instance
+ - The name of the sub directory reflects the name of the service and the name of the instance: ```{$service-name__$instance-name}```
+ - For the AYS JumpScale services itself for example, as defined in the git clone ```/opt/code/github/jumpscale/ays_jumpscale7```, it will be as below, where the name of each instance is ```main``` which is the default instance name when no other name was specified in the recipe:
 
- - Installed services have their config files installed by default into ```/opt/jumpscale7/hrd/apps/{$domain_$name_$instance}```
-
- - ```sh
+ ```shell
   root@ovc2:~# ls /opt/jumpscale7/hrd/apps/                    
-  jumpscale__agentcontroller__main         jumpscale__osis__main
-  jumpscale__agentcontroller_client__main  jumpscale__osis_client__jsagent
-  jumpscale__base__main                    jumpscale__osis_client__main
-  jumpscale__grafana__main                 jumpscale__osis_eve__main
-  jumpscale__grafana_client__main          jumpscale__portal__main 
-  jumpscale__gridportal__main              jumpscale__portal_client__main 
-  jumpscale__influxdb__main                jumpscale__portal_lib__main
-  jumpscale__influxdb_client__main         jumpscale__redis__system
-  jumpscale__jsagent__main                 jumpscale__singlenode_grid__main
-  jumpscale__mailclient__main              jumpscale__singlenode_portal__main
-  jumpscale__mongodb__main                 jumpscale__statsd-collector__main
-  jumpscale__mongodb_client__main          jumpscale__statsd-master__main
-  jumpscale__nginx__main                   jumpscale__web__main```
-  
+  agentcontroller__main         osis__main
+  agentcontroller_client__main  osis_client__jsagent
+  base__main                    osis_client__main
+  grafana__main                 osis_eve__main
+  grafana_client__main          portal__main
+  gridportal__main              portal_client__main
+  influxdb__main                portal_lib__main
+  influxdb_client__main         redis__system
+  jsagent__main                 singlenode_grid__main
+  mailclient__main              singlenode_portal__main
+  mongodb__main                 statsd-collector__main
+  mongodb_client__main          statsd-master__main
+  nginx__main                   web__main
+```
+
 
 ### AtYourService Basics
 
-#### AtYourService has a recipe and an instance
+#### Recipes and instances
 
-*ays template* or *ays recipe*
-- are the definition of how a service needs to get deployed
-- in such a recipe we describe
-    - parameters relevant for the aysi (AtYouService instance)
-    - how to startstop the aysi
-    - how to monitor the aysi
-    - how to install the binary files for the aysi
-    - how to configure the aysi
-    - how to get stats from the aysi
-    - how to export/import the ays data
+*AYS Recipe*
+- Defines the full life cycle from pre-installation, over installation, to upgrades and monitoring of a service, all described in the above mentioned recipe files:
+    - service.hrd
+    - instance.hrd
+    - action*.py
+- In a recipe we describe
+    - Parameters relevant for a service instance
+    - How to start/stop the instance
+    - How to monitor the instance
+    - How to install the binary files for the instance
+    - How to configure the instance
+    - How to get stats from the instance
+    - How to export/import the data
 
 
 *Instances*
 
-Example: Running several instances of mongodb on the same machine on different ports.
+Example: Running several instances of MongoDB on the same machine on different ports.
 
 ```shell
-#the following will init mongodb template as an instance
-ays init -n mongodb # Use default instance name (main)
-ays init -n mongodb -i mongo2 #instance name is (mongo2)
+#the following will init the MongoDB recipe as an instance
+ays init -n MongoDB # Use default instance name (main)
+ays init -n MongoDB -i mongo2 #instance name is (mongo2)
 ```
 
 
-#### Each AtYourService instance (aysi) has a unique key
+#### Each AtYourService instance has a unique key
 
-key in format $domain|$name!$instance@role ($version)
+Key in format $domain|$name!$instance@role ($version)
 
-different format examples
+Different format examples
 + $domain|$name!$instance
 + $name
 + !$instance
 + $name!$instance
 + @role
 
-version is added with ()
-+ e.g. node.ssh (1.0)
+Version is added with ()
++ e.g. node.ssh (1.0), where "node.ssh" is the name of the service, which in this case contains a "." where "node" is the role of the service and "ssh" the name of the instance
 
 ### AYS instances can be found using this key format
 
 e.g.
 ```shell
-#find 1 atyourservice which role mongodb and then start (if not started yet), if more than 1 then this will fail
+#find 1 service instance with role MongoDB and then start (if not started yet), if more than 1 then this will fail
 ays start -n @mongodb
 
-#find all ays of role node and print status
+#find all service instances with role node and print their status
 ays status -n @node
 
-#find an ays which has instance name: ovh4
+#find a service instance which has instance name ovh4
 ays status -n !ovh4
 
 ```
 
-if more than 1 aysi found then there will be an error
+If more than 1 instance is found then there will be an error
 
-### each AYS Recipe (aysr) has a role
+### Each service has a role
 
-if the role is not specified in the 'service.hrd' under parameter 'role'
-the the role will be auto filled in with first part of name
-e.g. if ays name is node.ssh the role will become node
+If the role is not specified in the 'service.hrd' under parameter 'role' then the role will be auto filled from the first part of name, e.g. if the AYS service name is "node.ssh" the role will become node
 
-these roles are used to define categories of aysr e.g. ays which define a node & how to execute cmds on a node
-another example role is e.g. ns
+Roles are used to define categories of AYS recipes e.g. AYS which define a node & how to execute commands on a node, another example of a role is e.g. ns
 
-### init redis local or remote (example)
+### Init redis local or remote (example)
 
 local
 
@@ -178,33 +168,33 @@ ays init -n redis -i system --parent '!ovh4' --data 'param.name:system param.por
 
 ```
 
-notice how we use as key !ovh4 this means any ays with instance name ovh4 will be used (only if found 1)
+Notice how we use as key !ovh4 this means any ays with instance name ovh4 will be used (only if found 1)
 more complete way to specify would have been 'node.ssh!ovh4' or '!ovh4$node' #means instance ovh4 from role node
 
-remark: install will only happen after 'ays apply'
+Remark: install will only happen after 'ays apply'
 
-### producers & consumers
+### Producers & Consumers
 
-- Each aysi can consume a service delivered by a producer
-- A producer is another aysi which delivers a service
-- when installing you can specify the consumption you are doing by e.g. '-c mongodb!main' construct
-    - easier is to specify by means of role e.g. '-c $mongodb' will only work if not more than 1 found per node or global 
+- Each service instance can consume a service delivered by a producer
+- A producer is another service instance delivering a service
+- When installing you can specify the consumption you are doing by e.g. '-c mongodb!main' construct
+    - Easier is to specify by means of role e.g. '-c $mongodb' will only work if not more than 1 found per node or global
 
-### usage of dependencies
+### Usage of dependencies
 
 ```
-dependencies.global             = mongodb,influxdb
+dependencies.global            = mongodb,influxdb
 dependencies.node              = portal_lib,influxdb_client,mongodb_client
 ```
 
-- dependencies are specified with a role name (not based on ays name)
-- global & node dependencies
-  - global dependencies are dependencies betweey aysi on level not specific to 1 node e.g. portal needs mongodb
-  - node dependencies are specific for 1 node, they tell us which local(=node) aysi need to be locally installed 
-- if the local & global deps. are properly defined then there is no need to specify the consumption flag
-  - ays will lookup a service with specified role on global or node level, if only 1 is found the the consumption will configured automatically
+- Dependencies are specified with a role name (not based on AYS name)
+- Global & node dependencies
+  - Global dependencies are dependencies between AYS instance on level not specific to 1 node e.g. portal needs MongoDB
+  - Node dependencies are specific for 1 node, they tell us which local(=node) AYS instance need to be locally installed
+- If the local & global dependencies are properly defined then there is no need to specify the consumption flag
+  - AYS will lookup a service with specified role on global or node level, if only 1 is found the the consumption will configured automatically
 
-### some special atyourserive recipe args
+### Some special AtYourService recipe args
 
 ```
 ns.enable = True

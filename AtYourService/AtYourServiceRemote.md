@@ -1,13 +1,13 @@
 ### AtYourService remote execution
 
-AtYourService allow you to create and manage a full environment.
+AtYourService allows you to create and manage a full environment.
 In order to be able to contact the remote machines, you need to write the services that will handle these communications.
 
 To have an idea of what can be created, lets have a look at a concrete example.
 
 Example of a remote node installation
 
-**Through the cmdline**
+**Through the command line**
 ```
 # First, node service should be installed
 # (Will define everything needed to connect to and manage a remote node)
