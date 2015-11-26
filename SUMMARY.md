@@ -8,7 +8,7 @@
    * [IPythonTricks](GettingStarted/IPythonTricks.md)
    * [Code Management](GettingStarted/JSCode.md)
 * [At Your Service](AtYourService/AtYourServiceIntro.md)
-   * [AYS File system](AtYourService/AYS FS.md) 
+   * [AYS File system](AtYourService/AYS FS.md)
    * [Create New Service](AtYourService/AtYourServiceNew.md)
    * [AYS Actions](AtYourService/AtYourServiceActions.md)
    * [AYS Command Line](AtYourService/AtYourServiceCmd.md)
@@ -22,6 +22,7 @@
    * [AYS Ubuntu](AtYourService/AtYourServiceUbuntu.md)
    * [AYS Examples](AtYourService/AtYourServiceExamples.md)
    * [AYS Remote](AtYourService/AtYourServiceRemote.md)
+   * [Building a Service](AtYourService/Building.md)
    * [Human Readable Data Format (HRD)](AtYourService/HRD.md)
    * [AYS Migration](AtYourService/AtYourServiceMigration.md)
    * [AYS Visualization in Portal](AtYourService/AtYourServicePortal.md)
@@ -181,4 +182,3 @@
 * [API Documentation](http:/despiegk.gitbooks.io/jumpscaleapi/content/)
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
-
