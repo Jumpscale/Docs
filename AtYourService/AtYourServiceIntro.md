@@ -21,7 +21,7 @@ A service, either local or remote, is an abstraction for almost anything:
 <br/>**One command to rule them all**
 
 We use only one command ```ays``` to control everything:
-- Configure a service and all its dependencies (if there): ```ays init -n service-name```
+- Configure a service and all its dependencies (if any): ```ays init -n service-name```
 - Install service: ```ays apply```
 - Start a service: ```ays start -n service-name```
 - Stop a service: ```ays stop -n service-name```
