@@ -14,6 +14,10 @@ build   =
 ``repo`` is the url of a git repository where a Dockerfile is located. It's used if you want to build the image on the build server itself instead of downloading it from Docker hub.
 
 ### Trigger a build
+Before you start building service you need to make sure you have the correct service instance installed. You need:
+- **Build server**: Any 'node' producer
+- **ays_stor_client.ssh**: At least one store client cause we need to know where to send the Metadata and binary files after the build.
+
 With the ``ays`` command line:
 ```bash
 ays build -n redis --host 'node.ssh!buildserver' --build --push
