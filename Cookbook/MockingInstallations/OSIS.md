@@ -21,3 +21,15 @@ class MockOSIS():
 if __name__ == '__main__':
     MockOSIS.mock()
 ```
+
+
+To connect to this server, in a jsshell do:
+```
+from JumpScale.grid.osis.OSISFactory import OSISClientFactory
+
+of = OSISClientFactory()
+client = of.get()
+client.listNamespaces()
+client.listNamespaceCategories('system')
+
+```
