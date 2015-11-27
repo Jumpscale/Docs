@@ -13,10 +13,60 @@ build   =
 ``image``: is the name of the docker image to use  
 ``repo`` is the url of a git repository where a Dockerfile is located. It's used if you want to build the image on the build server itself instead of downloading it from Docker hub.
 
-### Trigger a build
+## Build server infrastructure
+
 Before you start building service you need to make sure you have the correct service instance installed. You need:
 - **Build server**: Any 'node' producer
 - **ays_stor_client.ssh**: At least one store client cause we need to know where to send the Metadata and binary files after the build.
+
+Here is an example script to deploy a build infrastructure
+
+```
+#!/usr/local/bin/jspython
+
+from JumpScale import j
+
+data = {
+ 'key.name': 'ovh_install',
+}
+key = j.atyourservice.new(name='sshkey', instance='build', args=data)
+
+buildhostip = "94.23.38.77"
+data = {
+    'jumpscale.branch': 'ays_unstable',
+    'jumpscale.install': False,
+    'jumpscale.reset': False,
+    'jumpscale.update': False,
+    'ssh.port': 22,
+    'login': 'root',
+    'password': 'supersecret',
+    'ip': buildhostip
+}
+buildhost = j.atyourservice.new(name='node.ssh',instance="master",args=data)
+
+
+# #INIT THE CACHES & STOR's
+data = {
+    'read.login': 'read',
+    'write.login': 'write',
+    'root': "/mnt/data/stor"
+}
+ays_stor1 = j.atyourservice.new(name='ays_stor.ssh',instance="stor1",parent=buildhost,args=data)
+
+data = {
+    'login': 'read',
+    'cache': False,
+    'ip': buildhostip,
+    'ssh.port': 22,
+}
+storclient1 = j.atyourservice.new(name='ays_stor_client.ssh',instance="storclient",args=data)
+storclient1.consume(ays_stor1)
+
+#######################################################
+
+```
+
+### Trigger a build
 
 With the ``ays`` command line:
 ```bash
