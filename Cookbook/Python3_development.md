@@ -3,7 +3,7 @@
 manual prepare your machine for development purposes on ubuntu 15.10
 best to copy following script in /tmp/install.sh & execute
 
-'''
+```
 #!/bin/bash
 set -ex
 
@@ -75,4 +75,4 @@ export JSBRANCH='python3_unstable'
 export AYSBRANCH='python3_unstable'
 cd /tmp;rm -f install.sh;curl -k https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/python3_unstable/install/install3.sh > install.sh;bash install.sh
 
-'''
+```
