@@ -5,7 +5,11 @@ best to copy following script in /tmp/install.sh & execute
 
 ```
 #!/bin/bash
+rm -rf /opt/jumpscale7
+
 set -ex
+
+
 
 cd /tmp
 rm -rf get-pip.py
