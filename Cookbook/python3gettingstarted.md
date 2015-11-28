@@ -74,7 +74,7 @@ docker-compose  up
 example docker compose file
 
 ```yaml
-web:
+devel:
   image: jumpscale/ubuntu1510_python3
   ports:
    - "2022:22"
@@ -87,12 +87,42 @@ web:
    - mongo
 influxdb:
   image: jumpscale/influxdb  
+  ports:
+   - "8083:8083"
+   - "3000:3000"
 mongo:
   image: jumpscale/mongo
+  ports:
+   - "27017:27017"
+   - "28017:28017"
 redis:
   image: gurpartap/redis
+  ports:
+   - "6379:6379"
 ```
 
+result
+- this will install ubuntu 15.10 with python3 inside & jumpscale 7
+- also influxdb, mongodb & redis will be installed & all accessible from the devel docker
+
+### influxdb
+- statistics database
+- std login/passwd root:root
+- go to admin interface on http://localhost:8083/
+
+### grafana
+- very nice dashboard to visualize stats in influxdb
+- is installed in same docker as influxdb
+- see http://docs.grafana.org/
+- is on port 3000  on http://localhost:3000/
+
+### mongodb
+- json database (very powerful)
+- 27017 = db port
+- 28017 = web stats port : http://localhost:28017/
+
+### redis
+- 
 
 ## other tools
 
