@@ -37,8 +37,16 @@ paths.hrd=$(paths.base)/hrd
 system.logging = 1
 system.sandbox = 0
 ```
-can all be left empty, or file does not have to exist
+if system.logging = 0 then there will no no logs send to redis or any other log target
 
+## whoami.hrd
+
+```
+email                   =
+fullname                =
+git.login               =
+git.passwd              =
+```
 
 ## system redis
 
@@ -48,11 +56,29 @@ redis.port =
 redis.passwd = 
 ```
 
+can all be left empty, or file does not have to exist
 
-## logging
+
+## realitydb
 
 ```
+realitydb.addr = 
+realitydb.port = 
+realitydb.login =
+realitydb.passwd = 
+```
 
+can all be left empty, or file does not have to exist
+
+
+## statsdb
 
 ```
+statsdb.addr = 
+statsdb.port = 
+statsdb.login =
+statsdb.passwd = 
+```
+
+can all be left empty, or file does not have to exist
 
