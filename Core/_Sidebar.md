@@ -5,4 +5,5 @@
 * [GettingStarted](GettingStarted)
 * [Install](Install)
 * [SomeExtensions](SomeExtensions)
+* [SystemRedis](SystemRedis)
 * [[Home](Home)]
