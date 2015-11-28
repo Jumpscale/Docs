@@ -73,7 +73,7 @@ docker-compose  up
 
 example docker compose file
 
-```yml
+```yaml
 web:
   image: jumpscale/ubuntu1510_python3
   ports:
