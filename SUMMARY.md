@@ -177,6 +177,7 @@
        * [Mothership1 Cloud](Cookbook/CloudAutomation/MS1.md)
    * [DB](Cookbook/DB/DB.md)
        * [SQLAlchemy](Cookbook/DB/SQLAlchemy.md)
+   * Python3GettingStarted
 * [API Documentation](http:/despiegk.gitbooks.io/jumpscaleapi/content/)
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
