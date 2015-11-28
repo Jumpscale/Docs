@@ -64,11 +64,35 @@ remark check if you have enough memory (here we are giving 4GB mem to the docker
 
 ## build your own environment
 
-```
+```bash
 cd ~/code/jumpscale/play7/docker/compose_devel/
+#will get the images as specified in the docker-compose.yml file
 docker-compose  up
 
 ```
+
+example docker compose file
+
+```yaml
+web:
+  image: jumpscale/ubuntu1510_python3
+  ports:
+   - "2022:22"
+  volumes:
+   - .:/code
+   - /Users/Shared/code/github:/opt/code/github
+  links:
+   - redis
+   - influxdb
+   - mongo
+influxdb:
+  image: jumpscale/influxdb  
+mongo:
+  image: jumpscale/mongo
+redis:
+  image: gurpartap/redis
+```
+
 
 ## other tools
 
