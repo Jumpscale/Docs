@@ -128,3 +128,4 @@ result
 
 - sourcetree on mac is a very good tool to manipulate your git repo's
 - sublimte text is a good editor
+- to look at your redis instance use: http://redisdesktop.com/
