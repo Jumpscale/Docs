@@ -18,6 +18,7 @@ wget https://bootstrap.pypa.io/get-pip.py --no-check-certificate
 apt-get install libpython3.5-dev python3.5-dev libffi-dev gcc build-essential autoconf libtool pkg-config libpq-dev -y
 apt-get install libsqlite3-dev -y
 apt-get install net-tools sudo -y
+apt-get install redis-server -y
 
 rm -f /usr/bin/python
 rm -f /usr/bin/python3
