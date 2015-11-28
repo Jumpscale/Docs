@@ -14,7 +14,6 @@
    * [AYS Command Line](AtYourService/AtYourServiceCmd.md)
    * [AYS Dependency Management](AtYourService/AtYourServiceDeps.md)
    * [AYS Parent](AtYourService/AtYourServiceParent.md)
-   * [AYS Hierarchy](AtYourService/AtYourServiceParent.md)
    * [AYS Exports](AtYourService/AtYourServiceExports.md)
    * [AYS FileLocations](AtYourService/AtYourServiceFileLocations.md)
    * [AYS Process](AtYourService/AtYourServiceProcess.md)
@@ -40,8 +39,8 @@
    * [Agent Controller 2](MultiNode/AgentController2/AgentController2.md)
        * [Install](MultiNode/AgentController2/Install.md)
        * Configuration
-          * [Controller](MultiNode/AgentController2/ControllerConfiguration.md)
-          * [Agent](MultiNode/AgentController2/AgentConfiguration.md)
+           * [Controller](MultiNode/AgentController2/ControllerConfiguration.md)
+           * [Agent](MultiNode/AgentController2/AgentConfiguration.md)
        * [Command Syntax](MultiNode/AgentController2/Command-Syntax.md)
        * [Security Certificates](MultiNode/AgentController2/Security.md)
        * [Port-forwarding](MultiNode/AgentController2/Port-forwarding.md)
@@ -162,7 +161,6 @@
    * [SSH Remote System](SSHSystemManagement/SSHRemoteSystem.md)
    * [SSH Cuisine](SSHSystemManagement/Cuisine.md)
    * [SSH SAL = System Abstraction Layer](SSHSystemManagement/SSHSAL.md)
-* [SSH SAL For Unix](SSHSystemManagement/SSHUnix.md)
 * [SAL's](SAL/Home.md)
 * [Howto](Howto/Home.md)
    * [How to connect to api jportal](Howto/How To Use JSPortal APIs Non Generated.md)
@@ -182,3 +180,4 @@
 * [API Documentation](http:/despiegk.gitbooks.io/jumpscaleapi/content/)
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
+
