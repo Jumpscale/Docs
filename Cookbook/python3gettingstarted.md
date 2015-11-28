@@ -18,17 +18,35 @@
 
 ```python
 mkdir -p  ~/code/jumpscale
-cd ~/code/jumpscale
 
 #checkout
+cd ~/code/jumpscale
 git clone git@github.com:Jumpscale/jumpscale_core7.git
 cd jumpscale_core7/
 git fetch
 git checkout -b python3_unstable origin/python3_unstable
 git pull origin python3_unstable
 
+#checkout ays repo
+cd ~/code/jumpscale
+git clone git@github.com:Jumpscale/ays_jumpscale7.git
+cd ays_jumpscale7/
+git fetch
+git checkout -b python3_unstable origin/python3_unstable
+git pull origin python3_unstable
 
+
+#get the playdirectory (has examples to play with)
+cd ~/code/jumpscale
+git clone git@github.com:Jumpscale/play7.git
 
 ```
 
-## 
+## build your own environment
+
+
+
+## other tools
+
+- sourcetree on mac is a very good tool to manipulate your git repo's
+- sublimte text is a good editor
