@@ -182,5 +182,5 @@
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
 * [Internals](Internals/InternalsHome.md)
-   * RedisUsage
+   * [RedisUsage](Internals/redisusage.md)
 
