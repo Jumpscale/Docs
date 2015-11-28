@@ -101,28 +101,36 @@ redis:
    - "6379:6379"
 ```
 
-result
+### result
 - this will install ubuntu 15.10 with python3 inside & jumpscale 7
 - also influxdb, mongodb & redis will be installed & all accessible from the devel docker
+
+### to connect
+- check ```docker-machine ip default``` to find ip address of docker host
+- e,g, foundip=192.168.99.100
+- the main development machine is accessible over ssh on the foundip on port 2022
+    - access ```ssh -A root@192.168.99.100 -p 2022 ``` login/passwd is root/gig1234
 
 ### influxdb
 - statistics database
 - std login/passwd root:root
-- go to admin interface on http://localhost:8083/
+- go to admin interface on http://192.168.99.100:8083/
 
 ### grafana
 - very nice dashboard to visualize stats in influxdb
 - is installed in same docker as influxdb
 - see http://docs.grafana.org/
-- is on port 3000  on http://localhost:3000/
+- is on port 3000  on http://192.168.99.100:3000/
 
 ### mongodb
 - json database (very powerful)
 - 27017 = db port
-- 28017 = web stats port : http://localhost:28017/
+- 28017 = web stats port : http://192.168.99.100:28017/
 
 ### redis
 - 
+
+
 
 ## other tools
 
