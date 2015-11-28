@@ -16,7 +16,7 @@
 - install git in terminal do ```brew install git```
 - checkout jumpscale code to appropriate directory
 
-```!python
+```python
 mkdir -p  ~/code/jumpscale
 cd ~/code/jumpscale
 
