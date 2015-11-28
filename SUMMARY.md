@@ -181,5 +181,5 @@
 * [API Documentation](http:/despiegk.gitbooks.io/jumpscaleapi/content/)
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
-* [Internals](Redis Usage.md)
+* [Internals](Internals/InternalsHome.md)
 
