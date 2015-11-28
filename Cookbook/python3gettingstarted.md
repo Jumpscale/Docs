@@ -42,9 +42,33 @@ git clone git@github.com:Jumpscale/play7.git
 
 ```
 
+## docker preparation
+
+- prepare yourself a bigger docker environment
+    - std docker is in too small docker env  
+
+```bash
+#remove your std vm used as docker host
+docker-machine rm default
+
+#create a new one based on virtualbox
+docker-machine create --driver virtualbox --virtualbox-disk-size "60000" --virtualbox-cpu-count "2" --virtualbox-memory "4000" default
+
+#put the docker env arguments in your os environment
+eval $(docker-machine env default)
+
+```
+
+remark check if you have enough memory (here we are giving 4GB mem to the docker host)
+
+
 ## build your own environment
 
+```
+cd ~/code/jumpscale/play7/docker/compose_devel/
+docker-compose  up
 
+```
 
 ## other tools
 
