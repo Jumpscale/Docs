@@ -77,8 +77,10 @@ can all be left empty, or file does not have to exist
 statsdb.addr = 
 statsdb.port = 
 statsdb.login =
-statsdb.passwd = 
+statsdb.passwd =
+statsdb.interval = 60
 ```
+interval is every how many sec aggregation is being done
 
 can all be left empty, or file does not have to exist
 
