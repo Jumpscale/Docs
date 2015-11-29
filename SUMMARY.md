@@ -8,7 +8,7 @@
    * [IPythonTricks](GettingStarted/IPythonTricks.md)
    * [Code Management](GettingStarted/JSCode.md)
 * [At Your Service](AtYourService/AtYourServiceIntro.md)
-   * AYS Bootstrap
+   * [AYS Bootstrap](AtYourService/ays_bootstrap.md)
    * [AYS File system](AtYourService/AYS FS.md)
    * [Create New Service](AtYourService/AtYourServiceNew.md)
    * [AYS Actions](AtYourService/AtYourServiceActions.md)
