@@ -181,7 +181,7 @@
 * [API Documentation](http:/despiegk.gitbooks.io/jumpscaleapi/content/)
 * [Developers](Developers/Developers.md)
    * [ConTOML](Developers/Contoml.md)
-   * BestPractices
+   * [Best Practices](Developers/BestPractices.md)
 * [Internals](Internals/InternalsHome.md)
    * [RedisUsage](Internals/redisusage.md)
    * [JumpscaleConfigFiles](Internals/jumpscaleconfigfiles.md)
