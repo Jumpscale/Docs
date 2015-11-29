@@ -185,6 +185,6 @@
 * [Internals](Internals/InternalsHome.md)
    * [RedisUsage](Internals/redisusage.md)
    * [JumpscaleConfigFiles](Internals/jumpscaleconfigfiles.md)
-* System Administration
+* [System Administration](system_administration.md)
    * AYS FS
 
