@@ -6,3 +6,5 @@
 - please no longer use the different fs walker functions/classes under j.system, the j.tools.path has a walkerfunction build in
 
 
+## errorhandling
+
