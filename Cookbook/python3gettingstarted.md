@@ -89,6 +89,7 @@ influxdb:
   image: jumpscale/influxdb  
   ports:
    - "8083:8083"
+   - "8086:8086"
    - "3000:3000"
 mongo:
   image: jumpscale/mongo
