@@ -54,6 +54,10 @@ docker-machine rm default
 #create a new one based on virtualbox
 docker-machine create --driver virtualbox --virtualbox-disk-size "60000" --virtualbox-cpu-count "2" --virtualbox-memory "4000" default
 
+#or create one on remote ssh node
+docker-machine rm ovh5
+docker-machine create --engine-storage-driver btrfs --driver=generic --generic-ip-address=ovh5 --generic-ssh-key=id_rsa default
+
 #put the docker env arguments in your os environment
 eval $(docker-machine env default)
 
