@@ -141,7 +141,7 @@ This is the code of the default build method:
 folders = serviceObj.installRecipe()
 
 for src, dest in folders:
-    j.tools.sandboxer.dedupe(dest, output_path, '%s__%s' % (serviceObj.domain, serviceObj.name))
+    serviceObj.upload2AYSfs(dest)
 ```
 
 Of course if your service requires more action you need to overwrite the default method and write the implementation yourself.
