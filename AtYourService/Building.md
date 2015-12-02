@@ -72,13 +72,24 @@ With the ``ays`` command line:
 ```bash
 ays build -n redis --host 'node.ssh!buildserver' --build --push
 ```
+
+```
+Build:
+  --host HOST           key of the build server e.g: 'node.ssh!buildserver'
+  --build               enable building of docker image before building the
+                        service
+  --push                push the docker image after building it.
+  --debug               don't clean the docker_build after build. usefull to
+                        debug if an error happen durin building
+
+```
 Here we trigger the build of the redis service on the build server pointed by ``--host``.  
 ``--build`` and ``--push`` specify that we want to build the docker image on the build server and then push it on Docker hub. These two flags are optional.
 
 In a Script:
 ```py
 redis = j.atyourservice.getTemplate(name='redis')
-redis.build(build_server='node.ssh!buildserver', image_build=False, image_push=False)
+redis.build(build_server='node.ssh!buildserver', image_build=False, image_push=False, debug=False)
 ```
 
 #### Metadata and binary files
