@@ -188,5 +188,5 @@
    * [JumpscaleConfigFiles](Internals/jumpscaleconfigfiles.md)
 * [System Administration](system_administration.md)
    * [AYS FS](systemadmin/ays_fs.md)
-* [JSInfrastructure](jsinfrastructure.md)
+* [Infrastructure](jsinfrastructure.md)
 
