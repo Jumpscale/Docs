@@ -4,7 +4,7 @@ from os.path import expanduser
 
 class MockREDIS(object):
     def mock(self):
-        j.system.fs.changeDir(expanduser('~'))
+        #j.system.fs.changeDir(expanduser('~'))
         bin = os.path.join(expanduser('~'),'redis')
         j.system.fs.createDir(bin)
         j.do.pullGitRepo(url='https://git.aydo.com/binary/redis.git', dest=bin, login=None, passwd=None, depth=1, ignorelocalchanges=False, reset=False, branch=None, revision=None)
