@@ -40,4 +40,5 @@ print('-> Remove')
 print(s.removeUser('test'))
 print(s.removeUser('test'))
 print(s.removeUser('test2'))
+
 ```
