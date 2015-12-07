@@ -1,10 +1,10 @@
-## Samba
+# Samba
 
-#This library is responsible for:
+##This library is responsible for:
 * Adding, removing, listing Samba shares and subshares
 * Adding, removing, listing Samba users as well as granting and revoking their access over shares
 
-#Here is an example:
+##Here is an example:
 
 ```python
 from JumpScale import j
