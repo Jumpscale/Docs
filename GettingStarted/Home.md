@@ -1,4 +1,4 @@
-# GettingStarted
+# Getting Started
 
 ## js
 
@@ -8,7 +8,7 @@ to execute a jumpscale cmd in the shell do
 ```
 js 'j.do.loadSSHAgent()'
 ```
-everything behind hs will be evalled in the jumpscale shell session 
+everything behind hs will be evalled in the jumpscale shell session
 
 ## to install jumpscale apps use ays (at your service)
 
