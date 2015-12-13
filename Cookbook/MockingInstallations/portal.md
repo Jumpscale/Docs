@@ -40,25 +40,24 @@ if __name__ == '__main__':
 
 Then, in a jsshell, do:
 ```
-hrdstr = """
+hrdstr = """                        
 #param.osis.connection=@ASK default:main descr:'PORTAL: OSIS connection instance'
 param.portal.rootpasswd = 'admin'
 
 param.cfg.ipaddr = '127.0.0.1'
 param.cfg.port= '82'
-param.cfg.appdir = /opt/jumpscale7/apps/portals/portalbase
-param.cfg.filesroot = /opt/jumpscale7/var/portal/files
+param.cfg.appdir = /opt/jumpscale8/apps/portals/portalbase
+param.cfg.filesroot = /opt/jumpscale8/var/portal/files
 param.cfg.secret = 'admin'
 param.cfg.defaultspace = 'home'
 param.cfg.admingroups = 'admin,'
-param.cfg.authentication.method=''
+param.cfg.authentication.method='' #Empty for minimal portal which doesn't authenticate
 param.cfg.gitlab.connection='main'
 param.cfg.force_oauth_instance=''
 
 param.cfg.contentdirs = ''
 """
-hrd = j.core.hrd.get(content=hrdstr)
-import JumpScale.portal
+hrd = j.data.hrd.get(content=hrdstr)
 j.application.instanceconfig = hrd
 j.core.portal.getServer().start()
 ```
