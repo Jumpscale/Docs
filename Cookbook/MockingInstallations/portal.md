@@ -11,8 +11,9 @@ cp -rf  /opt/jumpscale8/apps/portals/jslib/old/images  /opt/jumpscale8/apps/port
 cd /opt/jumpscale8/apps/portals/main  
 
 ```
-Then, in a jsshell, do:
+Then, create a file.py script, with :
 ```
+from JumpScale import j
 
 hrdstr = """                        
 #param.osis.connection=@ASK default:main descr:'PORTAL: OSIS connection instance'
