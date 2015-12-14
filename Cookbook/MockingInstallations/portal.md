@@ -37,7 +37,3 @@ j.core.portal.getServer().start()
 
 
 
-Now, to connect to the portal, in a jsshell:
-```
- cl = j.clients.portal.get(port=82, secret='admin')
-```
