@@ -19,7 +19,7 @@ param.portal.rootpasswd = 'admin'
 
 param.cfg.ipaddr = '127.0.0.1'
 param.cfg.port= '82'
-param.cfg.appdir = /opt/jumpscale8/apps/portals/main
+param.cfg.appdir = /opt/jumpscale8/apps/portals/portalbase
 param.cfg.filesroot = /opt/jumpscale8/var/portal/files
 param.cfg.secret = 'admin'
 param.cfg.defaultspace = 'home'
