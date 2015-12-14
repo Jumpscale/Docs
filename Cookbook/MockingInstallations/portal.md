@@ -6,7 +6,7 @@ mkdir -p /opt/jumpscale8/apps/portals/main
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/jslib /opt/jumpscale8/apps/portals/
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/apps/portalbase /opt/jumpscale8/apps/portals/
 
-move home space into /opt/jumpscale/apps/portal/main/base
+mkdir -p /opt/jumpscale/apps/portal/main/base/home/.space
 cp -rf  /opt/jumpscale/apps/portals/jslib/old/images  /opt/jumpscale/apps/portals/jslib/old/elfinder
 
 ```
