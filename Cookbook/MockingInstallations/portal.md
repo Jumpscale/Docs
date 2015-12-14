@@ -32,9 +32,13 @@ param.cfg.force_oauth_instance=''
 
 param.cfg.contentdirs = ''
 """
+from JumpScale import j
+
 hrd = j.data.hrd.get(content=hrdstr)
+import JumpScale.portal
 j.application.instanceconfig = hrd
 j.core.portal.getServer().start()
+~                                     
 ```
 
 
