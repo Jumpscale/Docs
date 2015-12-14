@@ -2,7 +2,7 @@ First, you'll need to make sure the poral libs are made available. You can do th
 ```
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/lib/portal /opt/jumpscale8/lib/JumpScale/
 ln -s /opt/code/git/binary/web_python3/root/lib/* /opt/jumpscale8/lib/
-mkdir -p /opt/jumpscale8/portals/main
+mkdir -p /opt/jumpscale8/apps/portals/main
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/jslib /opt/jumpscale8/apps/portals/
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/apps/portalbase /opt/jumpscale8/apps/portals/
 
@@ -10,9 +10,10 @@ move home space into /opt/jumpscale/apps/portal/main/base
 cp -rf  /opt/jumpscale/apps/portals/jslib/old/images  /opt/jumpscale/apps/portals/jslib/old/elfinder
 
 ```
-
 Then, in a jsshell, do:
 ```
+cd /opt/jumpscale8/apps/portals/main  
+
 hrdstr = """                        
 #param.osis.connection=@ASK default:main descr:'PORTAL: OSIS connection instance'
 param.portal.rootpasswd = 'admin'
