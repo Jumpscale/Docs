@@ -6,13 +6,13 @@ mkdir -p /opt/jumpscale8/apps/portals/main
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/jslib /opt/jumpscale8/apps/portals/
 ln -s /opt/code/github/jumpscale/jumpscale_portal8/apps/portalbase /opt/jumpscale8/apps/portals/
 
-mkdir -p /opt/jumpscale/apps/portal/main/base/home/.space
-cp -rf  /opt/jumpscale/apps/portals/jslib/old/images  /opt/jumpscale/apps/portals/jslib/old/elfinder
+mkdir -p /opt/jumpscale8/apps/portal/main/base/home/.space
+cp -rf  /opt/jumpscale8/apps/portals/jslib/old/images  /opt/jumpscale8/apps/portals/jslib/old/elfinder
+cd /opt/jumpscale8/apps/portals/main  
 
 ```
 Then, in a jsshell, do:
 ```
-cd /opt/jumpscale8/apps/portals/main  
 
 hrdstr = """                        
 #param.osis.connection=@ASK default:main descr:'PORTAL: OSIS connection instance'
