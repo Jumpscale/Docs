@@ -9,6 +9,10 @@ mkdir -p /opt/jumpscale8/apps/portals/main/base/home/.space
 cp -rf  /opt/jumpscale8/apps/portals/jslib/old/images  /opt/jumpscale8/apps/portals/jslib/old/elfinder
 cd /opt/jumpscale8/apps/portals/main  
 
+* To get GridPortal
+ln -s /opt/code/github/jumpscale/jumpscale_portal8/apps/gridportal/base/* /opt/jumpscale8/apps/portals/main/base/
+
+
 ```
 Then, create a file.py script, with :
 ```
