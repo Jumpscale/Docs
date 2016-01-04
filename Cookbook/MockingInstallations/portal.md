@@ -15,17 +15,16 @@ Then, create a file.py script, with :
 from JumpScale import j
 
 hrdstr = """                        
-#param.osis.connection=@ASK default:main descr:'PORTAL: OSIS connection instance'
+param.mongoengine.connection=host:localhost, port:27017
 param.portal.rootpasswd = 'admin'
 
 param.cfg.ipaddr = '127.0.0.1'
 param.cfg.port= '82'
 param.cfg.appdir = /opt/jumpscale8/apps/portals/portalbase
 param.cfg.filesroot = /opt/jumpscale8/var/portal/files
-param.cfg.secret = 'admin'
 param.cfg.defaultspace = 'home'
 param.cfg.admingroups = 'admin,'
-param.cfg.authentication.method='' #Empty for minimal portal which doesn't authenticate
+param.cfg.authentication.method='me' #Empty for minimal portal which doesn't authenticate
 param.cfg.gitlab.connection='main'
 param.cfg.force_oauth_instance=''
 
