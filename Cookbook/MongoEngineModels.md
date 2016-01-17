@@ -24,11 +24,11 @@ class MyNameSpace(NameSpaceLoader):
 
 * To create generic DemoData:
 ```
-from JumpScale.data.models.DemoData import Populate
-Populate.create(outputpath)
+from JumpScale.data.models.DemoData import create, load
+create(outputpath)
 ```
 
 * To load user-defined data into your db:
 ```
-Populate.load(path=path_to_your_json_objects)
+load(path=path_to_your_json_objects)
 ```
