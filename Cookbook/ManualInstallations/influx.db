@@ -1,3 +1,5 @@
+'''
+
 from JumpScale import j
 CONFIG="""
 reporting-disabled = false
@@ -106,23 +108,24 @@ reporting-disabled = false
 class MockInflux(object):
     def mockinstall(self):
         j.do.pullGitRepo(url = 'https://git.aydo.com/binary/influxdb_bin.git')
-        j.system.fs.createDir('/opt/influxdb')
+        j.sal.fs.createDir('/opt/influxdb')
 
         src='/opt/code/git/binary/influxdb_bin'
         dst='/opt/influxdb/'
-        j.do.copyFile(src,"/opt/influxdb/",skipIfExists=True) 
-        j.system.fs.changeDir('/opt/influxdb')
+        j.do.copyTree(src,"/opt/influxdb/") 
+        j.sal.fs.changeDir('/opt/influxdb')
      #   return True
 
     # def config(self):
-        j.system.fs.createDir("/opt/influxdb/cfg")   
+        j.sal.fs.createDir("/opt/influxdb/cfg")   
         cfg = j.dirs.replaceTxtDirVars(CONFIG, additionalArgs={})
-        j.system.fs.createEmptyFile('config.toml')
+        j.sal.fs.createEmptyFile('config.toml')
         j.do.writeFile("/opt/influxdb/cfg/config.toml", cfg)
       #  return True
 
     # def run(self):
-        j.system.process.execute('./influxd -config=cfg/config.toml', dieOnNonZeroExitCode=True, outputToStdout=True ) 
+        j.sal.fs.changeDir('/opt/influxdb')
+        j.sal.process.execute('./influxd -config=cfg/config.toml', dieOnNonZeroExitCode=True, outputToStdout=True ) 
         return True
 
 if __name__ == '__main__':
@@ -130,3 +133,4 @@ if __name__ == '__main__':
     mock.mockinstall()
     #mock.config()
     #mock.run()
+'''
