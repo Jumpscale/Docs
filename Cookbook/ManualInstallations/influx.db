@@ -1,5 +1,3 @@
-'''
-
 from JumpScale import j
 CONFIG="""
 reporting-disabled = false
@@ -133,4 +131,3 @@ if __name__ == '__main__':
     mock.mockinstall()
     #mock.config()
     #mock.run()
-'''
