@@ -45,6 +45,46 @@ export JSBRANCH=@ys
 ```
 the standard branch = master
 
+## Offline mode
+
+To do an offline installation you can install JumpScale in offline mode.
+
+1. Make sure that the required packages are installed which are:
+
+  * curl
+  * git
+  * ssh
+  * python2.7
+  * python
+
+
+2. Make sure that the required repos are cloned in the right direcctory
+
+  ```
+  http://git.aydo.com/binary/base_python.git -> /opt/code/git/binary/base_python
+  http://git.aydo.com/binary/grafana.git -> /opt/code/git/binary/grafana
+  http://git.aydo.com/binary/mongodb.git -> /opt/code/git/binary/mongodb
+  https://git.aydo.com/binary/nginx.git -> /opt/code/git/binary/nginx
+  https://git.aydo.com/binary/nodejs.git -> /opt/code/git/binary/nodejs
+  https://git.aydo.com/binary/openvcloud.git -> /opt/code/git/binary/openvcloud
+  http://git.aydo.com/binary/openvstorage.git -> /opt/code/git/binary/openvstorage
+  http://git.aydo.com/binary/openwrt.git -> /opt/code/git/binary/openwrt
+  http://git.aydo.com/binary/ovs_branding.git -> /opt/code/git/binary/ovs_branding
+  http://git.aydo.com/binary/python-cloudlibs.git -> /opt/code/git/binary/python-cloudlibs
+  http://git.aydo.com/binary/redis.git -> /opt/code/git/binary/redis
+  http://git.aydo.com/binary/routeros.git -> /opt/code/git/binary/routeros
+  http://git.aydo.com/binary/statsd.git -> /opt/code/git/binary/statsd
+  http://git.aydo.com/binary/web_python.git -> /opt/code/git/binary/web_python
+  https://github.com/Jumpscale/ays_jumpscale7.git -> /opt/code/github/jumpscale/ays_jumpscale7
+  https://git.aydo.com/jumpscale/ays_test -> /opt/code/github/jumpscale/ays_test
+  https://github.com/Jumpscale/jumpscale_core7.git -> /opt/code/github/jumpscale/jumpscale_core7
+  https://github.com/Jumpscale/jumpscale_portal.git -> /opt/code/github/jumpscale/jumpscale_portal
+  ```
+3. Execute [the installation script](https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/7.0/install/InstallTools.py) using `--offline` argument
+
+`curl https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/7.0/install/InstallTools.py | python - --offline`
+
+
 More Information About Installation Process
 =======================
 
