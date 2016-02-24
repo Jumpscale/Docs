@@ -76,7 +76,6 @@ To do an offline installation you can install JumpScale in offline mode.
   http://git.aydo.com/binary/statsd.git -> /opt/code/git/binary/statsd
   http://git.aydo.com/binary/web_python.git -> /opt/code/git/binary/web_python
   https://github.com/Jumpscale/ays_jumpscale7.git -> /opt/code/github/jumpscale/ays_jumpscale7
-  https://git.aydo.com/jumpscale/ays_test -> /opt/code/github/jumpscale/ays_test
   https://github.com/Jumpscale/jumpscale_core7.git -> /opt/code/github/jumpscale/jumpscale_core7
   https://github.com/Jumpscale/jumpscale_portal.git -> /opt/code/github/jumpscale/jumpscale_portal
   ```
