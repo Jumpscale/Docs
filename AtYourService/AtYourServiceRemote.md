@@ -59,5 +59,5 @@ j.atyourservice.apply()
 ```
 
 Have a look at the services template used in this example :
-- [node.local](https://github.com/Jumpscale/ays_jumpscale7/tree/ays_unstable/_ays/node.local)
-- [singlenode_portal](https://github.com/Jumpscale/ays_jumpscale7/tree/ays_unstable/_jumpscale/singlenode_portal)
+- [node.local](https://github.com/jumpscale7/ays_jumpscale7/tree/ays_unstable/_ays/node.local)
+- [singlenode_portal](https://github.com/jumpscale7/ays_jumpscale7/tree/ays_unstable/_jumpscale/singlenode_portal)

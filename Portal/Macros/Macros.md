@@ -24,18 +24,18 @@ Under these paths we should have three subpaths `page`, `wiki` and `preprocess`
 ## Wiki Macros
 
 Wiki macros replace with body of the macro with new wiki syntax and can write out new macros in its turn.
-The [doc](https://github.com/Jumpscale/jumpscale_portal/blob/master/lib/portal/docpreprocessor/Doc.py) object get passed to the params of these macros.
+The [doc](https://github.com/jumpscale7/jumpscale_portal/blob/master/lib/portal/docpreprocessor/Doc.py) object get passed to the params of these macros.
 
-[Examples](https://github.com/Jumpscale/jumpscale_portal/tree/master/apps/portalbase/macros/wiki)
+[Examples](https://github.com/jumpscale7/jumpscale_portal/tree/master/apps/portalbase/macros/wiki)
 
 ## Page Macros
 
-Page macros work on a high level of the document and manipulate the HTML itself. The [page](https://github.com/Jumpscale/jumpscale_portal/blob/master/lib/portal/docgenerator/PageHTML.py) object gets passed to the params which makes it easy to add CSS or JavaScript to the document.
+Page macros work on a high level of the document and manipulate the HTML itself. The [page](https://github.com/jumpscale7/jumpscale_portal/blob/master/lib/portal/docgenerator/PageHTML.py) object gets passed to the params which makes it easy to add CSS or JavaScript to the document.
 
-[Examples](https://github.com/Jumpscale/jumpscale_portal/tree/master/apps/portalbase/macros/page)
+[Examples](https://github.com/jumpscale7/jumpscale_portal/tree/master/apps/portalbase/macros/page)
 
 ## Preprocess macros
 
-Currently only [include](https://github.com/Jumpscale/jumpscale_portal/tree/master/apps/portalbase/macros/preprocess/include) uses the preprocessor macro.
+Currently only [include](https://github.com/jumpscale7/jumpscale_portal/tree/master/apps/portalbase/macros/preprocess/include) uses the preprocessor macro.
 
-[Examples](https://github.com/Jumpscale/jumpscale_portal/tree/master/apps/portalbase/macros/preprocess)
+[Examples](https://github.com/jumpscale7/jumpscale_portal/tree/master/apps/portalbase/macros/preprocess)

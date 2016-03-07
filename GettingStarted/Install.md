@@ -8,7 +8,7 @@ use these install scripts to make your life easy
 ```shell
 sudo -s
 #if ubuntu is in recent state & apt get update was done recently
-cd /tmp;rm -f install.sh;curl -k https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/master/install/install.sh > install.sh;bash install.sh
+cd /tmp;rm -f install.sh;curl -k https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/master/install/install.sh > install.sh;bash install.sh
 ```
 
 above will copy a boostrap.py file in your temp folder e.g. /tmp, you can manually execute from there
@@ -17,7 +17,7 @@ MacOSX
 ------
 go to shell in MacOSX
 ```shell
-cd $TMPDIR;rm -f install.sh;curl -k https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/master/install/install.sh > install.sh;bash install.sh
+cd $TMPDIR;rm -f install.sh;curl -k https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/master/install/install.sh > install.sh;bash install.sh
 ```
 
 ENV ARGUMENTS which can be set to change behaviour of install
@@ -30,8 +30,8 @@ export JSBASE='/opt/jumpscale7'
 export SANDBOX=0
 export JSBRANCH='ays_unstable'
 export AYSBRANCH='ays_unstable'
-export JSGIT='https://github.com/Jumpscale/jumpscale_core7.git'
-export AYSGIT='https://github.com/Jumpscale/ays_jumpscale7.git'
+export JSGIT='https://github.com/jumpscale7/jumpscale_core7.git'
+export AYSGIT='https://github.com/jumpscale7/ays_jumpscale7.git'
 ```
 
 * insystem means use system packaging system to deploy dependencies like python & python packages
@@ -75,13 +75,13 @@ To do an offline installation you can install JumpScale in offline mode.
   http://git.aydo.com/binary/routeros.git -> /opt/code/git/binary/routeros
   http://git.aydo.com/binary/statsd.git -> /opt/code/git/binary/statsd
   http://git.aydo.com/binary/web_python.git -> /opt/code/git/binary/web_python
-  https://github.com/Jumpscale/ays_jumpscale7.git -> /opt/code/github/jumpscale/ays_jumpscale7
-  https://github.com/Jumpscale/jumpscale_core7.git -> /opt/code/github/jumpscale/jumpscale_core7
-  https://github.com/Jumpscale/jumpscale_portal.git -> /opt/code/github/jumpscale/jumpscale_portal
+  https://github.com/jumpscale7/ays_jumpscale7.git -> /opt/code/github/jumpscale7/ays_jumpscale7
+  https://github.com/jumpscale7/jumpscale_core7.git -> /opt/code/github/jumpscale7/jumpscale_core7
+  https://github.com/jumpscale7/jumpscale_portal.git -> /opt/code/github/jumpscale7/jumpscale_portal
   ```
-3. Execute [the installation script](https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/7.0/install/InstallTools.py) using `--offline` argument
+3. Execute [the installation script](https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/7.0/install/InstallTools.py) using `--offline` argument
 
-`curl https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/7.0/install/InstallTools.py | python - --offline`
+`curl https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/7.0/install/InstallTools.py | python - --offline`
 
 
 More Information About Installation Process

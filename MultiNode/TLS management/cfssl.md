@@ -5,7 +5,7 @@ In order to do that, a common technique is to use TLS/SSL.
 JumpScale provide simple ways to deal with servcer and client certificate generation.
 
 ### CFSSL Service
-The AYS service responsible of all the TLS infrastructure is [cfssl](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_tools/cfsll).
+The AYS service responsible of all the TLS infrastructure is [cfssl](https://github.com/jumpscale7/ays_jumpscale7/tree/master/_tools/cfsll).
 
 to install simple do 
 ```

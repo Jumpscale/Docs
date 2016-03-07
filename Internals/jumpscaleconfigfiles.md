@@ -11,7 +11,7 @@ all hrd config files are stored in /opt/jumpscale7/hrd/system
 ```bash
 #here domain=jumpscale, change name for more domains
 metadata.jumpscale =
-    url:'https://github.com/Jumpscale/ays_jumpscale7',
+    url:'https://github.com/jumpscale7/ays_jumpscale7',
     branch:'python3_unstable',
 
 ```

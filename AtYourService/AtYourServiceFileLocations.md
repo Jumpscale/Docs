@@ -1,11 +1,11 @@
 ## File Locations For Service Templates
 
 ```
-/opt/code/github/jumpscale/ays_jumpscale7/singlenode_portal/
+/opt/code/github/jumpscale7/ays_jumpscale7/singlenode_portal/
 ```
 
 * service templates are organized in service domains and are stored in git.
-* /opt/code/github/jumpscale/ays_jumpscale7 is a service domain called jumpscale7
+* /opt/code/github/jumpscale7/ays_jumpscale7 is a service domain called jumpscale7
 
 ```
 /opt/jumpscale7/hrd/apps/$role!$instanceName/

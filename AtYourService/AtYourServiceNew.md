@@ -8,7 +8,7 @@ How to configure a new service
         - Add the binary data files to this repo
         - Push this repo to e.g. [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)
     - Create service templates
-        - create a directory under your ays metadata repo e.g. ```/opt/code/github/jumpscale/ays_jumpscale7/``` called ```fancyPackage```
+        - create a directory under your ays metadata repo e.g. ```/opt/code/github/jumpscale7/ays_jumpscale7/``` called ```fancyPackage```
         - Inside the service template directory, add 3 files *(actions.py, service.hrd, instance.hrd)*
         - Those metadata files draw the life cycle plan of the service from creation to monitoring.
         - Metadata will contain the URL for binary data repo for that service on [Remote Binary Repo/Aydo](http://git.aydo.com/org/binary)

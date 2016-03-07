@@ -59,9 +59,9 @@ More Info
 
 - [API Documentation](http://gig.gitbooks.io/jumpscaleapi/content/)
 - Main gitgub repo's
-    - [JumpScale Core Repo](https://github.com/Jumpscale/jumpscale_core7):
+    - [JumpScale Core Repo](https://github.com/jumpscale7/jumpscale_core7):
     - [Jumpscale Prototypes](https://github.com/jumpscale/jumpscale_prototypes)
-    - [AtYourService metadata](https://github.com/Jumpscale/ays_jumpscale7) 
+    - [AtYourService metadata](https://github.com/jumpscale7/ays_jumpscale7) 
     - [AtYourService binary repo's](http://git.aydo.com/binary)
 - Docs in other format
     - [Jumpscale Docs In PDF](https://www.gitbook.com/download/pdf/book/gig/jumpscale)
@@ -71,7 +71,7 @@ More Info
 
 Known Issues
 =============
-* See bug list on github: https://github.com/Jumpscale/jumpscale_core7/issues
+* See bug list on github: https://github.com/jumpscale7/jumpscale_core7/issues
 
 Help us improve JumpScale
 =============================

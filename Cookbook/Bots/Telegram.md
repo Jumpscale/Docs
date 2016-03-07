@@ -51,4 +51,4 @@ now go to your chat app & look for user jumpscale_bot (ofcourse needs to be your
 
 ### check the handlers code on
 
-https://github.com/Jumpscale/jumpscale_core7/tree/master/lib/JumpScale/lib/telegram/handlers
+https://github.com/jumpscale7/jumpscale_core7/tree/master/lib/jumpscale7/lib/telegram/handlers

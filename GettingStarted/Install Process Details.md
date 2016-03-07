@@ -19,9 +19,9 @@ GITHUBUSER = ''
 GITHUBPASSWD = ''
 SANDBOX = 0
 JSBASE = '/opt/jumpscale7'
-JSGIT = 'https://github.com/Jumpscale/jumpscale_core7.git'
+JSGIT = 'https://github.com/jumpscale7/jumpscale_core7.git'
 JSBRANCH = 'master'
-AYSGIT = 'https://github.com/Jumpscale/ays_jumpscale7.git'
+AYSGIT = 'https://github.com/jumpscale7/ays_jumpscale7.git'
 AYSBRANCH = 'master'
 CODEDIR = '/opt/code'
 ```
@@ -45,7 +45,7 @@ jumpscale install process
 - on macosx we use the fantastic package manager brew
 
 the first install script to use is in our main git repo 
-- [$github/jumpscale/jumpscale_core7/install/install.sh](https://github.com/Jumpscale/jumpscale_core7/blob/master/install/install.sh)
+- [$github/jumpscale7/jumpscale_core7/install/install.sh](https://github.com/jumpscale7/jumpscale_core7/blob/master/install/install.sh)
 - its very easy to create other install scripts which change your required behaviour e.g. set the env arguments differenty and use that as your own bootstrap file
 
 this script will
@@ -53,12 +53,12 @@ this script will
     - curl python & git get installed
     - some basic env var's are set
 - then the python bootscript file will be downloaded
-    - default: [https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/master/install/web/bootstrap.py](https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/master/install/web/bootstrap.py)
+    - default: [https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/master/install/web/bootstrap.py](https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/master/install/web/bootstrap.py)
     - ofcourse also this fileis really easy to change & get other install behaviour (please investigate the content of this file)
 
 the python bootstrap file will
 - download Install Tools
-    - [https://github.com/Jumpscale/jumpscale_core7/blob/master/install/InstallTools.py](https://github.com/Jumpscale/jumpscale_core7/blob/master/install/InstallTools.py)
+    - [https://github.com/jumpscale7/jumpscale_core7/blob/master/install/InstallTools.py](https://github.com/jumpscale7/jumpscale_core7/blob/master/install/InstallTools.py)
     - which is 1 python script with lots of helper functions in to help you bootstrap an install, please look at that file to understand
 - read the environment variables and set python variables
 - call the install method on InstallTools: 
@@ -66,8 +66,8 @@ the python bootstrap file will
 ```
 def installJS(self,base="",clean=False,insystem=True,pythonversion=2,copybinary=True,\
         GITHUBUSER="",GITHUBPASSWD="",CODEDIR="\opt\code",\
-        JSGIT="https://github.com/Jumpscale/jumpscale_core7.git",JSBRANCH="master",\
-        AYSGIT="https://github.com/Jumpscale/ays_jumpscale7.git",AYSBRANCH="master"\
+        JSGIT="https://github.com/jumpscale7/jumpscale_core7.git",JSBRANCH="master",\
+        AYSGIT="https://github.com/jumpscale7/ays_jumpscale7.git",AYSBRANCH="master"\
         ):
     """
     @param pythonversion is 2 or 3 (3 no longer tested and prob does not work)

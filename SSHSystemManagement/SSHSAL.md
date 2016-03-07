@@ -6,7 +6,7 @@ The idea is we use SSH to remote manage certain systems (e.g. ubuntu, unix in ge
 For that a thin abstraction layer is created called SAL and this makes it easy for the developer to interact with the remote system.
 
 The original specs for this tool are on
-https://github.com/Jumpscale/jumpscale_core7/blob/master/specs/ssh_enabled_SALs.md
+https://github.com/jumpscale7/jumpscale_core7/blob/master/specs/ssh_enabled_SALs.md
 Since then quite some modifcations are done.
 
 Its build on top of cuisine

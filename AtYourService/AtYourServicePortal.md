@@ -16,7 +16,7 @@ ays.1                          =
 
 metadata.jumpscale             =
     branch:'master',
-    url:'https://github.com/Jumpscale/ays_jumpscale7',
+    url:'https://github.com/jumpscale7/ays_jumpscale7',
 
 metadata.openvcloud            =
     url:'https://git.aydo.com/0-complexity/openvcloud_ays',

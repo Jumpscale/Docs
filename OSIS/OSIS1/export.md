@@ -4,7 +4,7 @@
 ##### Manually execute a jumpscript that does the trick for you.
 
 ```
-cd /opt/code/github/jumpscale/jumpscale_core7/apps/agentcontroller/jumpscripts/core/backup
+cd /opt/code/github/jumpscale7/jumpscale_core7/apps/agentcontroller/jumpscripts/core/backup
 python export.py
 ```
 - You can change the namespaces you want to export from inside the jumpscript file itself

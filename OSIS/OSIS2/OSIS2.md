@@ -57,7 +57,7 @@ see dir structure higher defined where the namespaces are
 
 
 ## Using the client
-Below are some examples and you can read more in [osis2 TESTS](https://github.com/Jumpscale/jumpscale_core7/blob/master/apps/osis2/tests/osis_test.py)
+Below are some examples and you can read more in [osis2 TESTS](https://github.com/jumpscale7/jumpscale_core7/blob/master/apps/osis2/tests/osis_test.py)
 ```python
 In [1]: cl = j.clients.osis2.get()  // main instance, otherwise : j.clients.osis2.get(instance='myinst') 
 In [2]: cl.
@@ -237,7 +237,7 @@ class audit(CommonColumns):
 
 ## osis2 Tests
 
-* osis2 comes with unit tests in```/opt/code/github/jumpscale/jumpscale_core7/apps/osis2/tests```
+* osis2 comes with unit tests in```/opt/code/github/jumpscale7/jumpscale_core7/apps/osis2/tests```
 * osis2 tests do tests on MONGO/SQL namespaces
 * To run the tests use the command ```python osis2_test.py```
 

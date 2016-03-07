@@ -27,7 +27,7 @@ git push -u origin master
 
 ### AYS Metadata Service Template
 
-- To create a metadata for a package, ```cd /opt/code/github/jumpscale/ays_jumpscale7```
+- To create a metadata for a package, ```cd /opt/code/github/jumpscale7/ays_jumpscale7```
 - Create a directory called nodejs that will hold the package metadata
 - Add to it, our 3 config files ```service.hrd```, ```instance.hrd``` and ```actions.py```
 - This is not a server app, that needs to run/stop/.... , we only need the ```node```&```npm``` tools that's why ```actions.py``` is not required for this particular service, so we leave it empty
@@ -59,12 +59,12 @@ git.export.1=
     - clean up previous installation using ```ays reset -n nodejs```
     - Reinstall package using ```ays install -n nodejs```
   - If all OK:
-    - ```/opt/code/github/jumpscale/ays_jumpscale7``` is a git repo, so commit and push changes to [ays_jumpscale](https://github.com/Jumpscale/ays_jumpscale7) in order to publish the package
+    - ```/opt/code/github/jumpscale7/ays_jumpscale7``` is a git repo, so commit and push changes to [ays_jumpscale](https://github.com/jumpscale7/ays_jumpscale7) in order to publish the package
     - If you don't have access, contact us at info@incubaid.com]
 
 * normal install nodejs from other node
   * ```ays mdupdate``` or alternatively pull/update metadata repo 
-      * This comes from ```/opt/code/github/jumpscale/ays_jumpscale7```
+      * This comes from ```/opt/code/github/jumpscale7/ays_jumpscale7```
   * ```ays install -n nodejs```
 
 
@@ -83,7 +83,7 @@ git.export.1=
 
 ### AYS Metadata Service Template
 
-see [ays_jumpscale7](https://github.com/jumpscale/ays_jumpscale7)
+see [ays_jumpscale7](https://github.com/jumpscale7/ays_jumpscale7)
 
 * under the path ```/opt/code/github/ays_jumpscale7/``` create a directory called mongodb
 * under ```/opt/code/github/ays_jumpscale7/openfire``` create 3 files:

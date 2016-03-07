@@ -23,7 +23,7 @@ $(instance.param.ip)
 
 - **category**  
     - In @YS you can specify a category for your service.  
-    - a use case for these categories is the creation of a link between a 'node' service like [node.ssh](https://github.com/Jumpscale/ays_jumpscale7/tree/master/_ays/node.ssh) and another service that need to be executed inside this node.
+    - a use case for these categories is the creation of a link between a 'node' service like [node.ssh](https://github.com/jumpscale7/ays_jumpscale7/tree/master/_ays/node.ssh) and another service that need to be executed inside this node.
 
 ## Example how to use from python
 

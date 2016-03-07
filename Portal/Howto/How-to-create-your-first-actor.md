@@ -87,7 +87,7 @@ id = myspace__test
 ## Raising http errors
 
 Following example will return a 404 message with header application/json.
-For full list of available exceptions see [github](https://github.com/jumpscale/jumpscale_portal/blob/master/lib/portal/portal/exceptions.py)
+For full list of available exceptions see [github](https://github.com/jumpscale7/jumpscale_portal/blob/master/lib/portal/portal/exceptions.py)
 
 ```python
 from JumpScale.portal.portal import exceptions

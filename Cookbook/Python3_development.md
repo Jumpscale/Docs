@@ -78,6 +78,6 @@ pip install ujson
 export SANDBOX=0
 export JSBRANCH='python3_unstable'
 export AYSBRANCH='python3_unstable'
-cd /tmp;rm -f install.sh;curl -k https://raw.githubusercontent.com/Jumpscale/jumpscale_core7/python3_unstable/install/install3.sh > install.sh;bash install.sh
+cd /tmp;rm -f install.sh;curl -k https://raw.githubusercontent.com/jumpscale7/jumpscale_core7/python3_unstable/install/install3.sh > install.sh;bash install.sh
 
 ```
